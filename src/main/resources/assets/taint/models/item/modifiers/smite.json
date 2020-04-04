@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_smite",
+		"waraxe": "taint:items/waraxe/mod_smite",
+		"spear": "taint:items/spear/mod_smite",
+		"glaive": "taint:items/glaive/mod_smite",
+		"shield": "taint:items/shield/mod_smite",
+		"buckler": "taint:items/buckler/mod_smite"
+	}
+}

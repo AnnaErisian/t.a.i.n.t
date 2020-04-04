@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_haste",
+		"waraxe": "taint:items/waraxe/mod_haste",
+		"spear": "taint:items/spear/mod_haste",
+		"glaive": "taint:items/glaive/mod_haste",
+		"shield": "taint:items/shield/mod_haste",
+		"buckler": "taint:items/buckler/mod_haste"
+	}
+}

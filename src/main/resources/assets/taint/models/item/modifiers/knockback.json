@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_knockback",
+		"waraxe": "taint:items/waraxe/mod_knockback",
+		"spear": "taint:items/spear/mod_knockback",
+		"glaive": "taint:items/glaive/mod_knockback",
+		"shield": "taint:items/shield/mod_knockback",
+		"buckler": "taint:items/buckler/mod_knockback"
+	}
+}

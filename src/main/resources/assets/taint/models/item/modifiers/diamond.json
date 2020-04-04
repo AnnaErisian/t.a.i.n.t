@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_diamond",
+		"waraxe": "taint:items/waraxe/mod_diamond",
+		"spear": "taint:items/spear/mod_diamond",
+		"glaive": "taint:items/glaive/mod_diamond",
+		"shield": "taint:items/shield/mod_diamond",
+		"buckler": "taint:items/buckler/mod_diamond"
+	}
+}

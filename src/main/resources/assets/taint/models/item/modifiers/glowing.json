@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_glowing",
+		"waraxe": "taint:items/waraxe/mod_glowing",
+		"spear": "taint:items/spear/mod_glowing",
+		"glaive": "taint:items/glaive/mod_glowing",
+		"shield": "taint:items/shield/mod_glowing",
+		"buckler": "taint:items/buckler/mod_glowing"
+	}
+}

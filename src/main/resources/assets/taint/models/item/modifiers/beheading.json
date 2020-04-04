@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_beheading",
+		"waraxe": "taint:items/waraxe/mod_beheading",
+		"spear": "taint:items/spear/mod_beheading",
+		"glaive": "taint:items/glaive/mod_beheading",
+		"shield": "taint:items/shield/mod_beheading",
+		"buckler": "taint:items/buckler/mod_beheading"
+	}
+}

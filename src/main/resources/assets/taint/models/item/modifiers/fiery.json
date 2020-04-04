@@ -1,0 +1,6 @@
+{
+  "textures": {
+    "dagger": "taint:items/dagger/mod_fiery",
+    "waraxe": "taint:items/waraxe/mod_knockback"
+  }
+}

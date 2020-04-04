@@ -1,0 +1,30 @@
+{
+  "textures": {
+    "layer1": "taint:items/waraxe/blade",
+    "layer0": "taint:items/waraxe/handle",
+    "layer2": "taint:items/waraxe/binding",
+    "broken1": "taint:items/waraxe/blade_broken"
+  },
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ 0, -90, 55 ],
+      "translation": [ 0, 3.0, 0.5 ],
+      "scale": [ 1.2, 1.2, 1.2 ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [ 0, 90, -55 ],
+      "translation": [ 0, 3.0, 0.5 ],
+      "scale": [ 1.2, 1.2, 1.2 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ 0, -95, 30 ],
+      "translation": [ 2.13, 6.0, 0.13 ],
+      "scale": [ 0.8, 0.8, 0.8 ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [ 0, 95, -30 ],
+      "translation": [ 2.13, 6.0, 0.13 ],
+      "scale": [ 0.8, 0.8, 0.8 ]
+    }
+  }
+}

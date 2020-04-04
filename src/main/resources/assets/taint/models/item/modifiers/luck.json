@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_luck",
+		"waraxe": "taint:items/waraxe/mod_luck",
+		"spear": "taint:items/spear/mod_luck",
+		"glaive": "taint:items/glaive/mod_luck",
+		"shield": "taint:items/shield/mod_luck",
+		"buckler": "taint:items/buckler/mod_luck"
+	}
+}

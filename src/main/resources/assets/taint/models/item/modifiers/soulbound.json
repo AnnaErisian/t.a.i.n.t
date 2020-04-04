@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_soulbound",
+		"waraxe": "taint:items/waraxe/mod_soulbound",
+		"spear": "taint:items/spear/mod_soulbound",
+		"glaive": "taint:items/glaive/mod_soulbound",
+		"shield": "taint:items/shield/mod_soulbound",
+		"buckler": "taint:items/buckler/mod_soulbound"
+	}
+}

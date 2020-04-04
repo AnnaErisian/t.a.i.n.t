@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_necrotic",
+		"waraxe": "taint:items/waraxe/mod_necrotic",
+		"spear": "taint:items/spear/mod_necrotic",
+		"glaive": "taint:items/glaive/mod_necrotic",
+		"shield": "taint:items/shield/mod_necrotic",
+		"buckler": "taint:items/buckler/mod_necrotic"
+	}
+}

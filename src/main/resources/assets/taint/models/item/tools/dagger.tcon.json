@@ -1,0 +1,8 @@
+{
+  "textures": {
+    "layer0": "taint:items/dagger/handle",
+    "layer1": "taint:items/dagger/blade",
+    "layer2": "taint:items/dagger/binding",
+    "broken1": "taint:items/dagger/blade_broken"
+  }
+}

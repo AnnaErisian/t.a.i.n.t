@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_sharpness",
+		"waraxe": "taint:items/waraxe/mod_sharpness",
+		"spear": "taint:items/spear/mod_sharpness",
+		"glaive": "taint:items/glaive/mod_sharpness",
+		"shield": "taint:items/shield/mod_sharpness",
+		"buckler": "taint:items/buckler/mod_sharpness"
+	}
+}

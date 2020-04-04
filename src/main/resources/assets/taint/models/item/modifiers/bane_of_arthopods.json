@@ -1,0 +1,10 @@
+{
+	"textures": {
+		"dagger": "taint:items/dagger/mod_bane_spider",
+		"waraxe": "taint:items/waraxe/mod_bane_spider",
+		"spear": "taint:items/spear/mod_bane_spider",
+		"glaive": "taint:items/glaive/mod_bane_spider",
+		"shield": "taint:items/shield/mod_bane_spider",
+		"buckler": "taint:items/buckler/mod_bane_spider"
+	}
+}
