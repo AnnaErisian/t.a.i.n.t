@@ -1,27 +1,45 @@
 package blue.thejester.taint.tools;
 
+import blue.thejester.taint.modules.Tools;
+import com.google.common.collect.Multimap;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
+import net.minecraft.init.SoundEvents;
+import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
+import net.minecraftforge.common.util.Constants;
 import shnupbups.tinkersaether.traits.Reach;
+import slimeknights.tconstruct.library.events.TinkerToolEvent;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
 import slimeknights.tconstruct.library.tools.SwordCore;
 import slimeknights.tconstruct.library.tools.ToolNBT;
+import slimeknights.tconstruct.library.utils.ToolHelper;
 import slimeknights.tconstruct.tools.TinkerTools;
 
 import javax.annotation.Nonnull;
 import java.util.List;
+import java.util.UUID;
+import java.util.function.Predicate;
+import java.util.function.UnaryOperator;
 
 public class ToolGlaive extends SwordCore {
 
 
     private static final float DURABILITY_MODIFIER = 1.8f;
+    private static final UUID GLAIVE_REACH_MODIFIER = UUID.fromString("a2dd4317-5694-43fa-8b0b-ae52ab9c8bbc");
 
     public ToolGlaive() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
@@ -67,6 +85,57 @@ public class ToolGlaive extends SwordCore {
         return DURABILITY_MODIFIER;
     }
 
+    // based on code in Scythe
+    @Override
+    public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity target) {
+
+        // only do AOE attack if the attack meter is charged
+        if(player.getCooledAttackStrength(0.5F) <= 0.9f) {
+            return super.onLeftClickEntity(stack, player, target);
+        }
+
+        // AOE attack!
+        player.getEntityWorld().playSound(null, player.posX, player.posY, player.posZ, SoundEvents.ENTITY_PLAYER_ATTACK_SWEEP, player.getSoundCategory(), 1.0F, 1.0F);
+        player.spawnSweepParticles();
+
+        boolean hit = false;
+        // and then sweep
+        if(!ToolHelper.isBroken(stack)) {
+            for(EntityLivingBase entitylivingbase : getAoeEntities(player, target)) {
+                if(entitylivingbase != player && !player.isOnSameTeam(entitylivingbase)) {
+                    hit |= ToolHelper.attackEntity(stack, this, player, entitylivingbase, null, false);
+                }
+            }
+        }
+
+        if(hit) {
+            player.resetCooldown();
+        }
+
+        // subtract the default box and then half as this number is the amount to increase the box by
+        return hit;
+
+    }
+
+    private List<EntityLivingBase> getAoeEntities(EntityLivingBase player, Entity target) {
+        AxisAlignedBB box = new AxisAlignedBB(target.posX-4, target.posY-2, target.posZ-4, target.posX + 4, target.posY + 2, target.posZ + 4);
+        List<EntityLivingBase> entities = player.getEntityWorld().getEntitiesWithinAABB(EntityLivingBase.class, box);
+        Vec3d vecLook = player.getLookVec().normalize();
+        float distanceTarget = player.getDistance(target);
+        entities.removeIf(new Predicate<EntityLivingBase>() {
+            @Override
+            public boolean test(EntityLivingBase entityLivingBase) {
+                //vector from them to us
+                Vec3d vecDirection = player.getPositionVector().subtractReverse(entityLivingBase.getPositionVector()).normalize();
+                float distanceOther = player.getDistance(entityLivingBase);
+                double cos = Math.abs(vecLook.dotProduct(vecDirection));
+                double distDiff = Math.abs(distanceOther - distanceTarget);
+                return cos < 0.70 || distDiff > 1.0;
+            }
+        });
+        return entities;
+    }
+
     @Override
     public ToolNBT buildTagData(List<Material> materials) {
         ToolNBT data = new ToolNBT();
@@ -88,10 +157,13 @@ public class ToolGlaive extends SwordCore {
     }
 
     @Override
-    public void addMaterialTraits(NBTTagCompound root, List<Material> materials) {
-        super.addMaterialTraits(root, materials);
+    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
+        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
 
-        //Thank you Tinker's Aether
-        Reach.reach.apply(root);
+        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.spear) {
+            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(GLAIVE_REACH_MODIFIER, "Tool modifier", 2.5, Constants.AttributeModifierOperation.ADD));
+        }
+
+        return multimap;
     }
 }

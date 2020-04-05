@@ -61,7 +61,16 @@ public enum MetalMaterial {
     orichalcum,
     adamantite,
     tinardite,
-    daemotium;
+    daemotium,
+    ardorum,
+    termium,
+    adipatum,
+    caersin,
+    neulite,
+    atercaeum,
+    oscurum,
+    inurose,
+    cibarite;
 
     public Item ingot = null;
     public ItemStack ingotStack = null;

@@ -32,8 +32,8 @@ public class OreGenerator implements IWorldGenerator {
     private static final int MIN_HEIGHT_ARDORUM = 2;
     private static final int MAX_HEIGHT_ARDORUM = 26;
 
-    private static final int VEIN_SIZE_TERMIUM = 4;
-    private static final int SPAWN_TRIES_TERMIUM = 8;
+    private static final int VEIN_SIZE_TERMIUM = 6;
+    private static final int SPAWN_TRIES_TERMIUM = 14;
     private static final int MIN_HEIGHT_TERMIUM = 2;
     private static final int MAX_HEIGHT_TERMIUM = 45;
 

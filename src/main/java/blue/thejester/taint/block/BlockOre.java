@@ -8,9 +8,11 @@ import net.minecraft.block.material.Material;
 import net.minecraft.util.ResourceLocation;
 
 public class BlockOre extends Block {
-    public BlockOre(String name) {
+    public BlockOre(String name, float hardness, float resistance, int miningLevel) {
         super(Material.ROCK);
-        this.setHardness(3F);
+        this.setHardness(hardness);
+        this.setResistance(resistance);
+        this.setHarvestLevel("pickaxe", miningLevel);
         this.setSoundType(SoundType.STONE);
         setTranslationKey(name);
         setRegistryName(new ResourceLocation(Taint.MODID, name));

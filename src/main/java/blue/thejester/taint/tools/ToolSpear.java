@@ -1,6 +1,13 @@
 package blue.thejester.taint.tools;
 
+import blue.thejester.taint.modules.Tools;
+import com.google.common.collect.Multimap;
+import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.common.util.Constants;
 import shnupbups.tinkersaether.traits.Reach;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.Category;
@@ -11,12 +18,14 @@ import slimeknights.tconstruct.tools.TinkerTools;
 import slimeknights.tconstruct.tools.modifiers.ModBeheading;
 
 import java.util.List;
+import java.util.UUID;
 
 //Spear: long range tinker weapon, damage/speed as rapier but 0.7 damage potential. Knifeblade, Binding, 2 Rod.
 public class ToolSpear extends SwordCore {
 
 
     private static final float DURABILITY_MODIFIER = 1.1f;
+    private static final UUID SPEAR_REACH_MODIFIER = UUID.fromString("89f0ebfe-c8a0-4e69-bddd-b0a4e32b8f9b");
 
     public ToolSpear() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
@@ -73,10 +82,13 @@ public class ToolSpear extends SwordCore {
     }
 
     @Override
-    public void addMaterialTraits(NBTTagCompound root, List<Material> materials) {
-        super.addMaterialTraits(root, materials);
+    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
+        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
 
-        //Thank you Tinker's Aether
-        Reach.reach.apply(root);
+        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.spear) {
+            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(SPEAR_REACH_MODIFIER, "Tool modifier", 3.5, Constants.AttributeModifierOperation.ADD));
+        }
+
+        return multimap;
     }
 }

@@ -84,7 +84,7 @@ public class Tools implements IModule {
 
     private static void initToolItem(IForgeRegistry<Item> reg, ToolCore c) {
         reg.register(c);
-        TinkerRegistry.registerToolStationCrafting(c);
+        TinkerRegistry.registerToolCrafting(c);
         Taint.proxy.registerToolModel(c);
     }
 }
