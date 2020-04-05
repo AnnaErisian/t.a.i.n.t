@@ -276,6 +276,66 @@ tile.block_daemotium.name=Block of Daemotium
 item.ingot_daemotium.name=Daemotium Ingot
 item.nugget_daemotium.name=Daemotium Nugget
 
+
+
+
+
+tile.ore_ardorum.name=Ardorum Ore
+tile.block_ardorum.name=Block of Ardorum
+item.ingot_ardorum.name=Ardorum Ingot
+item.nugget_ardorum.name=Ardorum Nugget
+
+tile.ore_termium.name=Termium Ore
+tile.block_termium.name=Block of Termium
+item.ingot_termium.name=Termium Ingot
+item.nugget_termium.name=Termium Nugget
+
+tile.ore_adipatum.name=Adipadum Ore
+tile.block_adipatum.name=Block of Adipadum
+item.ingot_adipatum.name=Adipadum Ingot
+item.nugget_adipatum.name=Adipadum Nugget
+
+tile.ore_caersin.name=Caersin Ore
+tile.block_caersin.name=Block of Caersin
+item.ingot_caersin.name=Caersin Ingot
+item.nugget_caersin.name=Caersin Nugget
+
+tile.ore_neulite.name=Neulite Ore
+tile.block_neulite.name=Block of Neulite
+item.ingot_neulite.name=Neulite Ingot
+item.nugget_neulite.name=Neulite Nugget
+
+tile.ore_atercaeum.name=Atercaeum Ore
+tile.block_atercaeum.name=Block of Alercaeum
+item.ingot_atercaeum.name=Atercaeum Ingot
+item.nugget_atercaeum.name=Atercaeum Nugget
+
+tile.ore_oscurum.name=Oscurum Ore
+tile.block_oscurum.name=Block of Oscurum
+item.ingot_oscurum.name=Oscurum Ingot
+item.nugget_oscurum.name=Oscurum Nugget
+
+tile.ore_inurose.name=Inurose Ore
+tile.block_inurose.name=Block of Inurose
+item.ingot_inurose.name=Inurose Ingot
+item.nugget_inurose.name=Inurose Nugget
+
+tile.ore_cibarite.name=Cibarite Ore
+tile.block_cibarite.name=Block of Cibarite
+item.ingot_cibarite.name=Cibarite Ingot
+item.nugget_cibarite.name=Cibarite Nugget
+
+
+
+item.dagger.name=Dagger
+item.waraxe.name=Waraxe
+item.spear.name=Spear
+item.glaive.name=Glaive
+item.buckler.name=Buckler
+item.shield.name=Shield
+
+
+
 modifier.ignitive.name=Ignitive
 modifier.ignitive.desc=§oSome men...§r\nSets creatures on fire for a few seconds.
 modifier.antigravity.name=Antigravity
