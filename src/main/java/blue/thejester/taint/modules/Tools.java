@@ -38,22 +38,22 @@ public class Tools implements IModule {
     @SubscribeEvent
     public static void initItems(RegistryEvent.Register<Item> event) {
         dagger = new ToolDagger();
-        initToolItem(event.getRegistry(), dagger);
+        initToolItem(event.getRegistry(), dagger, false);
 
         waraxe = new ToolWaraxe();
-        initToolItem(event.getRegistry(), waraxe);
+        initToolItem(event.getRegistry(), waraxe, false);
 
         spear = new ToolSpear();
-        initToolItem(event.getRegistry(), spear);
+        initToolItem(event.getRegistry(), spear, true);
 
         glaive = new ToolGlaive();
-        initToolItem(event.getRegistry(), glaive);
+        initToolItem(event.getRegistry(), glaive, true);
 
         shield = new ToolShield();
-        initToolItem(event.getRegistry(), shield);
+        initToolItem(event.getRegistry(), shield, false);
 
         buckler = new ToolBuckler();
-        initToolItem(event.getRegistry(), buckler);
+        initToolItem(event.getRegistry(), buckler, false);
 
         // register modifiers
         for (IModifier modifier: new IModifier[] {
@@ -82,9 +82,13 @@ public class Tools implements IModule {
         }
     }
 
-    private static void initToolItem(IForgeRegistry<Item> reg, ToolCore c) {
+    private static void initToolItem(IForgeRegistry<Item> reg, ToolCore c, boolean forge ) {
         reg.register(c);
-        TinkerRegistry.registerToolCrafting(c);
+        if (forge) {
+            TinkerRegistry.registerToolForgeCrafting(c);
+        } else {
+            TinkerRegistry.registerToolCrafting(c);
+        }
         Taint.proxy.registerToolModel(c);
     }
 }

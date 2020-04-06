@@ -16,7 +16,7 @@ import slimeknights.tconstruct.library.tools.ToolCore;
 
 import java.util.Arrays;
 
-public abstract class CommonProxy {
+public class CommonProxy {
 
     public static CreativeTab taintCreativeTab = new CreativeTab("TaintTab", new ItemStack(Items.IRON_HOE));
 
@@ -26,15 +26,15 @@ public abstract class CommonProxy {
     public void preInit() {
 
         ModItems.init();
-        IModule.modules.addAll(Arrays.asList(new Tools()));
-//        IModule.modules.addAll(Arrays.asList(new BotaniaArmor(), new Betweenlands(), new Fluids(), new Netherstar(), new NewMaterials(), new Tools()));
+//        IModule.modules.addAll(Arrays.asList(new Tools()));
+        IModule.modules.addAll(Arrays.asList(new BotaniaArmor(), new Betweenlands(), new Fluids(), new Netherstar(), new NewMaterials(), new Tools()));
         IModule.modules.forEach(IModule::init);
 
         ModItems.init();
         MetalMaterial.makeItems();
         MetalMaterial.sendSmelteryIMC();
 
-        taintCreativeTab.setDisplayIcon(MetalMaterial.adamantite.ingotStack);
+//        taintCreativeTab.setDisplayIcon(MetalMaterial.adamantite.ingotStack);
 
     }
 

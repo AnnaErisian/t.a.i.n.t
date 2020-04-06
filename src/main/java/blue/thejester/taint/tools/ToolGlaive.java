@@ -160,8 +160,8 @@ public class ToolGlaive extends SwordCore {
     public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
         Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
 
-        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.spear) {
-            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(GLAIVE_REACH_MODIFIER, "Tool modifier", 2.5, Constants.AttributeModifierOperation.ADD));
+        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.glaive) {
+            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(GLAIVE_REACH_MODIFIER, "Tool modifier", 2.0, Constants.AttributeModifierOperation.ADD));
         }
 
         return multimap;

@@ -2,6 +2,7 @@ package blue.thejester.taint.modules;
 
 import blue.thejester.taint.helper.fluid.Create;
 import blue.thejester.taint.traits.Ignitive;
+import blue.thejester.taint.traits.Midden;
 import c4.conarm.common.armor.traits.ArmorTraits;
 import c4.conarm.lib.materials.*;
 import landmaster.plustic.traits.Terrafirma;
@@ -26,8 +27,9 @@ public class Betweenlands implements IModule {
     public void init() {
         {
             Material valonite = new Material("valonite", 0xD8B7D9);
-            valonite.addTrait(TinkerTraits.established);
-            valonite.addTrait(TinkerTraits.enderference);
+            valonite.addTrait(TinkerTraits.enderference, MaterialTypes.HEAD);
+            NewMaterials.addToToolAll(valonite, TinkerTraits.established);
+            NewMaterials.addToToolAll(valonite, Midden.midden);
             valonite.setCraftable(true).setCastable(false);
             ArmorMaterials.addArmorTrait(valonite, ArmorTraits.indomitable, ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(valonite, ArmorTraits.shielding, ArmorMaterialType.CORE);
@@ -52,16 +54,16 @@ public class Betweenlands implements IModule {
         {
             Material octine = new Material("octine", 0xffe634);
             octine.setCraftable(false).setCastable(true);
-            octine.addTrait(TinkerTraits.superheat);
-            octine.addTrait(TinkerTraits.superheat, MaterialTypes.HEAD);
             octine.addTrait(Ignitive.ignitive, MaterialTypes.HEAD);
+            NewMaterials.addToToolAll(octine, Midden.midden);
+            NewMaterials.addToToolAll(octine, TinkerTraits.superheat);
             octine.addItem("ingotOctine", 1, Material.VALUE_Ingot);
             octine.addItem("blockOctine", 1, Material.VALUE_Block);
             TinkerRegistry.addMaterialStats(octine,
                     new HeadMaterialStats(660, 6.5f, 5.5f, 2),
                     new HandleMaterialStats(1.1f, 15),
                     new ExtraMaterialStats(66),
-                    new BowMaterialStats(5, 0.5f, 1));
+                    new BowMaterialStats(0.2f, 0.5f, 1));
             setRenderInfo(octine, 0xffe634);
 
             octineFluid = Create.plain("octine", 0xffe634);
@@ -72,9 +74,7 @@ public class Betweenlands implements IModule {
             Material syrmorite = new Material("syrmorite", 0x4e58a7);
             syrmorite.setCraftable(false).setCastable(true);
             ArmorMaterials.addArmorTrait(syrmorite, ArmorTraits.steady, ArmorMaterialType.CORE);
-            ArmorMaterials.addArmorTrait(syrmorite, ArmorTraits.lightweight, ArmorMaterialType.CORE);
-            ArmorMaterials.addArmorTrait(syrmorite, ArmorTraits.lightweight, ArmorMaterialType.TRIM);
-            ArmorMaterials.addArmorTrait(syrmorite, ArmorTraits.lightweight, ArmorMaterialType.PLATES);
+            NewMaterials.addToArmorAll(syrmorite, ArmorTraits.lightweight);
             syrmorite.addItem("ingotSyrmorite", 1, Material.VALUE_Ingot);
             syrmorite.addItem("blockSyrmorite", 1, Material.VALUE_Block);
             TinkerRegistry.addMaterialStats(syrmorite,
@@ -92,10 +92,8 @@ public class Betweenlands implements IModule {
             Material scabyst = new Material("scabyst", 0x97bdb7);
             scabyst.setCraftable(true).setCastable(false);
             scabyst.addTrait(Terrafirma.terrafirma.get(0), ArmorMaterialType.CORE);
-            ArmorMaterials.addArmorTrait(scabyst, ArmorTraits.shielding, ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(scabyst, ArmorTraits.aquaspeed, ArmorMaterialType.PLATES);
-            ArmorMaterials.addArmorTrait(scabyst, ArmorTraits.shielding, ArmorMaterialType.PLATES);
-            ArmorMaterials.addArmorTrait(scabyst, ArmorTraits.shielding, ArmorMaterialType.TRIM);
+            NewMaterials.addToArmorAll(scabyst, ArmorTraits.shielding);
             scabyst.addItem("gemScabyst", 1, Material.VALUE_Gem);
             scabyst.addItem("blockScabyst", 1, Material.VALUE_Gem);
             TinkerRegistry.addMaterialStats(scabyst,
