@@ -1,7 +1,7 @@
 {
-    "variants": {
-      "normal": [
-        { "model": "taint:block_escalite" }
-      ]
-    }
+  "variants": {
+    "normal": [
+      { "model": "taint:block_escalite" }
+    ]
   }
+}

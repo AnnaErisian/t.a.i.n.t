@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
+  "parent": "item/generated",
     "textures": {
-        "layer0": "taint:items/ingot_orichalcum"
+      "layer0": "taint:items/ingot_orichalcum"
     }
-}
+  }

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "taint:blocks/block_unseelium"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "taint:blocks/block_unseelium"
+  }
 }

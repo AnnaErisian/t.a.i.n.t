@@ -1,7 +1,7 @@
 {
-    "variants": {
-      "normal": [
-        { "model": "taint:block_sestertium" }
-      ]
-    }
+  "variants": {
+    "normal": [
+      { "model": "taint:block_sestertium" }
+    ]
   }
+}

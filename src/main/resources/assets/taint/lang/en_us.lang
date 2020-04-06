@@ -1,330 +1,284 @@
-itemGroup.TaintTab=T.A.I.L.
+itemGroup.TaintTab=T.A.I.N.T.
 
 material.valonite.name=Valonite
 material.scabyst.name=Scabyst
-
-fluid.prismarine.name=Molten Prismarine
-fluid.lapis.name=Molten Lapis Lazuli
-fluid.tinardite.name=Molten Tin-Ardite Alloy
-fluid.daemotium.name=Molten Daemotium
-fluid.thermoconducting.name=Molten Thermoconducting Alloy
-
 material.octine.name=Octine
-fluid.octine.name=Molten Octine
 material.syrmorite.name=Syrmorite
+fluid.octine.name=Molten Octine
 fluid.syrmorite.name=Molten Syrmorite
 material.netherstar.name=Nether Star
 fluid.netherstar.name=Molten Nether Stars
-material.sageslime.name=Sageslime
-fluid.sageslime.name=Molten Sageslime
-material.chaoite.name=Chaoite
-fluid.chaoite.name=Molten Chaoite
-material.betweensteel.name=Betweensteel
-fluid.betweensteel.name=Molten Betweensteel
-material.tritanium.name=Tritanium
-fluid.tritanium.name=Molten Tritanium
-material.whitesteel.name=White Steel
-fluid.white_steel.name=Molten White Steel
-material.oilsteel.name=Oil Steel
-fluid.oil_steel.name=Molten Oil Steel
-material.lordslime.name=Lordslime
-fluid.lordslime.name=Molten Lordslime
-material.faerite.name=Faerite
-fluid.faerite.name=Molten Faerite
-material.alubronze.name=Alubronze
-fluid.alubronze.name=Molten Alubronze
-material.caelite.name=Caelite
-fluid.caelite.name=Molten Caelite
-material.atmium.name=Atmium
-fluid.atmium.name=Molten Atmium
-material.pelagium.name=Pelagium
-fluid.pelagium.name=Molten Pelagium
-material.sonium.name=Sonium
-fluid.sonium.name=Molten Sonium
-material.unseelium.name=Unseelium
-fluid.unseelium.name=Molten Unseelium
-material.peractium.name=Peractium
-fluid.peractium.name=Molten Peractium
-material.caeputescite.name=Caeputescite
-fluid.caeputescite.name=Molten Caeputescite
-material.superlumium.name=Superlumium
-fluid.superlumium.name=Molten Superlumium
-material.starsteel.name=Starsteel
-fluid.starsteel.name=Molten Starsteel
-material.yellowcobalt.name=Yellow Cobalt
-fluid.yellow_cobalt.name=Molten Yellow Cobalt
-material.aureclase.name=Aureclase
-fluid.aureclase.name=Molten Aureclase
-material.cobaltthoriumg.name=Cobalt Thorium G
-fluid.cobalt_thorium_g.name=Molten Cobalt Thorium G
-material.florium.name=Florium
-fluid.florium.name=Molten Florium
-material.gourmium.name=Gourmium
-fluid.gourmium.name=Molten Gourmium
-material.escalite.name=Escalite
-fluid.escalite.name=Molten Escalite
-material.alcite.name=Alcite
-fluid.alcite.name=Molten Alcite
-material.urielium.name=Urielium
-fluid.urielium.name=Molten Urielium
-material.aggrite.name=Aggrite
-fluid.aggrite.name=Molten Aggrite
-material.cloudiron.name=Cloud Iron
-fluid.cloudiron.name=Molten Cloud Iron
-material.astralium.name=Astralium
-fluid.astralium.name=Molten Astralium
-material.bavarium.name=Bavarium
-fluid.bavarium.name=Molten Bavarium
-material.assarion.name=Assarion
-fluid.assarion.name=Molten Assarion
-material.dyrnwynite.name=Dyrnwynite
-fluid.dyrnwynite.name=Molten Dyrnwynite
-material.infernite.name=Infernite
-fluid.infernite.name=Molten Infernite
-material.tetramentium.name=Tetramentium
-fluid.tetramentium.name=Molten Tetramentium
-material.cyrium.name=Cyrium
-fluid.cyrium.name=Molten Cyrium
-material.terium.name=Terium
-fluid.terium.name=Molten Terium
-material.dupondium.name=Dupondium
-fluid.dupondium.name=Molten Dupondium
-material.aerium.name=Aerium
-fluid.aerium.name=Molten Aerium
-material.pyrium.name=Pyrium
-fluid.pyrium.name=Molten Pyrium
-material.sestertium.name=Sestertium
-fluid.sestertium.name=Molten Sestertium
-material.orichalcum.name=Orichalcum
-fluid.orichalcum.name=Molten Orichalcum
+fluid.prismarine.name=Molten Prismarine
+fluid.lapis.name=Molten Lapis Lazuli
+fluid.thermoconducting.name=Molten Thermoconducting Alloy
+
+ui.mininglevel.5=Ardorum
+ui.mininglevel.6=Termium
+ui.mininglevel.7=Adipatum
+ui.mininglevel.8=Neulite
+ui.mininglevel.9=Atercaeum
+ui.mininglevel.10=Cibarite
+
+material.accelerase.name=Accelerase
+fluid.accelerase.name=Molten Accelerase
+tile.block_accelerase.name=Block of Accelerase
+item.ingot_accelerase.name=Accelerase Ingot
+item.nugget_accelerase.name=Accelerase Nugget
+
 material.adamantite.name=Adamantite
 fluid.adamantite.name=Molten Adamantite
-
-tile.block_sageslime.name=Block of Sageslime
-item.ingot_sageslime.name=Sageslime Ingot
-item.nugget_sageslime.name=Sageslime Nugget
-
-tile.block_chaoite.name=Block of Chaoite
-item.ingot_chaoite.name=Chaoite Ingot
-item.nugget_chaoite.name=Chaoite Nugget
-
-tile.block_betweensteel.name=Block of Betweensteel
-item.ingot_betweensteel.name=Betweensteel Ingot
-item.nugget_betweensteel.name=Betweensteel Nugget
-
-tile.block_tritanium.name=Block of Tritanium
-item.ingot_tritanium.name=Tritanium Ingot
-item.nugget_tritanium.name=Tritanium Nugget
-
-tile.block_white_steel.name=Block of White Steel
-item.ingot_white_steel.name=White Steel Ingot
-item.nugget_white_steel.name=White Steel Nugget
-
-tile.block_oil_steel.name=Block of Oil Steel
-item.ingot_oil_steel.name=Oil Steel Ingot
-item.nugget_oil_steel.name=Oil Steel Nugget
-
-tile.block_lordslime.name=Block of Lordslime
-item.ingot_lordslime.name=Lordslime Ingot
-item.nugget_lordslime.name=Lordslime Nugget
-
-tile.block_faerite.name=Block of Faerite
-item.ingot_faerite.name=Faerite Ingot
-item.nugget_faerite.name=Faerite Nugget
-
-tile.block_alubronze.name=Block of Alubronze
-item.ingot_alubronze.name=Alubronze Ingot
-item.nugget_alubronze.name=Alubronze Nugget
-
-tile.block_caelite.name=Block of Caelite
-item.ingot_caelite.name=Caelite Ingot
-item.nugget_caelite.name=Caelite Nugget
-
-tile.block_atmium.name=Block of Atmium
-item.ingot_atmium.name=Atmium Ingot
-item.nugget_atmium.name=Atmium Nugget
-
-tile.block_pelagium.name=Block of Pelagium
-item.ingot_pelagium.name=Pelagium Ingot
-item.nugget_pelagium.name=Pelagium Nugget
-
-tile.block_sonium.name=Block of Sonium
-item.ingot_sonium.name=Sonium Ingot
-item.nugget_sonium.name=Sonium Nugget
-
-tile.block_unseelium.name=Block of Unseelium
-item.ingot_unseelium.name=Unseelium Ingot
-item.nugget_unseelium.name=Unseelium Nugget
-
-tile.block_peractium.name=Block of Peractium
-item.ingot_peractium.name=Peractium Ingot
-item.nugget_peractium.name=Peractium Nugget
-
-tile.block_caeputescite.name=Block of Caeputescite
-item.ingot_caeputescite.name=Caeputescite Ingot
-item.nugget_caeputescite.name=Caeputescite Nugget
-
-tile.block_superlumium.name=Block of Superlumium
-item.ingot_superlumium.name=Superlumium Ingot
-item.nugget_superlumium.name=Superlumium Nugget
-
-tile.block_starsteel.name=Block of Starsteel
-item.ingot_starsteel.name=Starsteel Ingot
-item.nugget_starsteel.name=Starsteel Nugget
-
-tile.block_yellow_cobalt.name=Block of Yellow Cobalt
-item.ingot_yellow_cobalt.name=Yellow Cobalt Ingot
-item.nugget_yellow_cobalt.name=Yellow Cobalt Nugget
-
-tile.block_aureclase.name=Block of Aureclase
-item.ingot_aureclase.name=Aureclase Ingot
-item.nugget_aureclase.name=Aureclase Nugget
-
-tile.block_cobalt_thorium_g.name=Block of Cobalt Thorium G
-item.ingot_cobalt_thorium_g.name=Cobalt Thorium G Ingot
-item.nugget_cobalt_thorium_g.name=Cobalt Thorium G Nugget
-
-tile.block_florium.name=Block of Florium
-item.ingot_florium.name=Florium Ingot
-item.nugget_florium.name=Florium Nugget
-
-tile.block_gourmium.name=Block of Gourmium
-item.ingot_gourmium.name=Gourmium Ingot
-item.nugget_gourmium.name=Gourmium Nugget
-
-tile.block_escalite.name=Block of Escalite
-item.ingot_escalite.name=Escalite Ingot
-item.nugget_escalite.name=Escalite Nugget
-
-tile.block_alcite.name=Block of Alcite
-item.ingot_alcite.name=Alcite Ingot
-item.nugget_alcite.name=Alcite Nugget
-
-tile.block_urielium.name=Block of Urielium
-item.ingot_urielium.name=Urielium Ingot
-item.nugget_urielium.name=Urielium Nugget
-
-tile.block_aggrite.name=Block of Aggrite
-item.ingot_aggrite.name=Aggrite Ingot
-item.nugget_aggrite.name=Aggrite Nugget
-
-tile.block_cloudiron.name=Block of Cloud Iron
-item.ingot_cloudiron.name=Cloud Iron Ingot
-item.nugget_cloudiron.name=Cloud Iron Nugget
-
-tile.block_astralium.name=Block of Astralium
-item.ingot_astralium.name=Astralium Ingot
-item.nugget_astralium.name=Astralium Nugget
-
-tile.block_bavarium.name=Block of Bavarium
-item.ingot_bavarium.name=Bavarium Ingot
-item.nugget_bavarium.name=Bavarium Nugget
-
-tile.block_assarion.name=Block of Assarion
-item.ingot_assarion.name=Assarion Ingot
-item.nugget_assarion.name=Assarion Nugget
-
-tile.block_dyrnwynite.name=Block of Dyrnwynite
-item.ingot_dyrnwynite.name=Dyrnwynite Ingot
-item.nugget_dyrnwynite.name=Dyrnwynite Nugget
-
-tile.block_infernite.name=Block of Infernite
-item.ingot_infernite.name=Infernite Ingot
-item.nugget_infernite.name=Infernite Nugget
-
-tile.block_tetramentium.name=Block of Tetramentium
-item.ingot_tetramentium.name=Tetramentium Ingot
-item.nugget_tetramentium.name=Tetramentium Nugget
-
-tile.block_cyrium.name=Block of Cyrium
-item.ingot_cyrium.name=Cyrium Ingot
-item.nugget_cyrium.name=Cyrium Nugget
-
-tile.block_terium.name=Block of Terium
-item.ingot_terium.name=Terium Ingot
-item.nugget_terium.name=Terium Nugget
-
-tile.block_dupondium.name=Block of Dupondium
-item.ingot_dupondium.name=Dupondium Ingot
-item.nugget_dupondium.name=Dupondium Nugget
-
-tile.block_aerium.name=Block of Aerium
-item.ingot_aerium.name=Aerium Ingot
-item.nugget_aerium.name=Aerium Nugget
-
-tile.block_pyrium.name=Block of Pyrium
-item.ingot_pyrium.name=Pyrium Ingot
-item.nugget_pyrium.name=Pyrium Nugget
-
-tile.block_sestertium.name=Block of Sestertium
-item.ingot_sestertium.name=Sestertium Ingot
-item.nugget_sestertium.name=Sestertium Nugget
-
-tile.block_orichalcum.name=Block of Orichalcum
-item.ingot_orichalcum.name=Orichalcum Ingot
-item.nugget_orichalcum.name=Orichalcum Nugget
-
 tile.block_adamantite.name=Block of Adamantite
 item.ingot_adamantite.name=Adamantite Ingot
 item.nugget_adamantite.name=Adamantite Nugget
 
-tile.block_tinardite.name=Block of Tin-Ardite Alloy
-item.ingot_tinardite.name=Tin-Ardite Alloy Ingot
-item.nugget_tinardite.name=Tin-Ardite Alloy Nugget
-
-tile.block_daemotium.name=Block of Daemotium
-item.ingot_daemotium.name=Daemotium Ingot
-item.nugget_daemotium.name=Daemotium Nugget
-
-
-
-
-
-tile.ore_ardorum.name=Ardorum Ore
-tile.block_ardorum.name=Block of Ardorum
-item.ingot_ardorum.name=Ardorum Ingot
-item.nugget_ardorum.name=Ardorum Nugget
-
-tile.ore_termium.name=Termium Ore
-tile.block_termium.name=Block of Termium
-item.ingot_termium.name=Termium Ingot
-item.nugget_termium.name=Termium Nugget
-
 tile.ore_adipatum.name=Adipadum Ore
+material.adipatum.name=Adipadum
+fluid.adipatum.name=Molten Adipadum
 tile.block_adipatum.name=Block of Adipadum
 item.ingot_adipatum.name=Adipadum Ingot
 item.nugget_adipatum.name=Adipadum Nugget
 
-tile.ore_caersin.name=Caersin Ore
-tile.block_caersin.name=Block of Caersin
-item.ingot_caersin.name=Caersin Ingot
-item.nugget_caersin.name=Caersin Nugget
+material.aerium.name=Aerium
+fluid.aerium.name=Molten Aerium
+tile.block_aerium.name=Block of Aerium
+item.ingot_aerium.name=Aerium Ingot
+item.nugget_aerium.name=Aerium Nugget
 
-tile.ore_neulite.name=Neulite Ore
-tile.block_neulite.name=Block of Neulite
-item.ingot_neulite.name=Neulite Ingot
-item.nugget_neulite.name=Neulite Nugget
+material.antenium.name=Antenium
+fluid.antenium.name=Molten Antenium
+tile.block_antenium.name=Block of Antenium
+item.ingot_antenium.name=Antenium Ingot
+item.nugget_antenium.name=Antenium Nugget
+
+tile.ore_ardorum.name=Ardorum Ore
+material.ardorum.name=Ardorum
+fluid.ardorum.name=Molten Ardorum
+tile.block_ardorum.name=Block of Ardorum
+item.ingot_ardorum.name=Ardorum Ingot
+item.nugget_ardorum.name=Ardorum Nugget
+
+material.ascalite.name=Ascalite
+fluid.ascalite.name=Molten Ascalite
+tile.block_ascalite.name=Block of Ascalite
+item.ingot_ascalite.name=Ascalite Ingot
+item.nugget_ascalite.name=Ascalite Nugget
 
 tile.ore_atercaeum.name=Atercaeum Ore
+material.atercaeum.name=Alercaeum
+fluid.atercaeum.name=Molten Alercaeum
 tile.block_atercaeum.name=Block of Alercaeum
 item.ingot_atercaeum.name=Atercaeum Ingot
 item.nugget_atercaeum.name=Atercaeum Nugget
 
-tile.ore_oscurum.name=Oscurum Ore
-tile.block_oscurum.name=Block of Oscurum
-item.ingot_oscurum.name=Oscurum Ingot
-item.nugget_oscurum.name=Oscurum Nugget
+fluid.betweensteel.name=Molten Betweensteel
+material.betweensteel.name=Betweensteel
+tile.block_betweensteel.name=Block of Betweensteel
+item.ingot_betweensteel.name=Betweensteel Ingot
+item.nugget_betweensteel.name=Betweensteel Nugget
 
-tile.ore_inurose.name=Inurose Ore
-tile.block_inurose.name=Block of Inurose
-item.ingot_inurose.name=Inurose Ingot
-item.nugget_inurose.name=Inurose Nugget
+material.blackrosite.name=Black Rosite
+fluid.black_rosite.name=Molten Black Rosite
+tile.block_black_rosite.name=Block of Black Rosite
+item.ingot_black_rosite.name=Black Rosite Ingot
+item.nugget_black_rosite.name=Black Rosite Nugget
+
+tile.ore_caersin.name=Caersin Ore
+material.caersin.name=Caersin
+fluid.caersin.name=Molten Caersin
+tile.block_caersin.name=Block of Caersin
+item.ingot_caersin.name=Caersin Ingot
+item.nugget_caersin.name=Caersin Nugget
+
+material.cannium.name=Cannium
+fluid.cannium.name=Molten Cannium
+tile.block_cannium.name=Block of Cannium
+item.ingot_cannium.name=Cannium Ingot
+item.nugget_cannium.name=Cannium Nugget
 
 tile.ore_cibarite.name=Cibarite Ore
+material.cibarite.name=Cibarite
+fluid.cibarite.name=Molten Cibarite
 tile.block_cibarite.name=Block of Cibarite
 item.ingot_cibarite.name=Cibarite Ingot
 item.nugget_cibarite.name=Cibarite Nugget
 
+material.dupondium.name=Dupondium
+fluid.dupondium.name=Molten Dupondium
+tile.block_dupondium.name=Block of Dupondium
+item.ingot_dupondium.name=Dupondium Ingot
+item.nugget_dupondium.name=Dupondium Nugget
+
+material.escalite.name=Escalite
+fluid.escalite.name=Molten Escalite
+tile.block_escalite.name=Block of Escalite
+item.ingot_escalite.name=Escalite Ingot
+item.nugget_escalite.name=Escalite Nugget
+
+material.faerite.name=Faerite
+fluid.faerite.name=Molten Faerite
+tile.block_faerite.name=Block of Faerite
+item.ingot_faerite.name=Faerite Ingot
+item.nugget_faerite.name=Faerite Nugget
+
+material.fierkite.name=Fierkite
+fluid.fierkite.name=Molten Fierkite
+tile.block_fierkite.name=Block of Fierkite
+item.ingot_fierkite.name=Fierkite Ingot
+item.nugget_fierkite.name=Fierkite Nugget
+
+material.infernium.name=Infernium
+fluid.infernium.name=Molten Infernium
+tile.block_infernium.name=Block of Infernium
+item.ingot_infernium.name=Infernium Ingot
+item.nugget_infernium.name=Infernium Nugget
+
+tile.ore_inurose.name=Inurose Ore
+material.inurose.name=Inurose
+fluid.inurose.name=Molten Inurose
+tile.block_inurose.name=Block of Inurose
+item.ingot_inurose.name=Inurose Ingot
+item.nugget_inurose.name=Inurose Nugget
+
+material.littium.name=Littium
+fluid.littium.name=Molten Littium
+tile.block_littium.name=Block of Littium
+item.ingot_littium.name=Littium Ingot
+item.nugget_littium.name=Littium Nugget
+
+material.lordslime.name=Lordslime
+fluid.lordslime.name=Molten Lordslime
+tile.block_lordslime.name=Block of Lordslime
+item.ingot_lordslime.name=Lordslime Ingot
+item.nugget_lordslime.name=Lordslime Nugget
+
+material.luginite.name=Luginite
+fluid.luginite.name=Molten Luginite
+tile.block_luginite.name=Block of Luginite
+item.ingot_luginite.name=Luginite Ingot
+item.nugget_luginite.name=Luginite Nugget
+
+material.lunite.name=Lunite
+fluid.lunite.name=Molten Lunite
+tile.block_lunite.name=Block of Lunite
+item.ingot_lunite.name=Lunite Ingot
+item.nugget_lunite.name=Lunite Nugget
+
+tile.ore_neulite.name=Neulite Ore
+material.neulite.name=Neulite
+fluid.neulite.name=Molten Neulite
+tile.block_neulite.name=Block of Neulite
+item.ingot_neulite.name=Neulite Ingot
+item.nugget_neulite.name=Neulite Nugget
+
+material.orichalcum.name=Orichalcum
+fluid.orichalcum.name=Molten Orichalcum
+tile.block_orichalcum.name=Block of Orichalcum
+item.ingot_orichalcum.name=Orichalcum Ingot
+item.nugget_orichalcum.name=Orichalcum Nugget
+
+material.orinase.name=Orinase
+fluid.orinase.name=Molten Orinase
+tile.block_orinase.name=Block of Orinase
+item.ingot_orinase.name=Orinase Ingot
+item.nugget_orinase.name=Orinase Nugget
+
+tile.ore_oscurum.name=Oscurum Ore
+material.oscurum.name=Oscurum
+fluid.oscurum.name=Molten Oscurum
+tile.block_oscurum.name=Block of Oscurum
+item.ingot_oscurum.name=Oscurum Ingot
+item.nugget_oscurum.name=Oscurum Nugget
+
+material.peractium.name=Peractium
+fluid.peractium.name=Molten Peractium
+tile.block_peractium.name=Block of Peractium
+item.ingot_peractium.name=Peractium Ingot
+item.nugget_peractium.name=Peractium Nugget
+
+material.piridium.name=Piridium
+fluid.piridium.name=Molten Piridium
+tile.block_piridium.name=Block of Piridium
+item.ingot_piridium.name=Piridium Ingot
+item.nugget_piridium.name=Piridium Nugget
+
+material.ptemnium.name=Ptemnium
+fluid.ptemnium.name=Molten Ptemnium
+tile.block_ptemnium.name=Block of Ptemnium
+item.ingot_ptemnium.name=Ptemnium Ingot
+item.nugget_ptemnium.name=Ptemnium Nugget
+
+material.rallium.name=Rallium
+fluid.rallium.name=Molten Rallium
+tile.block_rallium.name=Block of Rallium
+item.ingot_rallium.name=Rallium Ingot
+item.nugget_rallium.name=Rallium Nugget
+
+material.sestertium.name=Sestertium
+fluid.sestertium.name=Molten Sestertium
+tile.block_sestertium.name=Block of Sestertium
+item.ingot_sestertium.name=Sestertium Ingot
+item.nugget_sestertium.name=Sestertium Nugget
+
+material.slipsteel.name=Slipsteel
+fluid.slipsteel.name=Molten Slipsteel
+tile.block_slipsteel.name=Block of Slipsteel
+item.ingot_slipsteel.name=Slipsteel Ingot
+item.nugget_slipsteel.name=Slipsteel Nugget
+
+material.solairite.name=Solairite
+fluid.solairite.name=Molten Solairite
+tile.block_solairite.name=Block of Solairite
+item.ingot_solairite.name=Solairite Ingot
+item.nugget_solairite.name=Solairite Nugget
+
+material.soldrite.name=Soldrite
+fluid.soldrite.name=Molten Soldrite
+tile.block_soldrite.name=Block of Soldrite
+item.ingot_soldrite.name=Soldrite Ingot
+item.nugget_soldrite.name=Soldrite Nugget
+
+material.starsteel.name=Starsteel
+fluid.starsteel.name=Molten Starsteel
+tile.block_starsteel.name=Block of Starsteel
+item.ingot_starsteel.name=Starsteel Ingot
+item.nugget_starsteel.name=Starsteel Nugget
+
+material.superlumium.name=Superlumium
+fluid.superlumium.name=Molten Superlumium
+tile.block_superlumium.name=Block of Superlumium
+item.ingot_superlumium.name=Superlumium Ingot
+item.nugget_superlumium.name=Superlumium Nugget
+
+material.tempestite.name=Tempestite
+fluid.tempestite.name=Molten Tempestite
+tile.block_tempestite.name=Block of Tempestite
+item.ingot_tempestite.name=Tempestite Ingot
+item.nugget_tempestite.name=Tempestite Nugget
+
+material.terium.name=Terium
+fluid.terium.name=Molten Terium
+tile.block_terium.name=Block of Terium
+item.ingot_terium.name=Terium Ingot
+item.nugget_terium.name=Terium Nugget
+
+tile.ore_termium.name=Termium Ore
+material.termium.name=Termium
+fluid.termium.name=Molten Termium
+tile.block_termium.name=Block of Termium
+item.ingot_termium.name=Termium Ingot
+item.nugget_termium.name=Termium Nugget
+
+material.unseelium.name=Unseelium
+fluid.unseelium.name=Molten Unseelium
+tile.block_unseelium.name=Block of Unseelium
+item.ingot_unseelium.name=Unseelium Ingot
+item.nugget_unseelium.name=Unseelium Nugget
+
+material.urielium.name=Urielium
+fluid.urielium.name=Molten Urielium
+tile.block_urielium.name=Block of Urielium
+item.ingot_urielium.name=Urielium Ingot
+item.nugget_urielium.name=Urielium Nugget
 
 
 item.dagger.name=Dagger
@@ -333,8 +287,6 @@ item.spear.name=Spear
 item.glaive.name=Glaive
 item.buckler.name=Buckler
 item.shield.name=Shield
-
-
 
 modifier.ignitive.name=Ignitive
 modifier.ignitive.desc=§oSome men...§r\nSets creatures on fire for a few seconds.
@@ -440,6 +392,6 @@ modifier.midden.extra.damage=Mining Speed in the Betweenlands: +%s
 modifier.midden.extra.armor=Mining Speed in the Betweenlands: +%s
 modifier.midden.extra.toughness=Mining Speed in the Betweenlands: +%s
 
-msg.taint.absolutedomainmodifier.disable=Friend the brains out of %s.
+msg.taint.absolutedomainmodifier.disable=Fried the brains out of %s.
 msg.taint.absolutedomainmodifier.release=Restored the faculties of %s.
 msg.taint.mastermodifier.use=It is not my time.

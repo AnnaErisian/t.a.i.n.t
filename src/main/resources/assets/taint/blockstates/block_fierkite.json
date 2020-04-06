@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": [
+      { "model": "taint:block_fierkite" }
+    ]
+  }
+}

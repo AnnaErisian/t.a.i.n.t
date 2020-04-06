@@ -1,7 +1,7 @@
 {
-    "variants": {
-      "normal": [
-        { "model": "taint:block_superlumium" }
-      ]
-    }
+  "variants": {
+    "normal": [
+      { "model": "taint:block_superlumium" }
+    ]
   }
+}

@@ -1,6 +1,6 @@
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "taint:blocks/block_escalite"
-    }
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "taint:blocks/block_escalite"
+  }
 }

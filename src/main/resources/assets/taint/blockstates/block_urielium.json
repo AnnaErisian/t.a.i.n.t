@@ -1,7 +1,7 @@
 {
-    "variants": {
-      "normal": [
-        { "model": "taint:block_urielium" }
-      ]
-    }
+  "variants": {
+    "normal": [
+      { "model": "taint:block_urielium" }
+    ]
   }
+}

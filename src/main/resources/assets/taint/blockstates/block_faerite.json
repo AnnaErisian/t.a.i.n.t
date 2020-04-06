@@ -1,7 +1,7 @@
 {
-    "variants": {
-      "normal": [
-        { "model": "taint:block_faerite" }
-      ]
-    }
+  "variants": {
+    "normal": [
+      { "model": "taint:block_faerite" }
+    ]
   }
+}
