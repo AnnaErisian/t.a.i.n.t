@@ -1565,8 +1565,7 @@ public class NewMaterials implements IModule {
 //            mat.addTrait(Decimator.decimator, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.unnatural);
             addToToolAll(mat, TinkerTraits.crumbling);
-            //TODO: implement Rocketeer
-//            ArmorMaterials.addArmorTrait(mat, Rocketeer.rocketeer, ArmorMaterialType.CORE);
+            ArmorMaterials.addArmorTrait(mat, Rocketeer.rocketeer, ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.invigorating);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.dramatic);
 

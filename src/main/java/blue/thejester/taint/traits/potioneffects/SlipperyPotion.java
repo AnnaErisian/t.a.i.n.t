@@ -14,7 +14,7 @@ import java.util.List;
 @Mod.EventBusSubscriber(modid = Taint.MODID)
 public class SlipperyPotion extends Potion {
 
-    public static final SlipperyPotion potion = new SlipperyPotion("taint_slippery", true, 0x333333);
+    public static final SlipperyPotion potion = new SlipperyPotion("taint_slippery", false, 0x333333);
 
     protected SlipperyPotion(String name, boolean isBadEffectIn, int liquidColorIn) {
         super(isBadEffectIn, liquidColorIn);
