@@ -1305,8 +1305,8 @@ public class NewMaterials implements IModule {
             );
             setRenderInfo(mat, color);
             mat.addTrait(Antigrav.antigrav, MaterialTypes.HEAD);
-            //TODO: implement Praise the Sun
-//            addToToolAll(mat, PraiseTheSun.praisethesun);
+            //TODO: test Praise the Sun
+            addToToolAll(mat, PraiseTheSun.praiseit);
             ArmorMaterials.addArmorTrait(mat, Floaty.floaty);
 
             mm.fluid = Create.plain(ln, color);
@@ -1355,11 +1355,11 @@ public class NewMaterials implements IModule {
                     new ExtraMaterialStats(500)
             );
             setRenderInfo(mat, color);
-            //TODO implement butchery
-//            mat.addTrait(Butchery.butchery, MaterialTypes.HEAD);
+            //TODO test butchery
+            mat.addTrait(Butchery.butchery, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.established);
-            //TODO implement Soul Catcher
-//            ArmorMaterials.addArmorTrait(mat, SoulCatcher.soulcatcher, ArmorMaterialType.CORE);
+            //TODO test Soul Catcher
+            ArmorMaterials.addArmorTrait(mat, SoulCatcher.soulcatcher, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.invigorating);
 
             mm.fluid = Create.plain(ln, color);
@@ -1383,8 +1383,8 @@ public class NewMaterials implements IModule {
             );
             setRenderInfo(mat, color);
             mat.addTrait(TinkerTraits.insatiable, MaterialTypes.HEAD);
-            //TODO implement Midnight Oil
-//            addToToolAll(mat, MidnightOil.midnightoil);
+            //TODO test Midnight Oil
+            addToToolAll(mat, MidnightOil.midnightoil);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.shielding);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.blessed);
 
@@ -1531,13 +1531,13 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new HeadMaterialStats(256, 12.2f, 4.6f, 6),
-                    new HandleMaterialStats(0.90f, 90),
-                    new ExtraMaterialStats(120)
+                    new HeadMaterialStats(512, 15.5f, 4.6f, 6),
+                    new HandleMaterialStats(0.80f, 90),
+                    new ExtraMaterialStats(20)
             );
             setRenderInfo(mat, color);
-            //TODO: implement Smashing
-//            mat.addTrait(Smashing.smashing, MaterialTypes.HEAD);
+            //TODO: test Smashing
+            mat.addTrait(Smashing.smashing, MaterialTypes.HEAD);
             addToToolAll(mat, Zany.zany);
 
             mm.fluid = Create.plain(ln, color);
@@ -1561,8 +1561,8 @@ public class NewMaterials implements IModule {
                     new TrimMaterialStats(11.8f)
             );
             setRenderInfo(mat, color);
-            //TODO: implement Decimator
-//            mat.addTrait(Decimator.decimator, MaterialTypes.HEAD);
+            //TODO: test Decimator
+            mat.addTrait(Decimator.decimator, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.unnatural);
             addToToolAll(mat, TinkerTraits.crumbling);
             ArmorMaterials.addArmorTrait(mat, Rocketeer.rocketeer, ArmorMaterialType.CORE);
