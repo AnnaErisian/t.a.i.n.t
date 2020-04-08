@@ -4,25 +4,15 @@ import blue.thejester.taint.helper.fluid.Create;
 import blue.thejester.taint.item.MetalMaterial;
 import blue.thejester.taint.traits.*;
 import c4.conarm.common.armor.traits.ArmorTraits;
-import c4.conarm.common.armor.traits.TraitAlien;
-import c4.conarm.common.armor.traits.TraitFeatherweight;
 import c4.conarm.lib.materials.*;
-import c4.conarm.lib.traits.AbstractArmorTrait;
 import landmaster.plustic.traits.*;
 import landmaster.plustic.traits.armor.DunansTransport;
-import landmaster.plustic.traits.armor.Invariant;
 import nc.integration.tconstruct.conarm.trait.NCArmorTraits;
 import nc.integration.tconstruct.trait.NCTraits;
-import nc.integration.tconstruct.trait.TraitWithering;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraftforge.fluids.Fluid;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import org.apache.commons.lang3.tuple.Pair;
-import shnupbups.tinkersaether.TinkersAether;
 import shnupbups.tinkersaether.traits.Antigrav;
 import shnupbups.tinkersaether.traits.Launching;
 import shnupbups.tinkersaether.traits.Zany;
@@ -33,7 +23,6 @@ import slimeknights.tconstruct.library.traits.ITrait;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerFluids;
 import slimeknights.tconstruct.tools.TinkerTraits;
-import slimeknights.tconstruct.tools.traits.TraitSuperheat;
 
 public class NewMaterials implements IModule {
 
@@ -991,8 +980,7 @@ public class NewMaterials implements IModule {
             );
             setRenderInfo(mat, color);
             mat.addTrait(Ignitive.ignitive, MaterialTypes.HEAD);
-            //TODO implement Luminous
-//            addToToolAll(mat, Luminous.luminous);
+            addToToolAll(mat, Luminous.luminous);
             addToToolAll(mat, Mana.mana);
 
             mm.fluid = Create.plain(ln, color);
@@ -1014,8 +1002,7 @@ public class NewMaterials implements IModule {
             );
             setRenderInfo(mat, color);
             mat.addTrait(TinkerTraits.momentum, MaterialTypes.HEAD);
-            //TODO: implement Silky
-//            addToToolAll(mat, Silky.silky);
+            addToToolAll(mat, Silky.silky);
 
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
@@ -1152,8 +1139,7 @@ public class NewMaterials implements IModule {
                     new BowMaterialStats(10f, 1.60f, -10f)
             );
             setRenderInfo(mat, color);
-            //TODO implement Black Hole
-//            mat.addTrait(BlackHole.blackhole);
+            mat.addTrait(BlackHole.blackhole);
             ArmorMaterials.addArmorTrait(mat, DunansTransport.dunanstransport);
 
             mm.fluid = Create.plain(ln, color);
@@ -1250,8 +1236,7 @@ public class NewMaterials implements IModule {
                     new TrimMaterialStats(22f)
             );
             setRenderInfo(mat, color);
-            //TODO implement Beezerker
-//            ArmorMaterials.addArmorTrait(mat, Beezerker.beezerker);
+            ArmorMaterials.addArmorTrait(mat, Beezerker.beezerker);
             addToArmorAll(mat, ArmorTraits.lightweight);
 
             mm.fluid = Create.plain(ln, color);
@@ -1271,8 +1256,7 @@ public class NewMaterials implements IModule {
                     new ExtraMaterialStats(280)
             );
             setRenderInfo(mat, color);
-            //TODO implement Propelled
-//            mat.addTrait(Propelled.propelled, MaterialTypes.HEAD);
+            mat.addTrait(Propelled.propelled, MaterialTypes.HEAD);
             addToToolAll(mat, Elemental.elemental);
             mat.addTrait(TinkerTraits.lightweight);
 
@@ -1293,8 +1277,7 @@ public class NewMaterials implements IModule {
                     new ExtraMaterialStats(425)
             );
             setRenderInfo(mat, color);
-            //TODO implement Luminous
-//            mat.addTrait(Luminous.luminous, MaterialTypes.HEAD);
+            mat.addTrait(Luminous.luminous, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.superheat);
             addToToolAll(mat, TinkerTraits.sharp);
 
@@ -1477,7 +1460,6 @@ public class NewMaterials implements IModule {
                     new TrimMaterialStats(4.6f)
             );
             setRenderInfo(mat, color);
-            //TODO: fix Soul Drain
             mat.addTrait(SoulDrain.soulDrain);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.spiny);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.vengeful);
@@ -1683,7 +1665,7 @@ public class NewMaterials implements IModule {
                     new BowMaterialStats(0.3f, 0.4f, 6f)
             );
             setRenderInfo(slipsteel, 0xaaa38f);
-            //TODO: implement and add Luminous (Head)
+            slipsteel.addTrait(Luminous.luminous, MaterialTypes.HEAD);
             addToToolAll(slipsteel, Slippery.slippery);
 
             MetalMaterial.slipsteel.fluid = Create.plain("slipsteel", 0xaaa38f);

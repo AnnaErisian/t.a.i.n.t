@@ -17,7 +17,8 @@ public class SoulDrain extends AbstractTrait {
 
 	@Override
 	public float damage(ItemStack tool, EntityLivingBase player, EntityLivingBase target, float damage, float newDamage, boolean isCritical) {
-		return target.getMaxHealth() * newDamage / 75f;
+		//85% damage plus 1/6th the target's health, max +10 (for 60HP)
+		return newDamage * 0.85f + Math.max(10, target.getMaxHealth() / 6f);
 	}
 
 }
