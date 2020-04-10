@@ -1,9 +1,9 @@
 package blue.thejester.taint.core;
 
+import blue.thejester.taint.block.OreBlocks;
 import blue.thejester.taint.item.MetalMaterial;
 import blue.thejester.taint.item.ModItems;
 import blue.thejester.taint.modules.*;
-import blue.thejester.taint.tools.ToolDagger;
 import blue.thejester.taint.world.OreGenerator;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -45,6 +45,7 @@ public class CommonProxy {
     public void init() {
         MetalMaterial.registerOreDict();
         MetalMaterial.makeRecipes();
+        OreBlocks.preInit();
         GameRegistry.registerWorldGenerator(new OreGenerator(), 1000);
     }
 

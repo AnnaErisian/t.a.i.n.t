@@ -1,5 +1,6 @@
 package blue.thejester.taint.traits;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -18,7 +19,7 @@ import java.util.List;
 
 public class Decimator extends AbstractTrait {
 	public static final Decimator decimator = new Decimator();
-	private static final float ENTITY_DROP_DESTROY_CHANCE = 0.2f;
+	private static final float ENTITY_DROP_DESTROY_CHANCE = 0.7f;
 	private static final float BLOCK_DROP_DESTROY_CHACE = 0.3f;
 
 	public Decimator() {
@@ -47,9 +48,9 @@ public class Decimator extends AbstractTrait {
 	@SubscribeEvent
 	public void onMobDrops(LivingDropsEvent event) {
 		World w = event.getEntity().getEntityWorld();
-		if (random.nextFloat() < .1f && event.getSource().getTrueSource() instanceof EntityPlayer) {
+		if (!w.isRemote && event.getSource().getTrueSource() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
-			if (!w.isRemote && event.getEntity() instanceof EntityMob && TinkerUtil.hasTrait(TagUtil.getTagSafe
+			if (event.getEntity() instanceof EntityLivingBase && TinkerUtil.hasTrait(TagUtil.getTagSafe
 					(player.getHeldItemMainhand()), identifier)) {
 				reduceDrops(event.getDrops(), ENTITY_DROP_DESTROY_CHANCE);
 			}
@@ -57,7 +58,7 @@ public class Decimator extends AbstractTrait {
 	}
 
 	private int getBoostedXp(int xp) {
-		float exp = (random.nextFloat()/3+1) * (random.nextFloat()/3+1) * xp * 1.2f;
+		float exp = (random.nextFloat()/4+1) * (random.nextFloat()/4+1) * xp * 1.2f;
 		return Math.round(exp);
 	}
 

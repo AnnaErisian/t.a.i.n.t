@@ -20,10 +20,10 @@ public class SoulCatcher extends AbstractArmorTrait {
     public ArmorModifications getModifications(EntityPlayer player, ArmorModifications mods, ItemStack armor, DamageSource source, double damage, int slot) {
         if (player.getHealth() < 15) {
             mods.armor *= 15f/player.getHealth();
-            mods.toughness *= Math.sqrt(15f/player.getHealth());
+            mods.toughness *= 1.3 * Math.sqrt(15f/player.getHealth());
         } else if (player.getHealth() > 30) {
             mods.armor *= 30f/player.getHealth();
-            mods.toughness *= Math.sqrt(30f/player.getHealth());
+            mods.toughness *= 0.8 * Math.sqrt(30f/player.getHealth());
         }
         return super.getModifications(player, mods, armor, source, damage, slot);
     }

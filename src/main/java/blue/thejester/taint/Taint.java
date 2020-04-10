@@ -27,8 +27,6 @@ public class Taint
 
     public static Logger logger;
 
-
-
     // The instance of your mod that Forge uses.  Optional.
     @Mod.Instance(Taint.MODID)
     public static Taint instance;

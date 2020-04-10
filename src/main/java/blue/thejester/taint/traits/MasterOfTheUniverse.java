@@ -9,7 +9,7 @@ public class MasterOfTheUniverse extends DeathSaveTrait {
 
         public MasterOfTheUniverse() {
             super("master_of_the_universe", 0xffffff, 1, (stack) -> {
-                return !stack.isEmpty() && ArrayUtils.contains(OreDictionary.getOreIDs(stack), OreDictionary.getOreID("dustAstralStarmetal"));},
+                return !stack.isEmpty() && ArrayUtils.contains(OreDictionary.getOreIDs(stack), OreDictionary.getOreID("boneDragon"));},
                     "msg.taint.mastermodifier.use");
         }
     }

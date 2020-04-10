@@ -1,8 +1,10 @@
 package blue.thejester.taint.block;
 
 import blue.thejester.taint.Taint;
+import blue.thejester.taint.helper.fluid.Create;
 import blue.thejester.taint.item.MetalMaterial;
 import blue.thejester.taint.item.ModItems;
+import blue.thejester.taint.traits.AbsoluteDominion;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -10,6 +12,13 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
+import scala.tools.cmd.Meta;
+import slimeknights.tconstruct.library.MaterialIntegration;
+import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.*;
+import slimeknights.tconstruct.tools.TinkerTraits;
 
 @Mod.EventBusSubscriber(modid = Taint.MODID)
 public class OreBlocks {
@@ -63,4 +72,23 @@ public class OreBlocks {
         ModItems.registerRender(Item.getItemFromBlock(oreInurose));
         ModItems.registerRender(Item.getItemFromBlock(oreCibarite));
     }
+
+    public static void preInit() {
+        preInitOre(oreArdorum, MetalMaterial.ardorum, 1.3f);
+        preInitOre(oreTermium, MetalMaterial.termium, 1.8f);
+        preInitOre(oreAdipatum, MetalMaterial.adipatum, 2f);
+        preInitOre(oreCaersin, MetalMaterial.caersin, 2.3f);
+        preInitOre(oreNeulite, MetalMaterial.neulite, 2.3f);
+        preInitOre(oreAtercaeum, MetalMaterial.atercaeum, 2.8f);
+        preInitOre(oreOscurum, MetalMaterial.oscurum, 3f);
+        preInitOre(oreInurose, MetalMaterial.inurose, 3f);
+        preInitOre(oreCibarite, MetalMaterial.cibarite, 3f);
+    }
+
+    private static void preInitOre(Block ore, MetalMaterial mat, float exp) {
+        GameRegistry.addSmelting(ore, mat.ingotStack, exp);
+        OreDictionary.registerOre("ore" + mat.getOreName(), ore);
+    }
+
+
 }

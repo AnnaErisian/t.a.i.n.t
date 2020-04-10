@@ -36,17 +36,17 @@ public class Luminous extends AbstractTrait {
 
 
     @SubscribeEvent(priority = EventPriority.LOWEST)
-    public void captureEntity(PlayerInteractEvent.RightClickBlock event) {
+    public void placeBall(PlayerInteractEvent.RightClickBlock event) {
         NBTTagCompound nbt = TagUtil.getTagSafe(event.getItemStack());
         if (event.getWorld().isRemote
-                || event.getEntityPlayer().isSneaking()
                 || event.getItemStack() == null
                 || !TinkerUtil.hasTrait(nbt, getIdentifier())
                 || ToolHelper.getCurrentDurability(event.getItemStack()) < COST) {
             return;
         }
         BlockPos pos = event.getPos();
-        TinkerCommons.blockGlow.addGlow(event.getWorld(), event.getPos().offset(event.getFace()), event.getFace());
+        TinkerCommons.blockGlow.addGlow(event.getWorld(), event.getPos().offset(event.getFace()), event.getFace().getOpposite()
+        );
         ToolHelper.damageTool(event.getItemStack(), COST, event.getEntityLiving());
         event.getEntityPlayer().swingArm(event.getHand());
         event.setCanceled(true);

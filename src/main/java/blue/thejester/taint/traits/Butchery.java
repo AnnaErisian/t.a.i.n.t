@@ -1,5 +1,6 @@
 package blue.thejester.taint.traits;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
@@ -19,7 +20,7 @@ import java.util.List;
 
 public class Butchery extends AbstractTrait {
 	public static final Butchery butchery = new Butchery();
-	private static final float ENTITY_DROP_BOOST_CHANCE = 0.2f;
+	private static final float ENTITY_DROP_BOOST_CHANCE = 0.3f;
 
 	public Butchery() {
 		super("butchery",0xffffff);
@@ -47,9 +48,9 @@ public class Butchery extends AbstractTrait {
 	@SubscribeEvent
 	public void onMobDrops(LivingDropsEvent event) {
 		World w = event.getEntity().getEntityWorld();
-		if (random.nextFloat() < .1f && event.getSource().getTrueSource() instanceof EntityPlayer) {
+		if (!w.isRemote && event.getSource().getTrueSource() instanceof EntityPlayer) {
 			EntityPlayer player = (EntityPlayer) event.getSource().getTrueSource();
-			if (!w.isRemote && event.getEntity() instanceof EntityMob && TinkerUtil.hasTrait(TagUtil.getTagSafe
+			if (event.getEntity() instanceof EntityLivingBase && TinkerUtil.hasTrait(TagUtil.getTagSafe
 					(player.getHeldItemMainhand()), identifier)) {
 				boostDrops(event.getDrops(), ENTITY_DROP_BOOST_CHANCE);
 			}
@@ -57,13 +58,13 @@ public class Butchery extends AbstractTrait {
 	}
 
 	private int getReducedXp(int xp) {
-		float exp = (random.nextFloat()+1) * (random.nextFloat()+1) * xp / 5.0f;
+		float exp = (random.nextFloat()+1) * (random.nextFloat()+1) * xp / 8.0f;
 		return Math.round(exp);
 	}
 
 	private void boostDrops(List<EntityItem> drops, float boostChance) {
 		for(EntityItem d : drops) {
-			if(random.nextFloat() > boostChance) {
+			if(random.nextFloat() < boostChance) {
 				d.getItem().setCount(d.getItem().getCount()+1);
 			}
 		}

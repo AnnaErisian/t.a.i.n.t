@@ -14,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+import static cofh.core.util.helpers.RecipeHelper.addTwoWayStorageRecipe;
+
 //import static cofh.core.util.helpers.RecipeHelper.addTwoWayStorageRecipe;
 
 public enum MetalMaterial {
@@ -124,8 +126,8 @@ public enum MetalMaterial {
 
     public static boolean makeRecipes() {
         for (MetalMaterial mat : MetalMaterial.values()) {
-//            addTwoWayStorageRecipe(mat.ingotStack, mat.nuggetStack);
-//            addTwoWayStorageRecipe(mat.blockItemStack, mat.ingotStack);
+            addTwoWayStorageRecipe(mat.ingotStack, mat.nuggetStack);
+            addTwoWayStorageRecipe(mat.blockItemStack, mat.ingotStack);
         }
         return true;
     }

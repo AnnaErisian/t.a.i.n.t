@@ -9,9 +9,9 @@ import slimeknights.tconstruct.library.traits.AbstractTrait;
 
 public class RampingStatusInflictor extends AbstractTrait {
 
-	public static final RampingStatusInflictor ice_age = new RampingStatusInflictor("ice_age", 0xffffff, MobEffects.SLOWNESS, 130, 5);
+//	public static final RampingStatusInflictor ice_age = new RampingStatusInflictor("ice_age", 0xffffff, MobEffects.SLOWNESS, 130, 5);
 	public static final RampingStatusInflictor nuclear_winter = new RampingStatusInflictor("nuclear_winter", 0xffffff, MobEffects.WITHER, 260, 5);
-	public static final RampingStatusInflictor toxic = new RampingStatusInflictor("toxic", 0xffffff, MobEffects.POISON, 130, 5);
+//	public static final RampingStatusInflictor toxic = new RampingStatusInflictor("toxic", 0xffffff, MobEffects.POISON, 130, 5);
 
 	private Potion effect;
 	private int duration;

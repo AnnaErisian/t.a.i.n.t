@@ -13,7 +13,7 @@ public class Netherstar implements IModule {
     @Override
     public void init() {
         {
-            Material netherstar = new Material("netherstar", 0x000000);
+            Material netherstar = new Material("netherstar", 0xcccccc);
             netherstar.addTrait(Apocalypse.apocalypse);
             netherstar.addTrait(TinkerTraits.lightweight);
             netherstar.addTrait(TinkerTraits.unnatural, MaterialTypes.HEAD);

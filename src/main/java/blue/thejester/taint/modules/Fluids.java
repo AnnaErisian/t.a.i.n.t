@@ -20,6 +20,16 @@ public class Fluids implements IModule{
         TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Oredict("netherStar", 1, 250), netherstar, 2500));
         TinkerRegistry.registerTableCasting(new CastingRecipe(new ItemStack(Items.NETHER_STAR, 1), netherstar, 250, 2400));
 
+        Fluid lapis = Create.plain("lapis", 0x2e91dd, 10000);
+        TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Oredict("gemLapis", 1, 666), lapis, 500));
+        TinkerRegistry.registerTableCasting(new CastingRecipe(new ItemStack(Items.DYE, 1, 4), lapis, 666, 200));
+        TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Oredict("blockLapis", 1, 666*9), lapis, 900));
+        TinkerRegistry.registerBasinCasting(new CastingRecipe(new ItemStack(Blocks.LAPIS_BLOCK, 1), lapis, 666*9, 600));
+
+        Fluid sponge = Create.plain("sponge", 0xddda82, 10000);
+        TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Item(new ItemStack(Blocks.SPONGE), 1, 1000), sponge, 900));
+        TinkerRegistry.registerBasinCasting(new CastingRecipe(new ItemStack(Blocks.SPONGE, 1, 1), sponge, 1000, 60));
+
         Fluid prismarine = Create.plain("prismarine", 0x37c2e5, 1000);
         TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Oredict("gemPrismarine", 1, 144), prismarine, 500));
         TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Oredict("dustPrismarine", 1, 144), prismarine, 500));

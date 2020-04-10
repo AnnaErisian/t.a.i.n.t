@@ -36,11 +36,10 @@ public abstract class DaytimeTrait extends AbstractTrait {
 		/** The current world time in ticks, ranging from 0 to 23999. */
 		long time = world.getWorldTime();
 		long distA = (time % 24000 - besttime % 24000) % 24000;
-		long distB = (besttime % 24000 - time % 24000) % 24000;
 		//dist is ~ from 0 to 1, with 0 being best and 1 the worst
-		float dist = Math.min(distA, distB) / 12000f;
+		float dist = Math.min(distA, 24000 - distA) / 12000f;
 		//this make a curve similar to a logistic function
-		return (float) (1.1f + Math.pow(Math.cos(dist), 7)/2f);
+		return (float) (1f + Math.pow(Math.cos(Math.PI * dist), 7));
 	}
 
 }
