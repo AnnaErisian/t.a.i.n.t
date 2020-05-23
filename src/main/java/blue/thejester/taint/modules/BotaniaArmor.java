@@ -14,7 +14,7 @@ import slimeknights.tconstruct.library.TinkerRegistry;
 @Mod.EventBusSubscriber(modid = Taint.MODID)
 public class BotaniaArmor implements IModule {
     @Override
-    public void init() {
+    public void preInit() {
         //This one all happens in onItemReg, after PlusTic creates the material definitions
     }
 
@@ -46,6 +46,6 @@ public class BotaniaArmor implements IModule {
         ArmorMaterials.addArmorTrait(TinkerRegistry.getMaterial("mirion"), Mana.mana, ArmorMaterialType.TRIM);
     }
 
-    public void initLate() {
+    public void postInit() {
     }
 }

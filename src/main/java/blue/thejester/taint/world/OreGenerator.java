@@ -1,6 +1,7 @@
 package blue.thejester.taint.world;
 
 import blue.thejester.taint.block.OreBlocks;
+import blue.thejester.taint.config.Configuration;
 import com.legacy.aether.AetherConfig;
 import com.legacy.aether.blocks.BlocksAether;
 import com.shinoow.beneath.Beneath;
@@ -82,28 +83,28 @@ public class OreGenerator implements IWorldGenerator {
             //Nether
         } else if (dimId == 1) {
             //End
-            runGenerator(OreBlocks.oreCaersin.getDefaultState(), VEIN_SIZE_CAERSIN, SPAWN_TRIES_CAERSIN, MIN_HEIGHT_CAERSIN, MAX_HEIGHT_CAERSIN, BlockMatcher.forBlock(Blocks.END_STONE), world, random, chunkX, chunkZ);
+            if(Configuration.generateCaersin) runGenerator(OreBlocks.oreCaersin.getDefaultState(), VEIN_SIZE_CAERSIN, SPAWN_TRIES_CAERSIN, MIN_HEIGHT_CAERSIN, MAX_HEIGHT_CAERSIN, BlockMatcher.forBlock(Blocks.END_STONE), world, random, chunkX, chunkZ);
         } else if (dimId == BetweenlandsConfig.WORLD_AND_DIMENSION.dimensionId) {
             //Betweenlands
-            runGenerator(OreBlocks.oreAdipatum.getDefaultState(), VEIN_SIZE_ADIPATUM, SPAWN_TRIES_ADIPATUM, MIN_HEIGHT_ADIPATUM, MAX_HEIGHT_ADIPATUM, BlockMatcher.forBlock(BlockRegistry.PITSTONE), world, random, chunkX, chunkZ);
+            if(Configuration.generateAdipatum) runGenerator(OreBlocks.oreAdipatum.getDefaultState(), VEIN_SIZE_ADIPATUM, SPAWN_TRIES_ADIPATUM, MIN_HEIGHT_ADIPATUM, MAX_HEIGHT_ADIPATUM, BlockMatcher.forBlock(BlockRegistry.PITSTONE), world, random, chunkX, chunkZ);
         } else if (dimId == AetherConfig.dimension.aether_dimension_id) {
             //Aether
-            runGenerator(OreBlocks.oreNeulite.getDefaultState(), VEIN_SIZE_NEULITE, SPAWN_TRIES_NEULITE, MIN_HEIGHT_NEULITE, MAX_HEIGHT_NEULITE, BlockMatcher.forBlock(BlocksAether.holystone), world, random, chunkX, chunkZ);
+            if(Configuration.generateNeulite) runGenerator(OreBlocks.oreNeulite.getDefaultState(), VEIN_SIZE_NEULITE, SPAWN_TRIES_NEULITE, MIN_HEIGHT_NEULITE, MAX_HEIGHT_NEULITE, BlockMatcher.forBlock(BlocksAether.holystone), world, random, chunkX, chunkZ);
         } else if (dimId == TFConfig.dimension.dimensionID) {
             //Twilight Forest
             if(biome == TFBiomes.fireSwamp) {
                 //Fire Swamp
-                runGenerator(OreBlocks.oreArdorum.getDefaultState(), VEIN_SIZE_ARDORUM, SPAWN_TRIES_ARDORUM, MIN_HEIGHT_ARDORUM, MAX_HEIGHT_ARDORUM, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+                if(Configuration.generateArdorum) runGenerator(OreBlocks.oreArdorum.getDefaultState(), VEIN_SIZE_ARDORUM, SPAWN_TRIES_ARDORUM, MIN_HEIGHT_ARDORUM, MAX_HEIGHT_ARDORUM, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
             } else if(biome == TFBiomes.highlandsCenter) {
                 //Final Plateau
-                runGenerator(OreBlocks.oreTermium.getDefaultState(), VEIN_SIZE_TERMIUM, SPAWN_TRIES_TERMIUM, MIN_HEIGHT_TERMIUM, MAX_HEIGHT_TERMIUM, BlockMatcher.forBlock(TFBlocks.deadrock), world, random, chunkX, chunkZ);
+                if(Configuration.generateTermium) runGenerator(OreBlocks.oreTermium.getDefaultState(), VEIN_SIZE_TERMIUM, SPAWN_TRIES_TERMIUM, MIN_HEIGHT_TERMIUM, MAX_HEIGHT_TERMIUM, BlockMatcher.forBlock(TFBlocks.deadrock), world, random, chunkX, chunkZ);
             }
         } else if (dimId == Beneath.dim) {
             //Beneath
-            runGenerator(OreBlocks.oreAtercaeum.getDefaultState(), VEIN_SIZE_ATERCAEUM, SPAWN_TRIES_ATERCAEUM, MIN_HEIGHT_ATERCAEUM, MAX_HEIGHT_ATERCAEUM, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
-            runGenerator(OreBlocks.oreOscurum.getDefaultState(), VEIN_SIZE_OSCURUM, SPAWN_TRIES_OSCURUM, MIN_HEIGHT_OSCURUM, MAX_HEIGHT_OSCURUM, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
-            runGenerator(OreBlocks.oreInurose.getDefaultState(), VEIN_SIZE_INUROSE, SPAWN_TRIES_INUROSE, MIN_HEIGHT_INUROSE, MAX_HEIGHT_INUROSE, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
-            runGenerator(OreBlocks.oreCibarite.getDefaultState(), VEIN_SIZE_CIBARITE, SPAWN_TRIES_CIBARITE, MIN_HEIGHT_CIBARITE, MAX_HEIGHT_CIBARITE, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+            if(Configuration.generateAtercaeum) runGenerator(OreBlocks.oreAtercaeum.getDefaultState(), VEIN_SIZE_ATERCAEUM, SPAWN_TRIES_ATERCAEUM, MIN_HEIGHT_ATERCAEUM, MAX_HEIGHT_ATERCAEUM, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+            if(Configuration.generateOscurum) runGenerator(OreBlocks.oreOscurum.getDefaultState(), VEIN_SIZE_OSCURUM, SPAWN_TRIES_OSCURUM, MIN_HEIGHT_OSCURUM, MAX_HEIGHT_OSCURUM, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+            if(Configuration.generateInurose) runGenerator(OreBlocks.oreInurose.getDefaultState(), VEIN_SIZE_INUROSE, SPAWN_TRIES_INUROSE, MIN_HEIGHT_INUROSE, MAX_HEIGHT_INUROSE, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
+            if(Configuration.generateCibarite) runGenerator(OreBlocks.oreCibarite.getDefaultState(), VEIN_SIZE_CIBARITE, SPAWN_TRIES_CIBARITE, MIN_HEIGHT_CIBARITE, MAX_HEIGHT_CIBARITE, BlockMatcher.forBlock(Blocks.STONE), world, random, chunkX, chunkZ);
         }
     }
 

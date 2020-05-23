@@ -27,7 +27,7 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 public class NewMaterials implements IModule {
 
     @Override
-    public void init() {
+    public void preInit() {
         initMaterials();
 
 //        MetalMaterial.tinardite.fluid = Create.plain("tinardite", 0x7a6463);
@@ -56,7 +56,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(22.8f, 16.2f),
+                    new CoreMaterialStats(22.8f, 20.6f),
                     new PlatesMaterialStats(1.02f, 12f, 3.4f),
                     new TrimMaterialStats(17f),
                     new HeadMaterialStats(1780, 12f, 6.8f, 10),
@@ -102,7 +102,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(22.8f, 18.2f),
+                    new CoreMaterialStats(22.8f, 20.2f),
                     new PlatesMaterialStats(1.02f, 12f, 3.4f),
                     new TrimMaterialStats(17f),
                     new HeadMaterialStats(2250, 9.11f, 10.8f, 10),
@@ -128,7 +128,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(22.8f, 19.2f),
+                    new CoreMaterialStats(22.8f, 20.2f),
                     new PlatesMaterialStats(1.2f, 12f, 3.4f),
                     new TrimMaterialStats(18f)
             );
@@ -149,7 +149,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color+0x201000);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(18.2f, 19.6f),
+                    new CoreMaterialStats(18.2f, 20.8f),
                     new PlatesMaterialStats(1.22f, 15f, 3.2f),
                     new TrimMaterialStats(16f)
             );
@@ -213,7 +213,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(23.8f, 20f),
+                    new CoreMaterialStats(23.8f, 21.4f),
                     new PlatesMaterialStats(1.23f, 19f, 5f),
                     new TrimMaterialStats(16f)
             );
@@ -319,7 +319,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(25f, 21f),
+                    new CoreMaterialStats(25f, 20.8f),
                     new PlatesMaterialStats(1.4f, 13f, 4f),
                     new TrimMaterialStats(12f),
                     new HeadMaterialStats(1780, 8.6f, 8.4f, 9),
@@ -345,7 +345,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(18f, 20.6f),
+                    new CoreMaterialStats(18f, 21.0f),
                     new PlatesMaterialStats(1.2f, 11f, 4f),
                     new TrimMaterialStats(8f)
             );
@@ -366,7 +366,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(16f, 18.6f),
+                    new CoreMaterialStats(16f, 19.6f),
                     new PlatesMaterialStats(1.18f, 15f, 3.5f),
                     new TrimMaterialStats(9f),
                     new HeadMaterialStats(780, 14f, 9.4f, 9),
@@ -414,7 +414,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(17f, 16f),
+                    new CoreMaterialStats(17f, 19.4f),
                     new PlatesMaterialStats(1.3f, 16f, 4f),
                     new TrimMaterialStats(8f),
                     new HeadMaterialStats(2100, 8.2f, 11f, 7),
@@ -441,7 +441,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(17f, 18f),
+                    new CoreMaterialStats(17f, 20.4f),
                     new PlatesMaterialStats(1.25f, 14f, 3f),
                     new TrimMaterialStats(19f),
                     new HeadMaterialStats(1780, 8.8f, 10.6f, 5),
@@ -467,7 +467,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(17f, 16f),
+                    new CoreMaterialStats(17f, 19.8f),
                     new PlatesMaterialStats(1.45f, 14f, 4f),
                     new TrimMaterialStats(22f)
             );
@@ -548,7 +548,7 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(1777, 7.2f, 8.2f, 8),
                     new HandleMaterialStats(0.95f, 150),
                     new ExtraMaterialStats(210),
-                    new CoreMaterialStats(14f, 18.2f),
+                    new CoreMaterialStats(14f, 20.2f),
                     new PlatesMaterialStats(1.05f, 7f, 1.6f),
                     new TrimMaterialStats(12.4f)
             );
@@ -569,7 +569,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(21f, 20f),
+                    new CoreMaterialStats(21f, 17.4f),
                     new PlatesMaterialStats(1.4f, 6f, 2f),
                     new TrimMaterialStats(6f),
                     new HeadMaterialStats(1000, 11f, 8.6f, 8),
@@ -595,7 +595,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(17f, 18.4f),
+                    new CoreMaterialStats(17f, 19.4f),
                     new PlatesMaterialStats(1.2f, 14f, 2f),
                     new TrimMaterialStats(11f),
                     new HeadMaterialStats(2100, 9.4f, 8.2f, 5),
@@ -646,7 +646,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color+0x202010);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(22f, 18f),
+                    new CoreMaterialStats(22f, 20.6f),
                     new PlatesMaterialStats(0.9f, 4f, 3f),
                     new TrimMaterialStats(12f),
                     new HeadMaterialStats(1900, 9f, 9f, 8),
@@ -714,7 +714,7 @@ public class NewMaterials implements IModule {
                     new HandleMaterialStats(0.85f, 70),
                     new ExtraMaterialStats(60),
                     new BowMaterialStats(0.5f, 1.5f, 4.5f),
-                    new CoreMaterialStats(13.2f, 15f),
+                    new CoreMaterialStats(13.2f, 20.4f),
                     new PlatesMaterialStats(0.9f, 2f, 1f),
                     new TrimMaterialStats(4.6f)
             );
@@ -740,7 +740,7 @@ public class NewMaterials implements IModule {
                     new HandleMaterialStats(0.85f, 70),
                     new ExtraMaterialStats(50),
                     new BowMaterialStats(0.9f, 1.2f, 4f),
-                    new CoreMaterialStats(13.2f, 13f),
+                    new CoreMaterialStats(13.2f, 15f),
                     new PlatesMaterialStats(0.8f, -1f, 1f),
                     new TrimMaterialStats(2.8f)
             );
@@ -869,7 +869,7 @@ public class NewMaterials implements IModule {
             int color = 0xc9db99;
             Material piridium = new Material("Piridium", color);
             TinkerRegistry.addMaterialStats(piridium,
-                    new CoreMaterialStats(17f, 19f),
+                    new CoreMaterialStats(17f, 16f),
                     new PlatesMaterialStats(1.1f, 10f, 2f),
                     new TrimMaterialStats(4.2f)
             );
@@ -890,7 +890,7 @@ public class NewMaterials implements IModule {
                     new HandleMaterialStats(0.7f, 70),
                     new ExtraMaterialStats(43),
                     new BowMaterialStats(0.95f, 1.2f, 2f),
-                    new CoreMaterialStats(17f, 19.2f),
+                    new CoreMaterialStats(17f, 18.2f),
                     new PlatesMaterialStats(1.0f, 20f, 2f),
                     new TrimMaterialStats(4.2f)
             );
@@ -912,7 +912,7 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(9, 8f, 2.5f, 2),
                     new HandleMaterialStats(1.1f, -40),
                     new ExtraMaterialStats(-20),
-                    new CoreMaterialStats(2f, 13f),
+                    new CoreMaterialStats(2f, 14f),
                     new PlatesMaterialStats(0.45f, 1f, 0f),
                     new TrimMaterialStats(0.5f)
             );
@@ -945,7 +945,7 @@ public class NewMaterials implements IModule {
         {
             Material faerite = new Material("Faerite", 0xff00f2);
             TinkerRegistry.addMaterialStats(faerite,
-                    new CoreMaterialStats(8f, 14f),
+                    new CoreMaterialStats(8f, 16f),
                     new PlatesMaterialStats(0.9f, 7f, 0.5f),
                     new TrimMaterialStats(3.3f),
                     new HeadMaterialStats(380, 5f, 3f, 2),
@@ -1031,9 +1031,8 @@ public class NewMaterials implements IModule {
         sendTiCAlloyInfo("escalite", 2, fluid("gold", 2), fluid("marshmallow", 5), fluid("milk_chocolate", 4));
     }
 
-    public void initLate() {
+    public void postInit() {
         TinkerRegistry.registerMelting(TinkerCommons.matSlimeBallBlue, TinkerFluids.blueslime, 250);
-//        TinkerRegistry.registerBasinCasting(MetalMaterial.pelagium.blockItemStack, new ItemStack(Blocks.SPONGE), MetalMaterial.tinardite.fluid, 1296);
     }
 
     public static void sendTiCAlloyInfo(String alloyName, int alloyAmount, Pair<String, Integer>... components) {

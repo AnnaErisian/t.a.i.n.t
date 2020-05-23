@@ -6,6 +6,7 @@ import blue.thejester.taint.item.ModItems;
 import blue.thejester.taint.modules.*;
 import blue.thejester.taint.world.OreGenerator;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fluids.Fluid;
@@ -27,8 +28,8 @@ public class CommonProxy {
 
         ModItems.init();
 //        IModule.modules.addAll(Arrays.asList(new Tools()));
-        IModule.modules.addAll(Arrays.asList(new BotaniaArmor(), new Betweenlands(), new Fluids(), new Netherstar(), new NewMaterials(), new Tools()));
-        IModule.modules.forEach(IModule::init);
+        IModule.modules.addAll(Arrays.asList(new BotaniaArmor(), new Betweenlands(), new Fluids(), new Netherstar(), new NewMaterials(), new Tools(), new NewMaterialsVanillaTools()));
+        IModule.modules.forEach(IModule::preInit);
 
         ModItems.init();
         MetalMaterial.makeItems();
@@ -53,7 +54,7 @@ public class CommonProxy {
      * Handle interaction with other mods, complete your setup based on this.
      */
     public void postInit() {
-        IModule.modules.forEach(IModule::initLate);
+        IModule.modules.forEach(IModule::postInit);
     }
 
     /**
@@ -74,6 +75,10 @@ public class CommonProxy {
     }
 
     public void registerModifierModel(IModifier mod, ResourceLocation rl) {
+
+    }
+
+    public void registerItemRenderer(Item item, int meta, String id) {
 
     }
 

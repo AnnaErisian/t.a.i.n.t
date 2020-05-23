@@ -15,7 +15,7 @@ import org.apache.logging.log4j.Logger;
 public class Taint
 {
     public static final String MODID = "taint";
-    public static final String NAME = "Tinker's Alloying and Integration Lineup";
+    public static final String NAME = "Tinker's Alloying, Integrations, and Tools";
     public static final String VERSION = "1.0";
     public static final String DEPENDS = "required-after:mantle;"
             + "required-after:tconstruct@[1.12-2.7.2.15,);required-after:forge@[14.23.5.2768,);"

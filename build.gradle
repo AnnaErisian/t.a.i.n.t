@@ -10,7 +10,7 @@ buildscript {
 apply plugin: 'net.minecraftforge.gradle.forge'
 //Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-version = "1.1.11"
+version = "1.1.13"
 group = "blue.thejester.taint" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "taint"
 
@@ -23,9 +23,6 @@ repositories {
 	}
     maven {
         url "http://maven.blamejared.com"
-    }
-    maven {
-        url "https://maven.chaosfield.at"
     }
     maven {
         url "https://minecraft.curseforge.com/api/maven/"
@@ -89,7 +86,7 @@ dependencies {
 
     deobfCompile "baubles:Baubles:1.12:1.5.2"
     deobfCompile "mcp.mobius.waila:Hwyla:1.8.26-B41_1.12.2"
-    deobfCompile "plustic:plustic:7.1.6.1"
+    deobfCompile "plusticminusbad:plustic:8.0.1.0"
 
     compile files("./libs/conarm-1.12.2-1.2.5.3.jar")
     //compile files("./libs/CraftTweaker2-1.12-4.1.19.jar")
@@ -138,6 +135,6 @@ processResources {
 }
 
 //Uncomment for testing in dev, comment when publishing
-sourceSets {
-    main { output.resourcesDir = output.classesDir }
-}
+//sourceSets {
+//    main { output.resourcesDir = output.classesDir }
+//}

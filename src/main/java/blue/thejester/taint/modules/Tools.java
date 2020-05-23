@@ -25,12 +25,12 @@ public class Tools implements IModule {
     public static ToolBuckler buckler;
 
     @Override
-    public void init() {
+    public void preInit() {
 
     }
 
     @Override
-    public void initLate() {
+    public void postInit() {
         MinecraftForge.EVENT_BUS.register(shield); // shield events
         MinecraftForge.EVENT_BUS.register(buckler); // shield events
     }

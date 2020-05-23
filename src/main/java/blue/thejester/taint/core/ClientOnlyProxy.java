@@ -130,4 +130,9 @@ public class ClientOnlyProxy extends CommonProxy {
         shieldInfo.addSlotPosition(33 - 6, 42 + 10); // handle
         TinkerRegistryClient.addToolBuilding(shieldInfo);
     }
+
+    @Override
+    public void registerItemRenderer(Item item, int meta, String id) {
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+    }
 }

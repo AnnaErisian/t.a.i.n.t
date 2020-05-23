@@ -24,7 +24,7 @@ public class Betweenlands implements IModule {
     private Fluid octineFluid;
 
     @Override
-    public void init() {
+    public void preInit() {
         {
             Material valonite = new Material("valonite", 0xD8B7D9);
             valonite.addTrait(TinkerTraits.enderference, MaterialTypes.HEAD);
@@ -107,7 +107,7 @@ public class Betweenlands implements IModule {
         }
     }
 
-    public void initLate() {
+    public void postInit() {
         TinkerRegistry.registerMelting(new ItemStack(ItemRegistry.ITEMS_MISC, 1, ItemMisc.EnumItemMisc.SYRMORITE_INGOT.getID()), syrmoriteFluid, 144);
         TinkerRegistry.registerMelting(new ItemStack(ItemRegistry.ITEMS_MISC, 1, ItemMisc.EnumItemMisc.SYRMORITE_NUGGET.getID()), syrmoriteFluid, 144 / 9);
         TinkerRegistry.registerMelting(new ItemStack(BlockRegistry.SYRMORITE_BLOCK), syrmoriteFluid, 144 * 9);

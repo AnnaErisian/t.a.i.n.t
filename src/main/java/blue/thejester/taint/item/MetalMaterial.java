@@ -1,8 +1,10 @@
 package blue.thejester.taint.item;
 
 import blue.thejester.taint.block.BlockStorage;
+import blue.thejester.taint.item.vanitools.*;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemArmor;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -100,6 +102,17 @@ public enum MetalMaterial {
     public Item blockItem = null;
     public ItemStack blockItemStack = null;
     public Fluid fluid = null;
+    public ModArmorItem aHelmet = null;
+    public ModArmorItem aChestplate = null;
+    public ModArmorItem aLeggings = null;
+    public ModArmorItem aBoots = null;
+    public ModHoeItem tHoe;
+    public ModPickItem tPick;
+    public ModSwordItem tSword;
+    public ModShovelItem tShovel;
+    public ModAxeItem tAxe;
+    public Item.ToolMaterial tMat;
+    public ItemArmor.ArmorMaterial aMat;
 
     public String getOreName() {
         List<String> list = new ArrayList<>();

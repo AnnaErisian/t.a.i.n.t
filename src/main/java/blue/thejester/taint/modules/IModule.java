@@ -10,9 +10,9 @@ public interface IModule {
 
     Set<IModule> modules = new LinkedHashSet();
 
-    void init();
+    void preInit();
 
-    void initLate();
+    void postInit();
 
     default void setRenderInfo(Material mat, int color) {
         if(!Taint.proxy.isDedicatedServer()) {

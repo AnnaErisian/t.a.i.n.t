@@ -11,7 +11,7 @@ import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class Netherstar implements IModule {
     @Override
-    public void init() {
+    public void preInit() {
         {
             Material netherstar = new Material("netherstar", 0xcccccc);
             netherstar.addTrait(Apocalypse.apocalypse);
@@ -38,6 +38,6 @@ public class Netherstar implements IModule {
 
     }
 
-    public void initLate() {
+    public void postInit() {
     }
 }

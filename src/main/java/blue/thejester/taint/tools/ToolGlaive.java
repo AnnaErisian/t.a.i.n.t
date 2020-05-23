@@ -130,7 +130,7 @@ public class ToolGlaive extends SwordCore {
                 float distanceOther = player.getDistance(entityLivingBase);
                 double cos = Math.abs(vecLook.dotProduct(vecDirection));
                 double distDiff = Math.abs(distanceOther - distanceTarget);
-                return cos < 0.70 || distDiff > 1.0;
+                return cos < 0.70 || distDiff > 1.5;
             }
         });
         return entities;

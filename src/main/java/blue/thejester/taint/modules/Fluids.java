@@ -15,7 +15,7 @@ import slimeknights.tconstruct.library.smeltery.MeltingRecipe;
 public class Fluids implements IModule{
 
     @Override
-    public void init() {
+    public void preInit() {
         Fluid netherstar = Create.plain("netherstar", 0xfffbed, 10000);
         TinkerRegistry.registerMelting(new MeltingRecipe(new RecipeMatch.Oredict("netherStar", 1, 250), netherstar, 2500));
         TinkerRegistry.registerTableCasting(new CastingRecipe(new ItemStack(Items.NETHER_STAR, 1), netherstar, 250, 2400));
@@ -47,6 +47,6 @@ public class Fluids implements IModule{
         FMLInterModComms.sendMessage("tconstruct", "integrateSmeltery", tag);
     }
 
-    public void initLate() {
+    public void postInit() {
     }
 }
