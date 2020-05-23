@@ -1,7 +1,7 @@
 [
 {
   "modid": "taint",
-  "name": "Tinker's Alloying and Integration Lineup",
+  "name": "Tinker's Alloying, Integrations, and Tools",
   "description": "Adds any integrations I want, and a boatload of alloys",
   "version": "${version}",
   "mcversion": "${mcversion}",

@@ -1,0 +1,351 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "forge:fluid"
+  },
+  "variants": {
+    "escalite": [
+      {
+        "custom": {
+          "fluid": "escalite"
+        }
+      }
+    ],
+    "slipsteel": [
+      {
+        "custom": {
+          "fluid": "slipsteel"
+        }
+      }
+    ],
+    "faerite": [
+      {
+        "custom": {
+          "fluid": "faerite"
+        }
+      }
+    ],
+    "black_rosite": [
+      {
+        "custom": {
+          "fluid": "black_rosite"
+        }
+      }
+    ],
+    "piridium": [
+      {
+        "custom": {
+          "fluid": "piridium"
+        }
+      }
+    ],
+    "luginite": [
+      {
+        "custom": {
+          "fluid": "luginite"
+        }
+      }
+    ],
+    "peractium": [
+      {
+        "custom": {
+          "fluid": "peractium"
+        }
+      }
+    ],
+    "sestertium": [
+      {
+        "custom": {
+          "fluid": "sestertium"
+        }
+      }
+    ],
+    "infernium": [
+      {
+        "custom": {
+          "fluid": "infernium"
+        }
+      }
+    ],
+    "littium": [
+      {
+        "custom": {
+          "fluid": "littium"
+        }
+      }
+    ],
+    "lordslime": [
+      {
+        "custom": {
+          "fluid": "lordslime"
+        }
+      }
+    ],
+    "ascalite": [
+      {
+        "custom": {
+          "fluid": "ascalite"
+        }
+      }
+    ],
+    "aerium": [
+      {
+        "custom": {
+          "fluid": "aerium"
+        }
+      }
+    ],
+    "cannium": [
+      {
+        "custom": {
+          "fluid": "cannium"
+        }
+      }
+    ],
+    "lunite": [
+      {
+        "custom": {
+          "fluid": "lunite"
+        }
+      }
+    ],
+    "betweensteel": [
+      {
+        "custom": {
+          "fluid": "betweensteel"
+        }
+      }
+    ],
+    "unseelium": [
+      {
+        "custom": {
+          "fluid": "unseelium"
+        }
+      }
+    ],
+    "tempestite": [
+      {
+        "custom": {
+          "fluid": "tempestite"
+        }
+      }
+    ],
+    "rallium": [
+      {
+        "custom": {
+          "fluid": "rallium"
+        }
+      }
+    ],
+    "fierkite": [
+      {
+        "custom": {
+          "fluid": "fierkite"
+        }
+      }
+    ],
+    "orinase": [
+      {
+        "custom": {
+          "fluid": "orinase"
+        }
+      }
+    ],
+    "superlumium": [
+      {
+        "custom": {
+          "fluid": "superlumium"
+        }
+      }
+    ],
+    "terium": [
+      {
+        "custom": {
+          "fluid": "terium"
+        }
+      }
+    ],
+    "soldrite": [
+      {
+        "custom": {
+          "fluid": "soldrite"
+        }
+      }
+    ],
+    "accelerase": [
+      {
+        "custom": {
+          "fluid": "accelerase"
+        }
+      }
+    ],
+    "antenium": [
+      {
+        "custom": {
+          "fluid": "antenium"
+        }
+      }
+    ],
+    "orichalcum": [
+      {
+        "custom": {
+          "fluid": "orichalcum"
+        }
+      }
+    ],
+    "urielium": [
+      {
+        "custom": {
+          "fluid": "urielium"
+        }
+      }
+    ],
+    "dupondium": [
+      {
+        "custom": {
+          "fluid": "dupondium"
+        }
+      }
+    ],
+    "adamantite": [
+      {
+        "custom": {
+          "fluid": "adamantite"
+        }
+      }
+    ],
+    "starsteel": [
+      {
+        "custom": {
+          "fluid": "starsteel"
+        }
+      }
+    ],
+    "ptemnium": [
+      {
+        "custom": {
+          "fluid": "ptemnium"
+        }
+      }
+    ],
+    "solairite": [
+      {
+        "custom": {
+          "fluid": "solairite"
+        }
+      }
+    ],
+    "ardorum": [
+      {
+        "custom": {
+          "fluid": "ardorum"
+        }
+      }
+    ],
+    "termium": [
+      {
+        "custom": {
+          "fluid": "termium"
+        }
+      }
+    ],
+    "adipatum": [
+      {
+        "custom": {
+          "fluid": "adipatum"
+        }
+      }
+    ],
+    "caersin": [
+      {
+        "custom": {
+          "fluid": "caersin"
+        }
+      }
+    ],
+    "neulite": [
+      {
+        "custom": {
+          "fluid": "neulite"
+        }
+      }
+    ],
+    "atercaeum": [
+      {
+        "custom": {
+          "fluid": "atercaeum"
+        }
+      }
+    ],
+    "oscurum": [
+      {
+        "custom": {
+          "fluid": "oscurum"
+        }
+      }
+    ],
+    "inurose": [
+      {
+        "custom": {
+          "fluid": "inurose"
+        }
+      }
+    ],
+    "cibarite": [
+      {
+        "custom": {
+          "fluid": "cibarite"
+        }
+      }
+    ],
+    "lapis": [
+      {
+        "custom": {
+          "fluid": "lapis"
+        }
+      }
+    ],
+    "netherstar": [
+      {
+        "custom": {
+          "fluid": "netherstar"
+        }
+      }
+    ],
+    "prismarine": [
+      {
+        "custom": {
+          "fluid": "prismarine"
+        }
+      }
+    ],
+    "octine": [
+      {
+        "custom": {
+          "fluid": "octine"
+        }
+      }
+    ],
+    "syrmorite": [
+      {
+        "custom": {
+          "fluid": "syrmorite"
+        }
+      }
+    ],
+    "sponge": [
+      {
+        "custom": {
+          "fluid": "sponge"
+        }
+      }
+    ],
+    "thermoconducting": [
+      {
+        "custom": {
+          "fluid": "thermoconducting"
+        }
+      }
+    ]
+  }
+}

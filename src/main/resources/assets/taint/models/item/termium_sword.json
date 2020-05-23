@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+    "textures": {
+      "layer0": "taint:items/termium_sword"
+    }
+  }
