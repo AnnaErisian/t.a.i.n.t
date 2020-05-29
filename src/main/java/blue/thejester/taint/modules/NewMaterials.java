@@ -2,6 +2,7 @@ package blue.thejester.taint.modules;
 
 import blue.thejester.taint.helper.fluid.Create;
 import blue.thejester.taint.item.MetalMaterial;
+import blue.thejester.taint.tools.WandCoreMaterialStats;
 import blue.thejester.taint.traits.*;
 import c4.conarm.common.armor.traits.ArmorTraits;
 import c4.conarm.lib.materials.*;
@@ -82,7 +83,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new HeadMaterialStats(2800, 11.2f, 11.8f, 10),
+                    new HeadMaterialStats(2800, 10.6f, 11.2f, 10),
                     new HandleMaterialStats(1.09f, 280),
                     new ExtraMaterialStats(520)
             );
@@ -133,7 +134,7 @@ public class NewMaterials implements IModule {
                     new TrimMaterialStats(18f)
             );
             setRenderInfo(mat, color);
-            ArmorMaterials.addArmorTrait(mat, MasterOfTheUniverse.master_of_the_universe, ArmorMaterialType.CORE);
+            ArmorMaterials.addArmorTrait(mat, ImmortalCenturion.immortalCenturion1, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.ambitious);
             addToArmorAll(mat, ArmorTraits.steady);
 
@@ -173,7 +174,8 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(2585, 11.5f, 10.6f, 10),
                     new HandleMaterialStats(1.15f, 320),
                     new ExtraMaterialStats(411),
-                    new BowMaterialStats(0.7f, 1.55f, 9.11f)
+                    new BowMaterialStats(0.7f, 1.55f, 9.11f),
+                    new WandCoreMaterialStats(1,1,1,1,1,1, 1)
             );
             setRenderInfo(mat, color);
             mat.addTrait(Ignitive.ignitive, MaterialTypes.HEAD);
@@ -195,7 +197,8 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(2333, 13f, 8.8f, 10),
                     new HandleMaterialStats(1.05f, 430),
                     new ExtraMaterialStats(560),
-                    new BowMaterialStats(0.82f, 1.45f, 5.6f)
+                    new BowMaterialStats(0.82f, 1.45f, 5.6f),
+                    new WandCoreMaterialStats(1,1,1,1,1,1, 1)
             );
             setRenderInfo(mat, color);
             mat.addTrait(TinkerTraits.momentum, MaterialTypes.HEAD);
@@ -215,11 +218,11 @@ public class NewMaterials implements IModule {
             TinkerRegistry.addMaterialStats(mat,
                     new CoreMaterialStats(23.8f, 21.4f),
                     new PlatesMaterialStats(1.23f, 19f, 5f),
-                    new TrimMaterialStats(16f)
+                    new TrimMaterialStats(16f),
+                    new WandCoreMaterialStats(1,1,1,1,1,1, 1)
             );
             setRenderInfo(mat, color);
-            ArmorMaterials.addArmorTrait(mat, ImmortalCenturion.immortalCenturion1, ArmorMaterialType.CORE);
-            ArmorMaterials.addArmorTrait(mat, ArmorTraits.calcic);
+            ArmorMaterials.addArmorTrait(mat, MasterOfTheUniverse.master_of_the_universe, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.ambitious);
             addToArmorAll(mat, ArmorTraits.heavy);
 
@@ -978,56 +981,56 @@ public class NewMaterials implements IModule {
     }
 
     private void initTier8Alloys() {
-        sendTiCAlloyInfo("dupondium", 2, fluid("soldrite", 3), fluid("atercaeum", 4), fluid("netherstar", 25));
-        sendTiCAlloyInfo("starsteel", 2, fluid("unseelium", 3), fluid("cibarite", 2));
-        sendTiCAlloyInfo("adamantite", 3, fluid("dupondium", 5), fluid("atercaeum", 7), fluid("starsteel", 5), fluid("ptemnium", 6));
-        sendTiCAlloyInfo("ptemnium", 3, fluid("inurose", 5), fluid("accelerase", 4), fluid("urielium", 3));
-        sendTiCAlloyInfo("orichalcum", 3, fluid("inurose", 3), fluid("cibarite", 3), fluid("oscurum", 3));
-        sendTiCAlloyInfo("solairite", 4, fluid("oscurum", 2), fluid("antenium", 6));
-        sendTiCAlloyInfo("urielium", 3, fluid("solairite", 4), fluid("thermoconducting", 6));
+        sendTiCAlloyInfo("dupondium", 1, fluid("soldrite", 3), fluid("atercaeum", 4), fluid("netherstar", 25));
+        sendTiCAlloyInfo("starsteel", 1, fluid("unseelium", 3), fluid("cibarite", 2));
+        sendTiCAlloyInfo("adamantite", 2, fluid("dupondium", 5), fluid("atercaeum", 7), fluid("starsteel", 5), fluid("ptemnium", 6));
+        sendTiCAlloyInfo("ptemnium", 2, fluid("inurose", 5), fluid("accelerase", 4), fluid("urielium", 3));
+        sendTiCAlloyInfo("orichalcum", 1, fluid("inurose", 5), fluid("cibarite", 5), fluid("oscurum", 5));
+        sendTiCAlloyInfo("solairite", 3, fluid("oscurum", 2), fluid("antenium", 6));
+        sendTiCAlloyInfo("urielium", 2, fluid("solairite", 4), fluid("thermoconducting", 6));
     }
 
     private void initTier7Alloys() {
-        sendTiCAlloyInfo("soldrite", 36, fluid("lordslime", 18), fluid("valkyrie", 16));
-        sendTiCAlloyInfo("superlumium", 36, fluid("gravitite", 36), fluid("lumium", 18), fluid("experience", 125));
-        sendTiCAlloyInfo("antenium", 36, fluid("valkyrie", 16), fluid("neulite", 36), fluid("lava", 250));
-        sendTiCAlloyInfo("accelerase", 3, fluid("neulite", 2), fluid("fierkite", 2));
-        sendTiCAlloyInfo("terium", 54, fluid("neulite", 36), fluid("sestertium", 18), fluid("sand", 250));
+        sendTiCAlloyInfo("soldrite", 18, fluid("lordslime", 18), fluid("valkyrie", 18));
+        sendTiCAlloyInfo("superlumium", 18, fluid("gravitite", 36), fluid("lumium", 18), fluid("experience", 125));
+        sendTiCAlloyInfo("antenium", 18, fluid("valkyrie", 16), fluid("neulite", 36), fluid("lava", 250));
+        sendTiCAlloyInfo("accelerase", 2, fluid("neulite", 2), fluid("fierkite", 2));
+        sendTiCAlloyInfo("terium", 36, fluid("neulite", 36), fluid("sestertium", 18), fluid("sand", 250));
     }
 
     private void initTier6Alloys() {
-        sendTiCAlloyInfo("unseelium", 3, fluid("faerite", 2), fluid("caersin", 2));
-        sendTiCAlloyInfo("orinase", 4, fluid("caersin", 3), fluid("octine", 2), fluid("cannium", 1));
-        sendTiCAlloyInfo("rallium", 18, fluid("caersin", 18), fluid("endacid", 125));
-        sendTiCAlloyInfo("tempestite", 36, fluid("luginite", 18), fluid("endacid", 250), fluid("enderium", 27));
-        sendTiCAlloyInfo("fierkite", 5, fluid("tempestite", 2), fluid("aerium", 4), fluid("unseelium", 3));
+        sendTiCAlloyInfo("unseelium", 2, fluid("faerite", 2), fluid("caersin", 2));
+        sendTiCAlloyInfo("orinase", 3, fluid("caersin", 3), fluid("octine", 2), fluid("cannium", 1));
+        sendTiCAlloyInfo("rallium", 9, fluid("caersin", 18), fluid("endacid", 125));
+        sendTiCAlloyInfo("tempestite", 27, fluid("luginite", 18), fluid("endacid", 250), fluid("enderium", 27));
+        sendTiCAlloyInfo("fierkite", 4, fluid("tempestite", 2), fluid("aerium", 4), fluid("unseelium", 3));
     }
 
     private void initTier5Alloys() {
-        sendTiCAlloyInfo("lunite", 54, fluid("peractium", 18), fluid("tar", 125), fluid("adipatum", 36));
-        sendTiCAlloyInfo("betweensteel", 7, fluid("octine", 3), fluid("syrmorite", 4), fluid("lunite", 1));
-        sendTiCAlloyInfo("cannium", 5, fluid("betweensteel", 3), fluid("black_rosite", 4));
-        sendTiCAlloyInfo("ascalite", 3, fluid("adipatum", 2), fluid("enderium", 3));
-        sendTiCAlloyInfo("aerium", 36, fluid("ascalite", 18), fluid("sestertium", 36), fluid("sponge", 100));
+        sendTiCAlloyInfo("lunite", 27, fluid("peractium", 18), fluid("tar", 125), fluid("adipatum", 36));
+        sendTiCAlloyInfo("betweensteel", 5, fluid("octine", 3), fluid("syrmorite", 4), fluid("lunite", 1));
+        sendTiCAlloyInfo("cannium", 4, fluid("betweensteel", 3), fluid("black_rosite", 4));
+        sendTiCAlloyInfo("ascalite", 2, fluid("adipatum", 2), fluid("enderium", 3));
+        sendTiCAlloyInfo("aerium", 27, fluid("ascalite", 18), fluid("sestertium", 36), fluid("sponge", 100));
     }
 
     private void initTier4Alloys() {
-        sendTiCAlloyInfo("lordslime", 108, fluid("piridium", 72), fluid("blueslime", 250), fluid("ardorum", 72));
-        sendTiCAlloyInfo("littium", 36, fluid("ardorum", 36), fluid("water", 100), fluid("mana", 10));
-        sendTiCAlloyInfo("infernium", 4, fluid("obsidian", 4), fluid("manyullyn", 2), fluid("termium", 1));
-        sendTiCAlloyInfo("peractium", 5, fluid("iridium", 2), fluid("termium", 1), fluid("knightmetal", 3));
-        sendTiCAlloyInfo("sestertium", 24, fluid("fierymetal", 12), fluid("lordslime", 24), fluid("cryotheum", 125), fluid("petrotheum", 125));
+        sendTiCAlloyInfo("lordslime", 72, fluid("piridium", 72), fluid("blueslime", 250), fluid("ardorum", 72));
+        sendTiCAlloyInfo("littium", 27, fluid("ardorum", 36), fluid("water", 100), fluid("mana", 10));
+        sendTiCAlloyInfo("infernium", 3, fluid("obsidian", 4), fluid("manyullyn", 2), fluid("termium", 1));
+        sendTiCAlloyInfo("peractium", 4, fluid("iridium", 2), fluid("termium", 1), fluid("knightmetal", 3));
+        sendTiCAlloyInfo("sestertium", 18, fluid("fierymetal", 12), fluid("lordslime", 24), fluid("cryotheum", 125), fluid("petrotheum", 125));
     }
 
     private void initTier3Alloys() {
-        sendTiCAlloyInfo("piridium", 18, fluid("knightslime", 18), fluid("aerotheum", 100));
-        sendTiCAlloyInfo("luginite", 18, fluid("hot_spring_water", 125), fluid("prismarine", 72), fluid("aluminum", 18));
-        sendTiCAlloyInfo("black_rosite", 12, fluid("mirion", 18), fluid("poison", 125), fluid("pyrotheum", 100));
+        sendTiCAlloyInfo("piridium", 12, fluid("knightslime", 18), fluid("aerotheum", 100));
+        sendTiCAlloyInfo("luginite", 9, fluid("hot_spring_water", 125), fluid("prismarine", 72), fluid("aluminum", 18));
+        sendTiCAlloyInfo("black_rosite", 8, fluid("mirion", 18), fluid("poison", 125), fluid("pyrotheum", 100));
     }
 
     private void initTier2Alloys() {
-        sendTiCAlloyInfo("slipsteel", 18, fluid("steel", 18), fluid("refined_fuel", 125));
-        sendTiCAlloyInfo("faerite", 144, fluid("manasteel", 108), fluid("prismarine", 36), fluid("redstone", 250));
+        sendTiCAlloyInfo("slipsteel", 12, fluid("steel", 18), fluid("refined_fuel", 125));
+        sendTiCAlloyInfo("faerite", 96, fluid("manasteel", 108), fluid("prismarine", 36), fluid("redstone", 250));
         sendTiCAlloyInfo("escalite", 2, fluid("gold", 2), fluid("marshmallow", 5), fluid("milk_chocolate", 4));
     }
 

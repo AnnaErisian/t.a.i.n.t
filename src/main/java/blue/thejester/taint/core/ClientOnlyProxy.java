@@ -17,6 +17,7 @@ import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
+import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
 public class ClientOnlyProxy extends CommonProxy {
@@ -134,5 +135,10 @@ public class ClientOnlyProxy extends CommonProxy {
     @Override
     public void registerItemRenderer(Item item, int meta, String id) {
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(item.getRegistryName(), id));
+    }
+
+    @Override
+    public <T extends Item & IToolPart> void registerToolPartModel(T part) {
+        ModelRegisterUtil.registerPartModel(part);
     }
 }

@@ -113,6 +113,8 @@ public enum MetalMaterial {
     public ModAxeItem tAxe;
     public Item.ToolMaterial tMat;
     public ItemArmor.ArmorMaterial aMat;
+    public float axeSpeed = -2.9f;
+    public float axeDamage = 8;
 
     public String getOreName() {
         List<String> list = new ArrayList<>();

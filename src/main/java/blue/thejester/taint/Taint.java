@@ -22,7 +22,7 @@ public class Taint
             + "required-after:botania;required-after:plustic;"
             + "required-after:thermalfoundation;after:draconicevolution;"
             + "required-after:twilightforest@[3.7,);required-after:crafttweaker;"
-            + "required-after:conarm;required-after:tinkersaether;";
+            + "required-after:conarm;required-after:tinkersaether;required-after:ebwizardry;";
     //required-after:iceandfire; LLibrary is crappy and breaks like hell, so we can't use it in dev
 
     public static Logger logger;

@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.init.MobEffects;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.EnumAction;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumActionResult;
@@ -12,6 +13,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import slimeknights.tconstruct.library.tools.ranged.ProjectileLauncherCore;
 import slimeknights.tconstruct.library.traits.AbstractTrait;
 import slimeknights.tconstruct.library.utils.TagUtil;
 import slimeknights.tconstruct.library.utils.TinkerUtil;
@@ -45,6 +47,9 @@ public class FaeFlight extends AbstractTrait {
 		NBTTagCompound nbt = TagUtil.getTagSafe(event.getItemStack());
 		if (event.getWorld().isRemote
 				|| event.getItemStack() == null
+				|| event.getItemStack().getItemUseAction() == EnumAction.BLOCK
+				|| ToolHelper.getCurrentDurability(event.getItemStack()) < DURABILITY_COST
+				|| event.getItemStack().getItem() instanceof ProjectileLauncherCore
 				|| !TinkerUtil.hasTrait(nbt, getIdentifier())) {
 			return;
 		}

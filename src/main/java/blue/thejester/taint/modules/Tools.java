@@ -3,6 +3,7 @@ package blue.thejester.taint.modules;
 import blue.thejester.taint.Taint;
 import blue.thejester.taint.tools.*;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -10,9 +11,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import slimeknights.tconstruct.library.TinkerRegistry;
+import slimeknights.tconstruct.library.materials.Material;
 import slimeknights.tconstruct.library.modifiers.IModifier;
+import slimeknights.tconstruct.library.tools.Pattern;
 import slimeknights.tconstruct.library.tools.ToolCore;
+import slimeknights.tconstruct.library.tools.ToolPart;
 import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.tools.TinkerTools;
 
 @Mod.EventBusSubscriber(modid = Taint.MODID)
 public class Tools implements IModule {
@@ -23,6 +28,9 @@ public class Tools implements IModule {
     public static ToolGlaive glaive;
     public static ToolShield shield;
     public static ToolBuckler buckler;
+    public static ToolWand wand;
+
+    public static ToolPart wandCore;
 
     @Override
     public void preInit() {
@@ -37,6 +45,14 @@ public class Tools implements IModule {
 
     @SubscribeEvent
     public static void initItems(RegistryEvent.Register<Item> event) {
+
+        wandCore = new ToolPart(Material.VALUE_Ingot);
+        wandCore.setTranslationKey("wand_core").setRegistryName("wand_core");
+        event.getRegistry().register(wandCore);
+        TinkerRegistry.registerToolPart(wandCore);
+        Taint.proxy.registerToolPartModel(wandCore);
+        TinkerRegistry.registerStencilTableCrafting(Pattern.setTagForPart(new ItemStack(TinkerTools.pattern), wandCore));
+
         dagger = new ToolDagger();
         initToolItem(event.getRegistry(), dagger, false);
 
@@ -54,6 +70,9 @@ public class Tools implements IModule {
 
         buckler = new ToolBuckler();
         initToolItem(event.getRegistry(), buckler, false);
+
+        wand = new ToolWand();
+        initToolItem(event.getRegistry(), wand, true);
 
         // register modifiers
         for (IModifier modifier: new IModifier[] {

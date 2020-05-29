@@ -394,3 +394,93 @@ modifier.midden.extra.toughness=Mining Speed in the Betweenlands: +%s
 msg.taint.absolutedomainmodifier.disable=Fried the brains out of %s.
 msg.taint.absolutedomainmodifier.release=Restored the faculties of %s.
 msg.taint.mastermodifier.use=It is not my time.
+
+item.ardorum_boots.name=Ardorum Boots
+item.ardorum_chestplate.name=Ardorum Chestplace
+item.ardorum_leggings.name=Ardorum Leggings
+item.ardorum_helmet.name=Ardorum Helmet
+item.ardorum_pickaxe.name=Ardorum Pickaxe
+item.ardorum_hoe.name=Ardorum Hoe
+item.ardorum_shovel.name=Ardorum Shovel
+item.ardorum_sword.name=Ardorum Sword
+item.ardorum_axe.name=Ardorum Axe
+
+item.termium_boots.name=Termium Boots
+item.termium_chestplate.name=Termium Chestplace
+item.termium_leggings.name=Termium Leggings
+item.termium_helmet.name=Termium Helmet
+item.termium_pickaxe.name=Termium Pickaxe
+item.termium_hoe.name=Termium Hoe
+item.termium_shovel.name=Termium Shovel
+item.termium_sword.name=Termium Sword
+item.termium_axe.name=Termium Axe
+
+item.adipatum_boots.name=Adipatum Boots
+item.adipatum_chestplate.name=Adipatum Chestplace
+item.adipatum_leggings.name=Adipatum Leggings
+item.adipatum_helmet.name=Adipatum Helmet
+item.adipatum_pickaxe.name=Adipatum Pickaxe
+item.adipatum_hoe.name=Adipatum Hoe
+item.adipatum_shovel.name=Adipatum Shovel
+item.adipatum_sword.name=Adipatum Sword
+item.adipatum_axe.name=Adipatum Axe
+
+item.caersin_boots.name=Caersin Boots
+item.caersin_chestplate.name=Caersin Chestplace
+item.caersin_leggings.name=Caersin Leggings
+item.caersin_helmet.name=Caersin Helmet
+item.caersin_pickaxe.name=Caersin Pickaxe
+item.caersin_hoe.name=Caersin Hoe
+item.caersin_shovel.name=Caersin Shovel
+item.caersin_sword.name=Caersin Sword
+item.caersin_axe.name=Caersin Axe
+
+item.neulite_boots.name=Neulite Boots
+item.neulite_chestplate.name=Neulite Chestplace
+item.neulite_leggings.name=Neulite Leggings
+item.neulite_helmet.name=Neulite Helmet
+item.neulite_pickaxe.name=Neulite Pickaxe
+item.neulite_hoe.name=Neulite Hoe
+item.neulite_shovel.name=Neulite Shovel
+item.neulite_sword.name=Neulite Sword
+item.neulite_axe.name=Neulite Axe
+
+item.atercaeum_boots.name=Atercaeum Boots
+item.atercaeum_chestplate.name=Atercaeum Chestplace
+item.atercaeum_leggings.name=Atercaeum Leggings
+item.atercaeum_helmet.name=Atercaeum Helmet
+item.atercaeum_pickaxe.name=Atercaeum Pickaxe
+item.atercaeum_hoe.name=Atercaeum Hoe
+item.atercaeum_shovel.name=Atercaeum Shovel
+item.atercaeum_sword.name=Atercaeum Sword
+item.atercaeum_axe.name=Atercaeum Axe
+
+item.oscurum_boots.name=Oscurum Boots
+item.oscurum_chestplate.name=Oscurum Chestplace
+item.oscurum_leggings.name=Oscurum Leggings
+item.oscurum_helmet.name=Oscurum Helmet
+item.oscurum_pickaxe.name=Oscurum Pickaxe
+item.oscurum_hoe.name=Oscurum Hoe
+item.oscurum_shovel.name=Oscurum Shovel
+item.oscurum_sword.name=Oscurum Sword
+item.oscurum_axe.name=Oscurum Axe
+
+item.inurose_boots.name=Inurose Boots
+item.inurose_chestplate.name=Inurose Chestplace
+item.inurose_leggings.name=Inurose Leggings
+item.inurose_helmet.name=Inurose Helmet
+item.inurose_pickaxe.name=Inurose Pickaxe
+item.inurose_hoe.name=Inurose Hoe
+item.inurose_shovel.name=Inurose Shovel
+item.inurose_sword.name=Inurose Sword
+item.inurose_axe.name=Inurose Axe
+
+item.cibarite_boots.name=Cibarite Boots
+item.cibarite_chestplate.name=Cibarite Chestplace
+item.cibarite_leggings.name=Cibarite Leggings
+item.cibarite_helmet.name=Cibarite Helmet
+item.cibarite_pickaxe.name=Cibarite Pickaxe
+item.cibarite_hoe.name=Cibarite Hoe
+item.cibarite_shovel.name=Cibarite Shovel
+item.cibarite_sword.name=Cibarite Sword
+item.cibarite_axe.name=Cibarite Axe

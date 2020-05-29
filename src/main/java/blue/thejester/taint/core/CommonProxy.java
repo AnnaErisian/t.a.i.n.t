@@ -13,6 +13,7 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import slimeknights.mantle.client.CreativeTab;
 import slimeknights.tconstruct.library.modifiers.IModifier;
+import slimeknights.tconstruct.library.tools.IToolPart;
 import slimeknights.tconstruct.library.tools.ToolCore;
 
 import java.util.Arrays;
@@ -84,5 +85,8 @@ public class CommonProxy {
 
     public void initToolGuis() {
 
+    }
+
+    public <T extends Item & IToolPart> void registerToolPartModel(T part) {
     }
 }
