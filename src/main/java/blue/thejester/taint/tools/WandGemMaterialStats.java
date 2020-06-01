@@ -40,13 +40,17 @@ public class WandGemMaterialStats extends WandPartMaterialStats {
     public List<String> getLocalizedInfo() {
         List<String> info = Lists.newArrayList();
 
+        info.add(Util.translate(LOC_TIER)+": "+COLOR_TIER+getWord(tier));
         info.add(formatNumber(LOC_CAPACITY, COLOR_CAPACITY, capacity));
-        info.add(formatNumber(LOC_TIER, COLOR_TIER, tier));
         info.add(formatNumber(LOC_POTENCY_MOD, COLOR_POTENCY_MOD, potencyMod));
 
         info.addAll(getElementLines());
 
         return info;
+    }
+
+    private String getWord(int tier) {
+        return Util.translate("stat.casttier."+tier);
     }
 
     @Override
@@ -56,7 +60,8 @@ public class WandGemMaterialStats extends WandPartMaterialStats {
         info.add(Util.translate(LOC_CAPACITY_DESC));
         info.add(Util.translate(LOC_POTENCY_MOD_DESC));
         info.add(Util.translate(LOC_TIER_DESC));
-        info.add(Util.translate(LOC_ELEMENTS_DESC));
+
+        info.addAll(getElementDescLines());
 
         return info;
     }

@@ -1,0 +1,11 @@
+// Sections
+welcome=Welcome
+materials=Wand Materials
+wands=Wands
+modifiers=Modifiers
+
+material.craft_partbuilder=Can be crafted in the Part Builder
+material.craft_casting=Can be cast from %s
+
+modifier.effect=Effects:
+tool.properties=Properties:

@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_web",
 		"shield": "taint:items/shield/mod_web",
 		"buckler": "taint:items/buckler/mod_web",
-		"magicwand": "taint:items/magicwand/mod_web"
+		"magicwand": "taint:items/magicwand/mod_web",
+		"staff": "taint:items/staff/mod_web",
+		"warwand": "taint:items/warwand/mod_web"
 	}
 }

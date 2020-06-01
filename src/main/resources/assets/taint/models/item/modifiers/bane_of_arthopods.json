@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_bane_spider",
 		"shield": "taint:items/shield/mod_bane_spider",
 		"buckler": "taint:items/buckler/mod_bane_spider",
-		"magicwand": "taint:items/magicwand/mod_bane_spider"
+		"magicwand": "taint:items/magicwand/mod_bane_spider",
+		"staff": "taint:items/staff/mod_bane_spider",
+		"warwand": "taint:items/warwand/mod_bane_spider"
 	}
 }

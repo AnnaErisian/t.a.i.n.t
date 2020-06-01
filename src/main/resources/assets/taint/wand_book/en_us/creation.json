@@ -1,0 +1,16 @@
+{
+  "title": "Notes on Arcane Tinkering",
+  "text": [
+    {
+      "text": "Wands can be created in a Tool Forge - a Tool Station lacks the precise instruments required for the process - but comes with some caveats."
+    },
+    {
+      "text": "Primarily, even the Tool Forge is a crude instrument for magic, and will leave a wand emptied entirely on creation.  Furthermore, additional tinkering will empty the wand until it has been infused with the mystical energies of a spell, which can only be done in an Arcane Workbench.",
+      "paragraph": true
+    },
+    {
+      "text": "Finally, note that wands cannot be repaired like other tools - they must be recharged with mana from Magic crystals or flasks.",
+      "paragraph": true
+    }
+  ]
+}

@@ -2,6 +2,7 @@ package blue.thejester.taint;
 
 import blue.thejester.taint.asm.ClassTransformer;
 import blue.thejester.taint.core.CommonProxy;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -54,5 +55,11 @@ public class Taint
     {
         proxy.postInit();
         logger.log(Level.DEBUG, ClassTransformer.transformations + "/1 ASM Transformations were applied from Taint.");
+    }
+
+    @EventHandler
+    public void registerModels(ModelRegistryEvent event)
+    {
+        proxy.registerModels(event);
     }
 }

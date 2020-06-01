@@ -1,0 +1,29 @@
+[
+  {
+    "name": "welcome",
+    "data": "sections/welcome.json",
+    "icon": {
+      "item": {
+        "id": "ebwizardry:arcane_workbench"
+      }
+    }
+  },
+  {
+    "name": "wands",
+    "data": "sections/wands.json",
+    "icon": {
+      "item": {
+        "id": "ebwizardry:master_wand",
+        "damage": 0
+      }
+    }
+  },
+  {
+    "name": "materials",
+    "icon": {
+      "item": {
+        "id": "minecraft:diamond"
+      }
+    }
+  }
+]

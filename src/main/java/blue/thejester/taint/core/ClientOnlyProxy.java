@@ -1,6 +1,8 @@
 package blue.thejester.taint.core;
 
 import blue.thejester.taint.Taint;
+import blue.thejester.taint.book.WandBook;
+import blue.thejester.taint.item.ModItems;
 import blue.thejester.taint.modules.Tools;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -11,10 +13,12 @@ import net.minecraft.client.renderer.block.statemap.StateMapperBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fluids.Fluid;
 import slimeknights.tconstruct.common.ModelRegisterUtil;
 import slimeknights.tconstruct.library.TinkerRegistryClient;
+import slimeknights.tconstruct.library.book.TinkerBook;
 import slimeknights.tconstruct.library.client.ToolBuildGuiInfo;
 import slimeknights.tconstruct.library.modifiers.IModifier;
 import slimeknights.tconstruct.library.tools.IToolPart;
@@ -24,8 +28,8 @@ public class ClientOnlyProxy extends CommonProxy {
 
     @Override
     public void preInit() {
-
         super.preInit();
+        WandBook.init();
     }
 
     @Override
@@ -56,6 +60,12 @@ public class ClientOnlyProxy extends CommonProxy {
     public void init() {
         super.init();
         initToolGuis();
+    }
+
+    @Override
+    public void postInit() {
+        super.postInit();
+        WandBook.INSTANCE.fontRenderer = TinkerBook.INSTANCE.fontRenderer;
     }
 
     /**
@@ -133,10 +143,25 @@ public class ClientOnlyProxy extends CommonProxy {
 
 
         ToolBuildGuiInfo wandInfo = new ToolBuildGuiInfo(Tools.wand);
-        wandInfo.addSlotPosition(33 - 20 - 1, 42 + 20); // gem
-        wandInfo.addSlotPosition(33 + 20 - 5, 42 - 20 + 4); // socket
-        wandInfo.addSlotPosition(33 - 2 - 1, 42 + 2); // core
+        wandInfo.addSlotPosition(33 + 20 - 5, 42 - 20 + 4); // gem
+        wandInfo.addSlotPosition(33 - 2 - 1, 42 + 2); // socket
+        wandInfo.addSlotPosition(33 - 20 - 1, 42 + 20); // core
         TinkerRegistryClient.addToolBuilding(wandInfo);
+
+        ToolBuildGuiInfo staffInfo = new ToolBuildGuiInfo(Tools.staff);
+        staffInfo.addSlotPosition(33 - 5, 42 - 20 + 4); // gem
+        staffInfo.addSlotPosition(33 + 20 - 5, 42 - 20 + 4); // gem
+        staffInfo.addSlotPosition(33 - 2 - 1, 42 + 2); // socket
+        staffInfo.addSlotPosition(33 - 1, 42 + 20); // core
+        staffInfo.addSlotPosition(33 - 20 - 1, 42 + 20); // core
+        TinkerRegistryClient.addToolBuilding(staffInfo);
+
+        ToolBuildGuiInfo warwandInfo = new ToolBuildGuiInfo(Tools.warwand);
+        warwandInfo.addSlotPosition(33 + 20 - 5, 42 - 20 + 4); // gem
+        warwandInfo.addSlotPosition(33 - 2 - 1, 42 + 2); // socket
+        warwandInfo.addSlotPosition(33 - 20 - 1, 42 + 20); // core
+        warwandInfo.addSlotPosition(33 - 1, 42 + 20); // rod
+        TinkerRegistryClient.addToolBuilding(warwandInfo);
     }
 
     @Override
@@ -147,5 +172,10 @@ public class ClientOnlyProxy extends CommonProxy {
     @Override
     public <T extends Item & IToolPart> void registerToolPartModel(T part) {
         ModelRegisterUtil.registerPartModel(part);
+    }
+
+    @Override
+    public void registerModels(ModelRegistryEvent event) {
+        ModItems.wandBook.initModel();
     }
 }

@@ -1,0 +1,9 @@
+{
+  "textures": {
+    "layer0": "taint:items/warwand/gem",
+    "layer1": "taint:items/warwand/socket",
+    "layer2": "taint:items/warwand/core",
+    "layer3": "taint:items/warwand/rod",
+    "broken0": "taint:items/warwand/gem_broken"
+  }
+}

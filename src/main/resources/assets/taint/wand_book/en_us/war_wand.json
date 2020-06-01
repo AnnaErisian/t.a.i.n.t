@@ -1,0 +1,13 @@
+{
+  "tool": "warwand",
+  "text": [
+    {
+      "text": "The War Wand is much like a normal wand - but it's made for hitting things as well.  However, because of this, it is more restricted in it's gem materials than a standard wand, requiring the material to also form a valid tool head."
+    }
+  ],
+  "properties": [
+    "Normal casting time",
+    "Makes a fine sword",
+    "Can be upgraded"
+  ]
+}

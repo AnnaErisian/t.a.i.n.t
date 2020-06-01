@@ -1,0 +1,10 @@
+{
+  "textures": {
+    "layer0": "taint:items/staff/gem1",
+    "layer1": "taint:items/staff/gem2",
+    "layer2": "taint:items/staff/socket",
+    "layer3": "taint:items/staff/core1",
+    "layer4": "taint:items/staff/core2",
+    "broken0": "taint:items/staff/gem_broken"
+  }
+}

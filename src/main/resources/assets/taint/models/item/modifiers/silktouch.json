@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_silk",
 		"shield": "taint:items/shield/mod_silk",
 		"buckler": "taint:items/buckler/mod_silk",
-		"magicwand": "taint:items/magicwand/mod_silk"
+		"magicwand": "taint:items/magicwand/mod_silk",
+		"staff": "taint:items/staff/mod_silk",
+		"warwand": "taint:items/warwand/mod_silk"
 	}
 }

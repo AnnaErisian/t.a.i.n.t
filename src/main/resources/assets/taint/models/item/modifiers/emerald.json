@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_emerald",
 		"shield": "taint:items/shield/mod_emerald",
 		"buckler": "taint:items/buckler/mod_emerald",
-		"magicwand": "taint:items/magicwand/mod_emerald"
+		"magicwand": "taint:items/magicwand/mod_emerald",
+		"staff": "taint:items/staff/mod_emerald",
+		"warwand": "taint:items/warwand/mod_emerald"
 	}
 }

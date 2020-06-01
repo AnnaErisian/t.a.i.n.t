@@ -9,6 +9,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import slimeknights.mantle.client.CreativeTab;
@@ -89,5 +90,9 @@ public class CommonProxy {
     }
 
     public <T extends Item & IToolPart> void registerToolPartModel(T part) {
+    }
+
+    public void registerModels(ModelRegistryEvent event) {
+
     }
 }

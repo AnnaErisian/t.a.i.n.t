@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_sharpness",
 		"shield": "taint:items/shield/mod_sharpness",
 		"buckler": "taint:items/buckler/mod_sharpness",
-		"magicwand": "taint:items/magicwand/mod_sharpness"
+		"magicwand": "taint:items/magicwand/mod_sharpness",
+		"staff": "taint:items/staff/mod_sharpness",
+		"warwand": "taint:items/warwand/mod_sharpness"
 	}
 }

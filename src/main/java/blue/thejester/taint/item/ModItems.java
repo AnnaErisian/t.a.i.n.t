@@ -4,33 +4,28 @@ import blue.thejester.taint.Taint;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
-import slimeknights.tconstruct.library.TinkerRegistry;
-import slimeknights.tconstruct.library.materials.Material;
-import slimeknights.tconstruct.library.tools.Pattern;
-import slimeknights.tconstruct.library.tools.ToolPart;
-import slimeknights.tconstruct.tools.TinkerTools;
-
-import static slimeknights.tconstruct.library.TinkerRegistry.registerToolPart;
 
 @Mod.EventBusSubscriber(modid = Taint.MODID)
 public class ModItems {
 
-    static TraitProfiler traitProfiler;
+    public static TraitProfiler traitProfiler;
+    public static ItemWandBook wandBook;
 
     public static void init() {
         traitProfiler = new TraitProfiler("trait_profiler");
+        wandBook = new ItemWandBook();
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
 //        event.getRegistry().registerAll(traitProfiler);
+        event.getRegistry().registerAll(wandBook);
         for (MetalMaterial mat : MetalMaterial.values()) {
             event.getRegistry().registerAll(mat.nugget);
             event.getRegistry().registerAll(mat.ingot);
@@ -68,6 +63,7 @@ public class ModItems {
 
     @SubscribeEvent
     public static void registerRenders(ModelRegistryEvent event) {
+        registerRender(wandBook);
         for (MetalMaterial mat : MetalMaterial.values()) {
             registerRender(Item.getItemFromBlock(mat.block));
             registerRender(mat.ingot);

@@ -1,0 +1,13 @@
+{
+  "tool": "magicwand",
+  "text": [
+    {
+      "text": "The Magic Wand is the simplest casting implement.  It functions almost identically to the wands from Electroblob's Wizardry."
+    }
+  ],
+  "properties": [
+    "Normal casting time",
+    "Makes a poor sword",
+    "Can be upgraded"
+  ]
+}

@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_haste",
 		"shield": "taint:items/shield/mod_haste",
 		"buckler": "taint:items/buckler/mod_haste",
-		"magicwand": "taint:items/magicwand/mod_haste"
+		"magicwand": "taint:items/magicwand/mod_haste",
+		"staff": "taint:items/staff/mod_haste",
+		"warwand": "taint:items/warwand/mod_haste"
 	}
 }

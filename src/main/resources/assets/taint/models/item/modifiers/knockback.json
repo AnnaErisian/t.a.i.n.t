@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_knockback",
 		"shield": "taint:items/shield/mod_knockback",
 		"buckler": "taint:items/buckler/mod_knockback",
-		"magicwand": "taint:items/magicwand/mod_knockback"
+		"magicwand": "taint:items/magicwand/mod_knockback",
+		"staff": "taint:items/staff/mod_knockback",
+		"warwand": "taint:items/warwand/mod_knockback"
 	}
 }

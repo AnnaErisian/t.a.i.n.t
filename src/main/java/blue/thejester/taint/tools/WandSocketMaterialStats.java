@@ -49,7 +49,8 @@ public class WandSocketMaterialStats extends WandPartMaterialStats {
 
         info.add(Util.translate(LOC_UPGRADE_SLOTS_DESC));
         info.add(Util.translate(LOC_CAPACITY_BONUS_DESC));
-        info.add(Util.translate(LOC_ELEMENTS_DESC));
+
+        info.addAll(getElementDescLines());
 
         return info;
     }

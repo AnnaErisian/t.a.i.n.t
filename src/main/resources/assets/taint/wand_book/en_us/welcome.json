@@ -1,0 +1,16 @@
+{
+  "title":"Welcome",
+  "text": [
+    {
+      "text": "Welcome to the arcane addendum of Materials and You."
+    },
+    {
+      "text": "Since you're here, I'll be teaching you the basics of tinkering with things beyond our understanding - teaching you about the creation of magical wands and similar casting implements.  This little book will show you the way to more and more powerful wands and staves.  Within, you will find information about the materials and components, and more importantly, about their interaction with the external systems of magic.",
+      "paragraph": true
+    },
+    {
+      "text": "I cannot make you a great mage - but I will show you the ropes, so to speak.",
+      "paragraph": true
+    }
+  ]
+}

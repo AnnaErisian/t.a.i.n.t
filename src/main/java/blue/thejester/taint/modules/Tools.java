@@ -1,6 +1,7 @@
 package blue.thejester.taint.modules;
 
 import blue.thejester.taint.Taint;
+import blue.thejester.taint.core.RecipeRegistry;
 import blue.thejester.taint.item.MetalMaterial;
 import blue.thejester.taint.tools.*;
 import landmaster.plustic.PlusTiC;
@@ -35,6 +36,8 @@ public class Tools implements IModule {
     public static ToolShield shield;
     public static ToolBuckler buckler;
     public static ToolWand wand;
+    public static ToolStaff staff;
+    public static ToolWarWand warwand;
 
     public static ToolPart wandCore;
     public static ToolPart wandGem;
@@ -298,6 +301,15 @@ public class Tools implements IModule {
 
         wand = new ToolWand();
         initToolItem(event.getRegistry(), wand, true);
+        RecipeRegistry.addToManaFlaskCharging(wand);
+
+        staff = new ToolStaff();
+        initToolItem(event.getRegistry(), staff, true);
+        RecipeRegistry.addToManaFlaskCharging(staff);
+
+        warwand = new ToolWarWand();
+        initToolItem(event.getRegistry(), warwand, true);
+        RecipeRegistry.addToManaFlaskCharging(warwand);
 
         // register modifiers
         for (IModifier modifier: new IModifier[] {

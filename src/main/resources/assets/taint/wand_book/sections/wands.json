@@ -1,0 +1,22 @@
+[
+  {
+    "name": "wands_creation",
+    "type": "text",
+    "data": "creation.json"
+  },
+  {
+    "name": "wands_wand",
+    "type": "tool",
+    "data": "wand.json"
+  },
+  {
+    "name": "wands_staff",
+    "type": "tool",
+    "data": "staff.json"
+  },
+  {
+    "name": "wands_warwand",
+    "type": "tool",
+    "data": "war_wand.json"
+  }
+]

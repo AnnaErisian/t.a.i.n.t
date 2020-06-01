@@ -1,0 +1,16 @@
+{
+  "tool": "staff",
+  "text": [
+    {
+      "text": "The Staff is much like a Magic Wand in every way.  However, it is slower to regain spellcasting ability, and in exchange, it can become far more potent due to the increased number of parts."
+    },
+    {
+      "text": "A Staff is made from 2 cores, 2 gems, and a socket."
+    }
+  ],
+  "properties": [
+    "Increased cooldown time",
+    "Still not good for hitting things",
+    "Can be upgraded"
+  ]
+}

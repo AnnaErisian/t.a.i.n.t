@@ -6,6 +6,8 @@
 		"glaive": "taint:items/glaive/mod_smite",
 		"shield": "taint:items/shield/mod_smite",
 		"buckler": "taint:items/buckler/mod_smite",
-		"magicwand": "taint:items/magicwand/mod_smite"
+		"magicwand": "taint:items/magicwand/mod_smite",
+		"staff": "taint:items/staff/mod_smite",
+		"warwand": "taint:items/warwand/mod_smite"
 	}
 }

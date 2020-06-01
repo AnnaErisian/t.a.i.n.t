@@ -89,8 +89,6 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
         setTranslationKey(key).setRegistryName(key);
 
         setNoRepair();
-
-        WizardryRecipes.addToManaFlaskCharging(this);
     }
 
     @Override
@@ -638,13 +636,17 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
             // Cooldown
             if(!spell.isContinuous && !caster.isCreative()){ // Spells only have a cooldown in survival
-                WandHelper.setCurrentCooldown(stack, (int)(spell.getCooldown() * modifiers.get(WizardryItems.cooldown_upgrade)));
+                WandHelper.setCurrentCooldown(stack, (int)(spell.getCooldown() * modifiers.get(WizardryItems.cooldown_upgrade) * cooldownFactor()));
             }
 
             return true;
         }
 
         return false;
+    }
+
+    protected float cooldownFactor() {
+        return 1;
     }
 
     @Override
