@@ -26,6 +26,7 @@ for modifierSpec in [
 \t\t"spear": "taint:items/spear/mod_%(shortName)s",
 \t\t"glaive": "taint:items/glaive/mod_%(shortName)s",
 \t\t"shield": "taint:items/shield/mod_%(shortName)s",
-\t\t"buckler": "taint:items/buckler/mod_%(shortName)s"
+\t\t"buckler": "taint:items/buckler/mod_%(shortName)s",
+\t\t"magicwand": "taint:items/magicwand/mod_%(shortName)s"
 \t}
 }''' % { 'shortName': modifierSpec[1] })

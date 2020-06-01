@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_mending_moss",
 		"glaive": "taint:items/glaive/mod_mending_moss",
 		"shield": "taint:items/shield/mod_mending_moss",
-		"buckler": "taint:items/buckler/mod_mending_moss"
+		"buckler": "taint:items/buckler/mod_mending_moss",
+		"magicwand": "taint:items/magicwand/mod_mending_moss"
 	}
 }

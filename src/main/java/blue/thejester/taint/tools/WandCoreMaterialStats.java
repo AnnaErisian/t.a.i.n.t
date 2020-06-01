@@ -1,79 +1,44 @@
 package blue.thejester.taint.tools;
 
 import com.google.common.collect.Lists;
-import slimeknights.tconstruct.library.materials.AbstractMaterialStats;
+import slimeknights.tconstruct.library.Util;
+import slimeknights.tconstruct.library.client.CustomFontColor;
 import slimeknights.tconstruct.library.materials.Material;
 
 import java.util.List;
 
-public class WandCoreMaterialStats extends AbstractMaterialStats {
+public class WandCoreMaterialStats extends WandPartMaterialStats {
 
-    public final static String LOC_FIRE = "stat.core.attunement.fire";
-    public final static String LOC_ICE = "stat.core.attunement.ice";
-    public final static String LOC_LIGHTNING = "stat.core.attunement.lightning";
-    public final static String LOC_NECROMANCY = "stat.core.attunement.necromancy";
-    public final static String LOC_SORCERY = "stat.core.attunement.sorcery";
-    public final static String LOC_HEALING = "stat.core.attunement.healing";
+    public final static String LOC_UPGRADE_CAP = "stat.wandcore.upgrade.cap.name";
+    public final static String LOC_CAPACITY_MOD = "stat.wandcore.capacitymod.name";
+    public final static String LOC_UPGRADE_CAP_DESC = "stat.wandcore.upgrade.cap.desc";
+    public final static String LOC_CAPACITY_MOD_DESC = "stat.wandcore.capacitymod.desc";
+    public final static String COLOR_MOD_CAP = CustomFontColor.encodeColor(215, 100, 100);
+    public final static String COLOR_CAPACITY_MOD = CustomFontColor.encodeColor(120, 160, 205);
 
     public static final String TYPE = "wand_core";
 
-    public float fire = 0;
-    public float ice = 0;
-    public float lightning = 0;
-    public float earth = 0;
-    public float necro = 0;
-    public float sorc = 0;
-    public float healing = 0;
-
-
     static {
-        Material.UNKNOWN.addStats(new WandCoreMaterialStats(0, 0, 0, 0, 0, 0, 0));
+        Material.UNKNOWN.addStats(new WandCoreMaterialStats(3, 1, 0, 0, 0, 0, 0, 0, 0));
     }
 
-    public WandCoreMaterialStats(float fire, float ice, float lightning, float earth, float necro, float sorc, float healing) {
-        super(TYPE);
-        this.fire = fire;
-        this.ice = ice;
-        this.lightning = lightning;
-        this.earth = earth;
-        this.necro = necro;
-        this.sorc = sorc;
-        this.healing = healing;
+    public int upgradeLimit;
+    public float capacityMod;
+
+    public WandCoreMaterialStats(int upgradeLimit, float capacityMod, float fire, float ice, float lightning, float earth, float necro, float sorc, float healing) {
+        super(TYPE, fire, ice, lightning, earth, necro, sorc, healing);
+        this.upgradeLimit = upgradeLimit;
+        this.capacityMod = capacityMod;
     }
 
     @Override
     public List<String> getLocalizedInfo() {
         List<String> info = Lists.newArrayList();
-        
-        String line = "";
 
-        if(fire != 0) {
-            line += formatNumber(LOC_FIRE, "ff0000", fire);
-        }
+        info.add(formatNumber(LOC_UPGRADE_CAP, COLOR_MOD_CAP, upgradeLimit));
+        info.add(formatNumber(LOC_CAPACITY_MOD, COLOR_CAPACITY_MOD, capacityMod));
 
-        if(ice != 0) {
-            line += formatNumber(LOC_ICE, "40b0a7", ice);
-        }
-
-        if(lightning != 0) {
-            line += formatNumber(LOC_LIGHTNING, "166b8e", lightning);
-        }
-
-        if(necro != 0) {
-            line += formatNumber(LOC_NECROMANCY, "6c47a3", necro);
-        }
-
-        if(sorc != 0) {
-            line += formatNumber(LOC_SORCERY, "5eead1", sorc);
-        }
-
-        if(healing != 0) {
-            line += formatNumber(LOC_HEALING, "f6d178", healing);
-        }
-
-        if(!line.isEmpty()) {
-            info.add(line);
-        }
+        info.addAll(getElementLines());
 
         return info;
     }
@@ -82,6 +47,9 @@ public class WandCoreMaterialStats extends AbstractMaterialStats {
     public List<String> getLocalizedDesc() {
         List<String> info = Lists.newArrayList();
 
+        info.add(Util.translate(LOC_UPGRADE_CAP_DESC));
+        info.add(Util.translate(LOC_CAPACITY_MOD_DESC));
+        info.add(Util.translate(LOC_ELEMENTS_DESC));
 
         return info;
     }

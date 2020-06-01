@@ -49,4 +49,9 @@ public class Fluids implements IModule{
 
     public void postInit() {
     }
+
+    @Override
+    public void init() {
+
+    }
 }

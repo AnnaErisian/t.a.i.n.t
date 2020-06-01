@@ -10,10 +10,12 @@ import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.tools.TinkerTraits;
 
 public class Netherstar implements IModule {
+
+    public static Material netherstar = new Material("netherstar", 0xcccccc);
+
     @Override
     public void preInit() {
         {
-            Material netherstar = new Material("netherstar", 0xcccccc);
             netherstar.addTrait(Apocalypse.apocalypse);
             netherstar.addTrait(TinkerTraits.lightweight);
             netherstar.addTrait(TinkerTraits.unnatural, MaterialTypes.HEAD);
@@ -39,5 +41,10 @@ public class Netherstar implements IModule {
     }
 
     public void postInit() {
+    }
+
+    @Override
+    public void init() {
+
     }
 }

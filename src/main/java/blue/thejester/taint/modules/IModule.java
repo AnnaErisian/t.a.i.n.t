@@ -12,6 +12,8 @@ public interface IModule {
 
     void preInit();
 
+    void init();
+
     void postInit();
 
     default void setRenderInfo(Material mat, int color) {
@@ -19,5 +21,4 @@ public interface IModule {
             mat.setRenderInfo(color);
         }
     }
-
 }

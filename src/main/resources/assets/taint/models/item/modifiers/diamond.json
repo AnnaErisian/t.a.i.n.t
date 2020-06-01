@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_diamond",
 		"glaive": "taint:items/glaive/mod_diamond",
 		"shield": "taint:items/shield/mod_diamond",
-		"buckler": "taint:items/buckler/mod_diamond"
+		"buckler": "taint:items/buckler/mod_diamond",
+		"magicwand": "taint:items/magicwand/mod_diamond"
 	}
 }

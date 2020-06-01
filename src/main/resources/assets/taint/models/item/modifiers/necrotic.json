@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_necrotic",
 		"glaive": "taint:items/glaive/mod_necrotic",
 		"shield": "taint:items/shield/mod_necrotic",
-		"buckler": "taint:items/buckler/mod_necrotic"
+		"buckler": "taint:items/buckler/mod_necrotic",
+		"magicwand": "taint:items/magicwand/mod_necrotic"
 	}
 }

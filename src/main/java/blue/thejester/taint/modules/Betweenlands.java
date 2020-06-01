@@ -23,10 +23,14 @@ public class Betweenlands implements IModule {
     private Fluid syrmoriteFluid;
     private Fluid octineFluid;
 
+    public static Material valonite = new Material("valonite", 0xD8B7D9);
+    public static Material octine = new Material("octine", 0xffe634);
+    public static Material syrmorite = new Material("syrmorite", 0x4e58a7);
+    public static Material scabyst = new Material("scabyst", 0x97bdb7);
+
     @Override
     public void preInit() {
         {
-            Material valonite = new Material("valonite", 0xD8B7D9);
             valonite.addTrait(TinkerTraits.enderference, MaterialTypes.HEAD);
             NewMaterials.addToToolAll(valonite, TinkerTraits.established);
             NewMaterials.addToToolAll(valonite, Midden.midden);
@@ -52,7 +56,6 @@ public class Betweenlands implements IModule {
             TinkerRegistry.integrate(valoniteMi).preInit();
         }
         {
-            Material octine = new Material("octine", 0xffe634);
             octine.setCraftable(false).setCastable(true);
             octine.addTrait(Ignitive.ignitive, MaterialTypes.HEAD);
             NewMaterials.addToToolAll(octine, Midden.midden);
@@ -71,7 +74,6 @@ public class Betweenlands implements IModule {
             TinkerRegistry.integrate(octineMi).preInit();
         }
         {
-            Material syrmorite = new Material("syrmorite", 0x4e58a7);
             syrmorite.setCraftable(false).setCastable(true);
             ArmorMaterials.addArmorTrait(syrmorite, ArmorTraits.steady, ArmorMaterialType.CORE);
             NewMaterials.addToArmorAll(syrmorite, ArmorTraits.lightweight);
@@ -89,7 +91,6 @@ public class Betweenlands implements IModule {
         }
 
         {
-            Material scabyst = new Material("scabyst", 0x97bdb7);
             scabyst.setCraftable(true).setCastable(false);
             scabyst.addTrait(Terrafirma.terrafirma.get(0), ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(scabyst, ArmorTraits.aquaspeed, ArmorMaterialType.PLATES);
@@ -127,6 +128,11 @@ public class Betweenlands implements IModule {
         TinkerRegistry.registerBasinCasting(new CastingRecipe(new ItemStack(BlockRegistry.TAR_SOLID),  FluidRegistry.TAR, 1000, 300));
         TinkerRegistry.registerMelting(new ItemStack(BlockRegistry.TAR_SOLID), FluidRegistry.TAR, 1000);
 
+
+    }
+
+    @Override
+    public void init() {
 
     }
 }

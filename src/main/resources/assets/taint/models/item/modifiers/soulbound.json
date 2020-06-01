@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_soulbound",
 		"glaive": "taint:items/glaive/mod_soulbound",
 		"shield": "taint:items/shield/mod_soulbound",
-		"buckler": "taint:items/buckler/mod_soulbound"
+		"buckler": "taint:items/buckler/mod_soulbound",
+		"magicwand": "taint:items/magicwand/mod_soulbound"
 	}
 }

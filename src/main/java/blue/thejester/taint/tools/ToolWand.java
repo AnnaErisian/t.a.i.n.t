@@ -1,10 +1,11 @@
 package blue.thejester.taint.tools;
 
-import blue.thejester.taint.item.ModItems;
 import blue.thejester.taint.modules.Tools;
 import com.google.common.collect.Multimap;
+import com.google.common.collect.Sets;
 import electroblob.wizardry.Wizardry;
 import electroblob.wizardry.constants.Constants;
+import electroblob.wizardry.constants.Element;
 import electroblob.wizardry.constants.Tier;
 import electroblob.wizardry.data.SpellGlyphData;
 import electroblob.wizardry.data.WizardData;
@@ -19,6 +20,7 @@ import electroblob.wizardry.packet.WizardryPacketHandler;
 import electroblob.wizardry.registry.*;
 import electroblob.wizardry.spell.Spell;
 import electroblob.wizardry.util.*;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -38,6 +40,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
+import net.minecraft.util.text.translation.I18n;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
@@ -46,6 +50,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.network.simpleimpl.IMessage;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import slimeknights.tconstruct.common.config.Config;
+import slimeknights.tconstruct.library.Util;
 import slimeknights.tconstruct.library.materials.*;
 import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
@@ -54,10 +60,13 @@ import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.library.utils.TagUtil;
 import slimeknights.tconstruct.library.utils.TinkerUtil;
 import slimeknights.tconstruct.library.utils.ToolHelper;
-import slimeknights.tconstruct.tools.TinkerTools;
 
+import javax.annotation.Nonnull;
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
+
+import static blue.thejester.taint.tools.WandPartMaterialStats.*;
 
 /**
  * Since Java does not allow multiple-inheritance, I basically copied and
@@ -67,20 +76,42 @@ import java.util.Random;
 public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCastingItem, IManaStoringItem {
 
     public ToolWand() {
-        super(  PartMaterialType.head(TinkerTools.arrowHead),
-                PartMaterialType.extra(TinkerTools.binding),
-                new PartMaterialType(Tools.wandCore, "wand_core", MaterialTypes.HANDLE));
+        this("magicwand",   new PartMaterialType(Tools.wandGem, WandGemMaterialStats.TYPE),
+                new PartMaterialType(Tools.wandSocket, WandSocketMaterialStats.TYPE),
+                new PartMaterialType(Tools.wandCore, WandCoreMaterialStats.TYPE));
+    }
+
+    public ToolWand(String key, PartMaterialType... parts) {
+        super(parts);
 
         this.addCategory(Category.WEAPON);
 
-        setTranslationKey("magicwand").setRegistryName("magicwand");
+        setTranslationKey(key).setRegistryName(key);
+
+        setNoRepair();
 
         WizardryRecipes.addToManaFlaskCharging(this);
     }
 
     @Override
     public int[] getRepairParts() {
+        //Empty array means no repairing this tool
         return new int[] {0};
+    }
+
+    @Nonnull
+    @Override
+    public String getItemStackDisplayName(@Nonnull ItemStack stack) {
+        // if the tool is not named we use the repair tools for a prefix like thing
+        List<Material> materials = TinkerUtil.getMaterialsFromTagList(TagUtil.getBaseMaterialsTagList(stack));
+        // we save all the ones for the name in a set so we don't have the same material in it twice
+        Set<Material> nameMaterials = Sets.newLinkedHashSet();
+
+        if(!materials.isEmpty()) {
+            nameMaterials.add(materials.get(0));
+        }
+
+        return Material.getCombinedItemName(I18n.translateToLocal(this.getUnlocalizedNameInefficiently(stack) + ".name").trim(), nameMaterials);
     }
 
     @Override
@@ -107,19 +138,14 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
     public ToolNBT buildTagData(List<Material> materials) {
         WandNBT data = new WandNBT();
 
-        HeadMaterialStats head = materials.get(0).getStatsOrUnknown(MaterialTypes.HEAD);
-        ExtraMaterialStats extra = materials.get(1).getStatsOrUnknown(MaterialTypes.EXTRA);
-        HandleMaterialStats handle = materials.get(2).getStatsOrUnknown(MaterialTypes.HANDLE);
-        WandCoreMaterialStats wandcore = materials.get(2).getStatsOrUnknown(WandCoreMaterialStats.TYPE);
-        data.head(head);
+        WandGemMaterialStats wandGem = materials.get(0).getStatsOrUnknown(WandGemMaterialStats.TYPE);
+        WandSocketMaterialStats wandSocket = materials.get(1).getStatsOrUnknown(WandSocketMaterialStats.TYPE);
+        WandCoreMaterialStats wandCore = materials.get(2).getStatsOrUnknown(WandCoreMaterialStats.TYPE);
 
-        data.extra(extra);
-
-        // calculate handle impact
-        data.handle(handle);
-
-        //wand core effects
-        data.wandCore(wandcore);
+        data.gemFirst(wandGem);
+        data.socket(wandSocket);
+        data.core(wandCore);
+        data.gemLast(wandGem);
 
         // 3 free modifiers
         data.modifiers = DEFAULT_MODIFIERS;
@@ -129,41 +155,48 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
     private Tier getWizardryTier(ItemStack stack) {
         switch (this.getCastingLevel(stack)) {
-            case 0:
-            case 1: return Tier.NOVICE;
-            case 2: return Tier.APPRENTICE;
-            case 3: return Tier.ADVANCED;
+            case 0: return Tier.NOVICE;
+            case 1: return Tier.APPRENTICE;
+            case 2: return Tier.ADVANCED;
             default: return Tier.MASTER;
         }
     }
 
     private int getCastingLevel(ItemStack stack) {
-        return ToolHelper.getHarvestLevelStat(stack);
+        WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
+        return nbt.castTier;
     }
 
-    private int getUpgradeLimit(ItemStack stack) {
-        return 1 + 2 * Math.max(8, getCastingLevel(stack));
+    private int getUpgradeSlots(ItemStack stack) {
+        WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
+        return nbt.upgradeSlots;
     }
 
-    private boolean canBoUpgraded(ItemStack stack, Item specialUpgrade) {
-        if(WandHelper.getTotalUpgrades(stack) < getUpgradeLimit(stack)) {
+    private boolean canBeUpgraded(ItemStack stack, Item specialUpgrade) {
+        if(WandHelper.getTotalUpgrades(stack) < getUpgradeSlots(stack)) {
             if(specialUpgrade == WizardryItems.attunement_upgrade) {
                 return WandHelper.getUpgradeLevel(stack, specialUpgrade) < Constants.UPGRADE_STACK_LIMIT;
             } else {
-                return WandHelper.getUpgradeLevel(stack, specialUpgrade) < getEnhancedUpgradeStackLimit(stack);
+                return WandHelper.getUpgradeLevel(stack, specialUpgrade) < getUpgradeStackLimit(stack);
             }
         } else {
             return false;
         }
     }
 
-    private int getEnhancedUpgradeStackLimit(ItemStack stack) {
-        return Math.min(Constants.UPGRADE_STACK_LIMIT, (getCastingLevel(stack) + 1) / 2);
+    private int getUpgradeStackLimit(ItemStack stack) {
+        WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
+        return nbt.upgradeLimit;
     }
 
     private float getPotencyIncrease(ItemStack stack, Spell spell) {
         WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
-        switch (spell.getElement()) {
+        return getPotencyIncrease(stack, spell.getElement());
+    }
+
+    private float getPotencyIncrease(ItemStack stack, Element element) {
+        WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
+        switch (element) {
             case FIRE: return nbt.fire;
             case ICE: return nbt.ice;
             case LIGHTNING: return nbt.lightning;
@@ -173,6 +206,11 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
             case HEALING: return nbt.healing;
         }
         return 0;
+    }
+
+    @Override
+    public boolean showDurabilityBar(ItemStack stack) {
+        return stack.isItemDamaged();
     }
 
     /*==================================================================================================================
@@ -226,7 +264,11 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
     @Override
     public void setMana(ItemStack stack, int mana){
         // Using super (which can only be done from in here) bypasses the above override
-        super.setDamage(stack, getManaCapacity(stack) - mana);
+        if(mana != 0) {
+            ToolHelper.unbreakTool(stack);
+        }
+        int newDamage = getManaCapacity(stack) - mana;
+        super.setDamage(stack, newDamage);
     }
 
     @Override
@@ -277,7 +319,10 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
     @Override
     public void onCreated(ItemStack stack, World worldIn, EntityPlayer playerIn){
-        setMana(stack, 0); // Wands are empty when first crafted
+        //The 'spells' tag gets added by the arcane workbench when the item is used there
+        if(stack.hasTagCompound() && !stack.getTagCompound().hasKey("spells")) {
+            setMana(stack, 0); // Wands are empty when first crafted
+        }
     }
 
     @Override
@@ -379,14 +424,48 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void addInformation(ItemStack stack, World world, List<String> text, net.minecraft.client.util.ITooltipFlag advanced){
+    public void addInformation(ItemStack stack, World world, List<String> tooltip, net.minecraft.client.util.ITooltipFlag advanced){
 
+
+        boolean shift = Util.isShiftKeyDown();
+        boolean ctrl = Util.isCtrlKeyDown();
         EntityPlayer player = net.minecraft.client.Minecraft.getMinecraft().player;
+        // modifiers
+        if(!shift && !ctrl) {
+            getTooltip(stack, tooltip);
+
+            tooltip.add("");
+            // info tooltip for detailed and componend info
+            tooltip.add(Util.translate("tooltip.tool.holdShift"));
+            tooltip.add(Util.translate("tooltip.tool.holdCtrl"));
+
+            if(world != null) {
+                tooltip.add(TextFormatting.BLUE +
+                        I18n.translateToLocalFormatted("attribute.modifier.plus.0",
+                                Util.df.format(ToolHelper.getActualDamage(stack, Minecraft.getMinecraft().player)),
+                                I18n.translateToLocal("attribute.name.generic.attackDamage")));
+            }
+
+            // +0.5f is necessary due to the error in the way floats are calculated.
+            tooltip.add(net.minecraft.client.resources.I18n.format("item.taint.wand.potency",
+                    FIRE_COLOR, (int)(getPotencyIncrease(stack, Element.FIRE) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.ICE_COLOR, (int)(getPotencyIncrease(stack, Element.ICE) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.LIGHTNING_COLOR, (int)(getPotencyIncrease(stack, Element.LIGHTNING) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.EARTH_COLOR, (int)(getPotencyIncrease(stack, Element.EARTH) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.NECROMANCY_COLOR, (int)(getPotencyIncrease(stack, Element.NECROMANCY) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.SORCERY_COLOR, (int)(getPotencyIncrease(stack, Element.SORCERY) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.HEALING_COLOR, (int)(getPotencyIncrease(stack, Element.HEALING) * 100 + 0.5f) + "%"));
+        }
+        // detailed data
+        else if(Config.extraTooltips && shift) {
+            getTooltipDetailed(stack, tooltip);
+        }
+        // component data
+        else if(Config.extraTooltips && ctrl) {
+            getTooltipComponents(stack, tooltip);
+        }
+
         if (player == null) { return; }
-        // +0.5f is necessary due to the error in the way floats are calculated.
-//        if(element != null) text.add("\u00A78" + net.minecraft.client.resources.I18n.format("item." + Wizardry.MODID + ":wand.buff",
-//                (int)((tier.level + 1) * Constants.POTENCY_INCREASE_PER_TIER * 100 + 0.5f) + "%",
-//                element.getDisplayName()));
 
         Spell spell = WandHelper.getCurrentSpell(stack);
 
@@ -396,19 +475,44 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
             discovered = false;
         }
 
-        text.add("\u00A77" + net.minecraft.client.resources.I18n.format("item." + Wizardry.MODID + ":wand.spell",
+        tooltip.add("\u00A77" + net.minecraft.client.resources.I18n.format("item." + Wizardry.MODID + ":wand.spell",
                 discovered ? "\u00A77" + spell.getDisplayNameWithFormatting()
                         : "#\u00A79" + SpellGlyphData.getGlyphName(spell, player.world)));
 
-        if(advanced.isAdvanced()){
-            // Advanced tooltips for debugging
-            text.add("\u00A79" + net.minecraft.client.resources.I18n.format("item." + Wizardry.MODID + ":wand.mana",
-                    this.getMana(stack), this.getManaCapacity(stack)));
+    }
 
-//		}else{
-//
-//			ChargeStatus status = ChargeStatus.getChargeStatus(stack);
-//			text.add(status.getFormattingCode() + status.getDisplayName());
+    @Override
+    public void getTooltipDetailed(ItemStack stack, List<String> tooltips) {
+        tooltips.addAll(getInformation(stack, false));
+
+        WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
+
+        if(nbt.fire != 0) {
+            tooltips.add(formatNumberPercent(LOC_FIRE_POTENCY, FIRE_COLOR, nbt.fire));
+        }
+
+        if(nbt.ice != 0) {
+            tooltips.add(formatNumberPercent(LOC_ICE_POTENCY, ICE_COLOR, nbt.ice));
+        }
+
+        if(nbt.lightning != 0) {
+            tooltips.add(formatNumberPercent(LOC_LIGHTNING_POTENCY, LIGHTNING_COLOR, nbt.lightning));
+        }
+
+        if(nbt.earth != 0) {
+            tooltips.add(formatNumberPercent(LOC_EARTH_POTENCY, EARTH_COLOR, nbt.earth));
+        }
+
+        if(nbt.necro != 0) {
+            tooltips.add(formatNumberPercent(LOC_NECRO_POTENCY, NECROMANCY_COLOR, nbt.necro));
+        }
+
+        if(nbt.sorc != 0) {
+            tooltips.add(formatNumberPercent(LOC_SORCERY_POTENCY, SORCERY_COLOR, nbt.sorc));
+        }
+
+        if(nbt.healing != 0) {
+            tooltips.add(formatNumberPercent(LOC_HEALING_POTENCY, HEALING_COLOR, nbt.healing));
         }
     }
 
@@ -682,7 +786,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
             // Special upgrades
             Item specialUpgrade = upgrade.getStack().getItem();
 
-            if(canBoUpgraded(centre.getStack(), specialUpgrade)){
+            if(canBeUpgraded(centre.getStack(), specialUpgrade)){
 
                 // Used to preserve existing mana when upgrading storage rather than creating free mana.
                 int prevMana = this.getMana(centre.getStack());
@@ -721,7 +825,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
                 upgrade.decrStackSize(1);
                 WizardryAdvancementTriggers.special_upgrade.triggerFor(player);
 
-                if(WandHelper.getTotalUpgrades(centre.getStack()) == getUpgradeLimit(centre.getStack())){
+                if(WandHelper.getTotalUpgrades(centre.getStack()) == getUpgradeSlots(centre.getStack())){
                     WizardryAdvancementTriggers.max_out_wand.triggerFor(player);
                 }
 

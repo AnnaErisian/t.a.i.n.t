@@ -2,7 +2,6 @@ package blue.thejester.taint.modules;
 
 import blue.thejester.taint.helper.fluid.Create;
 import blue.thejester.taint.item.MetalMaterial;
-import blue.thejester.taint.tools.WandCoreMaterialStats;
 import blue.thejester.taint.traits.*;
 import c4.conarm.common.armor.traits.ArmorTraits;
 import c4.conarm.lib.materials.*;
@@ -71,6 +70,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.featherweight, ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.lightweight);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -91,6 +91,7 @@ public class NewMaterials implements IModule {
             mat.addTrait(AbsoluteDominion.absoluteDominion, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.coldblooded);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -117,6 +118,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, BlazingGrace.blazing_grace, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.superhot);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -138,6 +140,7 @@ public class NewMaterials implements IModule {
             addToArmorAll(mat, ArmorTraits.ambitious);
             addToArmorAll(mat, ArmorTraits.steady);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -159,6 +162,7 @@ public class NewMaterials implements IModule {
             addToArmorAll(mat, ArmorTraits.featherweight);
             addToArmorAll(mat, Mana.mana);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -174,14 +178,14 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(2585, 11.5f, 10.6f, 10),
                     new HandleMaterialStats(1.15f, 320),
                     new ExtraMaterialStats(411),
-                    new BowMaterialStats(0.7f, 1.55f, 9.11f),
-                    new WandCoreMaterialStats(1,1,1,1,1,1, 1)
+                    new BowMaterialStats(0.7f, 1.55f, 9.11f)
             );
             setRenderInfo(mat, color);
             mat.addTrait(Ignitive.ignitive, MaterialTypes.HEAD);
             addToToolAll(mat, Luminous.luminous);
             addToToolAll(mat, Mana.mana);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -197,13 +201,13 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(2333, 13f, 8.8f, 10),
                     new HandleMaterialStats(1.05f, 430),
                     new ExtraMaterialStats(560),
-                    new BowMaterialStats(0.82f, 1.45f, 5.6f),
-                    new WandCoreMaterialStats(1,1,1,1,1,1, 1)
+                    new BowMaterialStats(0.82f, 1.45f, 5.6f)
             );
             setRenderInfo(mat, color);
             mat.addTrait(TinkerTraits.momentum, MaterialTypes.HEAD);
             addToToolAll(mat, Silky.silky);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -218,14 +222,14 @@ public class NewMaterials implements IModule {
             TinkerRegistry.addMaterialStats(mat,
                     new CoreMaterialStats(23.8f, 21.4f),
                     new PlatesMaterialStats(1.23f, 19f, 5f),
-                    new TrimMaterialStats(16f),
-                    new WandCoreMaterialStats(1,1,1,1,1,1, 1)
+                    new TrimMaterialStats(16f)
             );
             setRenderInfo(mat, color);
             ArmorMaterials.addArmorTrait(mat, MasterOfTheUniverse.master_of_the_universe, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.ambitious);
             addToArmorAll(mat, ArmorTraits.heavy);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -239,6 +243,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = null;
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -252,6 +257,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = null;
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -265,6 +271,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = null;
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -289,6 +296,7 @@ public class NewMaterials implements IModule {
             mat.addTrait(RampingStatusInflictor.nuclear_winter, MaterialTypes.HEAD);
             mat.addTrait(NCTraits.WITHERING);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -310,6 +318,7 @@ public class NewMaterials implements IModule {
             mat.addTrait(Hyperspeed.hyperspeed, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.enderference);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -336,6 +345,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, Stoneborn.stoneborn, ArmorMaterialType.CORE);
             addToArmorAll(mat, NCArmorTraits.POISONOUS);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -357,6 +367,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.calcic);
             addToArmorAll(mat, ArmorTraits.ambitious);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -381,6 +392,7 @@ public class NewMaterials implements IModule {
             mat.addTrait(BlackHole.blackhole);
             ArmorMaterials.addArmorTrait(mat, DunansTransport.dunanstransport);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -402,6 +414,7 @@ public class NewMaterials implements IModule {
             mat.addTrait(TinkerTraits.autosmelt, MaterialTypes.HEAD);
             addToToolAll(mat, Ignitive.ignitive);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -432,6 +445,7 @@ public class NewMaterials implements IModule {
             addToToolAll(mat, Mana.mana);
             addToArmorAll(mat, Mana.mana);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -458,6 +472,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.voltaic);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.aquaspeed);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -478,6 +493,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, Beezerker.beezerker);
             addToArmorAll(mat, ArmorTraits.lightweight);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -499,6 +515,7 @@ public class NewMaterials implements IModule {
             addToToolAll(mat, Elemental.elemental);
             mat.addTrait(TinkerTraits.lightweight);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -520,6 +537,7 @@ public class NewMaterials implements IModule {
             addToToolAll(mat, TinkerTraits.superheat);
             addToToolAll(mat, TinkerTraits.sharp);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -533,6 +551,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = null;
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -560,6 +579,7 @@ public class NewMaterials implements IModule {
             addToToolAll(mat, PraiseTheSun.praiseit);
             ArmorMaterials.addArmorTrait(mat, Floaty.floaty);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -586,6 +606,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, AirMastery.airmastery, ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.featherweight);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -612,6 +633,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, SoulCatcher.soulcatcher, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.invigorating);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -637,6 +659,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.shielding);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.blessed);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -664,6 +687,7 @@ public class NewMaterials implements IModule {
             addToArmorAll(mat, ArmorTraits.aquaspeed);
             addToToolAll(mat, ArmorTraits.steady);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -677,6 +701,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = null;
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -700,6 +725,7 @@ public class NewMaterials implements IModule {
             setRenderInfo(mat, color);
             mat.addTrait(TinkerTraits.autosmelt);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -726,6 +752,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.spiny);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.vengeful);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -753,6 +780,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, Tetraboost_Armor.tetraboost);
             ArmorMaterials.addArmorTrait(mat, Tetraboost_Armor.tetraboost2, ArmorMaterialType.CORE);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -780,6 +808,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.shielding, ArmorMaterialType.CORE);
             addToArmorAll(mat, ArmorTraits.combustible);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -801,6 +830,7 @@ public class NewMaterials implements IModule {
             mat.addTrait(Smashing.smashing, MaterialTypes.HEAD);
             addToToolAll(mat, Zany.zany);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -829,6 +859,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.invigorating);
             ArmorMaterials.addArmorTrait(mat, ArmorTraits.dramatic);
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -842,6 +873,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = null;
 
+            mm.material = mat;
             mm.fluid = Create.plain(ln, color);
             MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
             integration.setRepresentativeItem("ingot"+cn);
@@ -863,6 +895,7 @@ public class NewMaterials implements IModule {
             blackRosite.addTrait(AphroditeBlessing.aphroditeBlessing, MaterialTypes.HEAD);
             addToToolAll(blackRosite, FlowerPower.flowerpower);
 
+            MetalMaterial.black_rosite.material = blackRosite;
             MetalMaterial.black_rosite.fluid = Create.plain("black_rosite", color);
             MaterialIntegration blackRositeIntegration = new MaterialIntegration(blackRosite, MetalMaterial.black_rosite.fluid, MetalMaterial.black_rosite.getOreName()).setRepresentativeItem("ingotBlackRosite");
             TinkerRegistry.integrate(blackRositeIntegration).preInit();
@@ -880,6 +913,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(piridium, PermanentStatus_Armor.jump_boost, ArmorMaterialType.CORE);
             addToArmorAll(piridium, ArmorTraits.featherweight);
 
+            MetalMaterial.piridium.material = piridium;
             MetalMaterial.piridium.fluid = Create.plain("piridium", color);
             MaterialIntegration piridiumIntegration = new MaterialIntegration(piridium, MetalMaterial.piridium.fluid, MetalMaterial.piridium.getOreName()).setRepresentativeItem("ingotPiridium");
             TinkerRegistry.integrate(piridiumIntegration).preInit();
@@ -902,6 +936,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(luginite, PermanentStatus_Armor.water_breathing, ArmorMaterialType.CORE);
             addToArmorAll(luginite, ArmorTraits.aquaspeed);
 
+            MetalMaterial.luginite.material = luginite;
             MetalMaterial.luginite.fluid = Create.plain("luginite", color);
             MaterialIntegration integration = new MaterialIntegration(luginite, MetalMaterial.luginite.fluid, MetalMaterial.luginite.getOreName()).setRepresentativeItem("ingotLuginite");
             TinkerRegistry.integrate(integration).preInit();
@@ -925,6 +960,8 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(escalite, Delicious_Armor.delicious, ArmorMaterialType.CORE);
             ArmorMaterials.addArmorTrait(escalite, ArmorTraits.tasty);
 
+            MetalMaterial.escalite.material = escalite;
+            MetalMaterial.escalite.material = escalite;
             MetalMaterial.escalite.fluid = Create.plain("escalite", 0x25a8c0);
             MaterialIntegration escaliteMi = new MaterialIntegration(escalite, MetalMaterial.escalite.fluid, MetalMaterial.escalite.getOreName()).setRepresentativeItem("ingotEscalite");
             TinkerRegistry.integrate(escaliteMi).preInit();
@@ -941,6 +978,7 @@ public class NewMaterials implements IModule {
             slipsteel.addTrait(Luminous.luminous, MaterialTypes.HEAD);
             addToToolAll(slipsteel, Slippery.slippery);
 
+            MetalMaterial.slipsteel.material = slipsteel;
             MetalMaterial.slipsteel.fluid = Create.plain("slipsteel", 0xaaa38f);
             MaterialIntegration slipsteelIntegration = new MaterialIntegration(slipsteel, MetalMaterial.slipsteel.fluid, MetalMaterial.slipsteel.getOreName()).setRepresentativeItem("ingotSlipsteel");
             TinkerRegistry.integrate(slipsteelIntegration).preInit();
@@ -963,6 +1001,7 @@ public class NewMaterials implements IModule {
             ArmorMaterials.addArmorTrait(faerite, ArmorTraits.alien);
             ArmorMaterials.addArmorTrait(faerite, Mana.mana);
 
+            MetalMaterial.faerite.material = faerite;
             MetalMaterial.faerite.fluid = Create.plain("faerite", 0xff00f2);
             MaterialIntegration faeriteMi = new MaterialIntegration(faerite, MetalMaterial.faerite.fluid, MetalMaterial.faerite.getOreName()).setRepresentativeItem("ingotFaerite");
             TinkerRegistry.integrate(faeriteMi).preInit();
@@ -1036,6 +1075,11 @@ public class NewMaterials implements IModule {
 
     public void postInit() {
         TinkerRegistry.registerMelting(TinkerCommons.matSlimeBallBlue, TinkerFluids.blueslime, 250);
+    }
+
+    @Override
+    public void init() {
+
     }
 
     public static void sendTiCAlloyInfo(String alloyName, int alloyAmount, Pair<String, Integer>... components) {

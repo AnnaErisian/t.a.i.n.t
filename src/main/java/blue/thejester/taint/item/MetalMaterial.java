@@ -11,6 +11,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
 import net.minecraftforge.oredict.OreDictionary;
+import slimeknights.tconstruct.library.materials.Material;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,6 +116,7 @@ public enum MetalMaterial {
     public ItemArmor.ArmorMaterial aMat;
     public float axeSpeed = -2.9f;
     public float axeDamage = 8;
+    public Material material;
 
     public String getOreName() {
         List<String> list = new ArrayList<>();

@@ -48,4 +48,9 @@ public class BotaniaArmor implements IModule {
 
     public void postInit() {
     }
+
+    @Override
+    public void init() {
+
+    }
 }

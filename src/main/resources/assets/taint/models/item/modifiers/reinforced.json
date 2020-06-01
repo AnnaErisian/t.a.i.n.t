@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_reinforced",
 		"glaive": "taint:items/glaive/mod_reinforced",
 		"shield": "taint:items/shield/mod_reinforced",
-		"buckler": "taint:items/buckler/mod_reinforced"
+		"buckler": "taint:items/buckler/mod_reinforced",
+		"magicwand": "taint:items/magicwand/mod_reinforced"
 	}
 }

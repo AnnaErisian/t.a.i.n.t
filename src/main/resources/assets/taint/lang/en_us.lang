@@ -293,6 +293,20 @@ item.spear.name=Spear
 item.glaive.name=Glaive
 item.buckler.name=Buckler
 item.shield.name=Shield
+item.magicwand.name=Wand
+
+item.dagger.desc=The Dagger is the fastest weapon, and it bypasses armor even more than the Rapier.
+item.waraxe.desc=The Waraxe is a heavy weapon, good for infrequent but powerful strikes.
+item.spear.desc=The Spear is a simple weapon that allows for attacks from a distance.
+item.glaive.desc=The Glaive is a powerful weapon that allows for attacks from a distance, and can sweep a large area when fully charged.
+item.buckler.desc=The Buckler acts primarily as a shield, and can be raised more quickly than most other defensive items.
+item.shield.desc=The Shield is a simple and unremarkable tool, but indispensible against many foes.
+item.magicwand.desc=The Wand acts like a wand from Electroblob's Wizardry - including being empty when you first make it.
+
+item.wand_core.name=Wand Core
+item.wand_gem.name=Gem
+item.wand_socket.name=Socket
+
 
 taint.potion.rocketeer=Rocketeer
 
@@ -484,3 +498,29 @@ item.cibarite_hoe.name=Cibarite Hoe
 item.cibarite_shovel.name=Cibarite Shovel
 item.cibarite_sword.name=Cibarite Sword
 item.cibarite_axe.name=Cibarite Axe
+
+item.taint.wand.potency=§4%s%s§r§7|§b%s%s§r§7|§9%s%s§r§7|§2%s%s§r§7|§5%s%s§r§7|§3%s%s§r§7|§6%s%s§r§7
+stat.wand_head.name=Gem
+stat.wand_socket.name=Socket
+stat.wand_core.name=Wand Core
+stat.wandhead.tier.name=Casting Tier
+stat.wandhead.tier.desc=The casting level of the wand
+stat.wandhead.potency.name=Potency Modifier
+stat.wandhead.potency.desc=A multiplier to the potency of the wand.
+stat.wandhead.capacity.name=Mana Capacity
+stat.wandhead.capacity.desc=The base mana capacity of the wand.
+stat.wandsock.upgrade.slots.name=Upgrade Capacity
+stat.wandsock.upgrade.slots.desc=Total number of Wand Upgrades this wand supports
+stat.wandsock.capacity.name=Bonus Mana Capacity
+stat.wandsock.capacity.desc=The extra mana capacity given by this part.
+stat.wandcore.upgrade.cap.name=Upgrade Limit
+stat.wandcore.upgrade.cap.desc=Maximum level for wand upgrades other than Attunement, which is always 3
+stat.wandcore.capacitymod.name=Capacity Modifier
+stat.wandcore.capacitymod.desc=Mana Capacity will be multiplied by this
+stat.wand.elements.potency.fire=Fire Potency
+stat.wand.elements.potency.ice=Ice Potency
+stat.wand.elements.potency.lightning=Lightning Potency
+stat.wand.elements.potency.earth=Earth Potency
+stat.wand.elements.potency.necro=Necromancy Potency
+stat.wand.elements.potency.sorcery=Sorcery Potency
+stat.wand.elements.potency.healing=Healing Potency

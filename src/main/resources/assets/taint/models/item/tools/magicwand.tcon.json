@@ -1,0 +1,8 @@
+{
+  "textures": {
+    "layer0": "taint:items/magicwand/gem",
+    "layer1": "taint:items/magicwand/socket",
+    "layer2": "taint:items/magicwand/core",
+    "broken0": "taint:items/magicwand/gem_broken"
+  }
+}

@@ -49,6 +49,7 @@ public class CommonProxy {
         MetalMaterial.makeRecipes();
         OreBlocks.preInit();
         GameRegistry.registerWorldGenerator(new OreGenerator(), 1000);
+        IModule.modules.forEach(IModule::init);
     }
 
     /**

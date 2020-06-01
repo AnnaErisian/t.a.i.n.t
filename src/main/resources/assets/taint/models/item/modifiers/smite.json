@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_smite",
 		"glaive": "taint:items/glaive/mod_smite",
 		"shield": "taint:items/shield/mod_smite",
-		"buckler": "taint:items/buckler/mod_smite"
+		"buckler": "taint:items/buckler/mod_smite",
+		"magicwand": "taint:items/magicwand/mod_smite"
 	}
 }

@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_shulking",
 		"glaive": "taint:items/glaive/mod_shulking",
 		"shield": "taint:items/shield/mod_shulking",
-		"buckler": "taint:items/buckler/mod_shulking"
+		"buckler": "taint:items/buckler/mod_shulking",
+		"magicwand": "taint:items/magicwand/mod_shulking"
 	}
 }

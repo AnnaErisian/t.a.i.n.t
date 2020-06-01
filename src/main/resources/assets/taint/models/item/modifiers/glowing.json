@@ -5,6 +5,7 @@
 		"spear": "taint:items/spear/mod_glowing",
 		"glaive": "taint:items/glaive/mod_glowing",
 		"shield": "taint:items/shield/mod_glowing",
-		"buckler": "taint:items/buckler/mod_glowing"
+		"buckler": "taint:items/buckler/mod_glowing",
+		"magicwand": "taint:items/magicwand/mod_glowing"
 	}
 }

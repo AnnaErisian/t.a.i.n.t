@@ -98,4 +98,9 @@ public class NewMaterialsVanillaTools implements IModule {
     public void postInit() {
 
     }
+
+    @Override
+    public void init() {
+
+    }
 }
