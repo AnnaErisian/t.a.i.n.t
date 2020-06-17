@@ -2,6 +2,7 @@ package blue.thejester.taint.tools;
 
 import blue.thejester.taint.modules.Tools;
 import slimeknights.tconstruct.library.materials.Material;
+import slimeknights.tconstruct.library.tinkering.Category;
 import slimeknights.tconstruct.library.tinkering.PartMaterialType;
 import slimeknights.tconstruct.library.tools.ToolNBT;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class ToolStaff extends ToolWand {
     public ToolStaff() {
-        super("staff",
+        super("staff", Category.NO_MELEE,
                 new PartMaterialType(Tools.wandGem, WandGemMaterialStats.TYPE),
                 new PartMaterialType(Tools.wandGem, WandGemMaterialStats.TYPE),
                 new PartMaterialType(Tools.wandSocket, WandSocketMaterialStats.TYPE),

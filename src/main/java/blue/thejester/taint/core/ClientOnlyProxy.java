@@ -155,13 +155,6 @@ public class ClientOnlyProxy extends CommonProxy {
         staffInfo.addSlotPosition(33 - 1, 42 + 20); // core
         staffInfo.addSlotPosition(33 - 20 - 1, 42 + 20); // core
         TinkerRegistryClient.addToolBuilding(staffInfo);
-
-        ToolBuildGuiInfo warwandInfo = new ToolBuildGuiInfo(Tools.warwand);
-        warwandInfo.addSlotPosition(33 + 20 - 5, 42 - 20 + 4); // gem
-        warwandInfo.addSlotPosition(33 - 2 - 1, 42 + 2); // socket
-        warwandInfo.addSlotPosition(33 - 20 - 1, 42 + 20); // core
-        warwandInfo.addSlotPosition(33 - 1, 42 + 20); // rod
-        TinkerRegistryClient.addToolBuilding(warwandInfo);
     }
 
     @Override

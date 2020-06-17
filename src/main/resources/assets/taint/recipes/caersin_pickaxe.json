@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:caersin_pickaxe"
+  },
+  "pattern": [
+    "AAA",
+    " S ",
+    " S "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_caersin"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

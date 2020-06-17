@@ -25,7 +25,7 @@ public class ToolSpear extends SwordCore {
 
 
     private static final float DURABILITY_MODIFIER = 1.1f;
-    private static final UUID SPEAR_REACH_MODIFIER = UUID.fromString("89f0ebfe-c8a0-4e69-bddd-b0a4e32b8f9b");
+//    private static final UUID SPEAR_REACH_MODIFIER = UUID.fromString("89f0ebfe-c8a0-4e69-bddd-b0a4e32b8f9b");
 
     public ToolSpear() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
@@ -63,6 +63,8 @@ public class ToolSpear extends SwordCore {
         return DURABILITY_MODIFIER;
     }
 
+
+
     @Override
     public ToolNBT buildTagData(List<Material> materials) {
         ToolNBT data = new ToolNBT();
@@ -81,14 +83,14 @@ public class ToolSpear extends SwordCore {
         return data;
     }
 
-    @Override
-    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
-        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
-
-        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.spear) {
-            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(SPEAR_REACH_MODIFIER, "Tool modifier", 3.5, Constants.AttributeModifierOperation.ADD));
-        }
-
-        return multimap;
-    }
+//    @Override
+//    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
+//        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
+//
+//        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.spear) {
+//            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(SPEAR_REACH_MODIFIER, "Tool modifier", 3.5, Constants.AttributeModifierOperation.ADD));
+//        }
+//
+//        return multimap;
+//    }
 }

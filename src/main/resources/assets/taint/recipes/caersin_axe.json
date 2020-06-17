@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:caersin_axe"
+  },
+  "pattern": [
+    "AA",
+    "AS",
+    " S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_caersin"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

@@ -2,6 +2,8 @@ package blue.thejester.taint;
 
 import blue.thejester.taint.asm.ClassTransformer;
 import blue.thejester.taint.core.CommonProxy;
+import blue.thejester.taint.core.MessageReachAttack;
+import blue.thejester.taint.core.ReachServerHandler;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -9,6 +11,9 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
+import net.minecraftforge.fml.relauncher.Side;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.Logger;
 
@@ -23,10 +28,12 @@ public class Taint
             + "required-after:botania;required-after:plustic;required-after:nuclearcraft;"
             + "required-after:thermalfoundation;after:draconicevolution;"
             + "required-after:twilightforest@[3.7,);required-after:crafttweaker;"
-            + "required-after:conarm;required-after:tinkersaether;required-after:ebwizardry;";
-    //required-after:iceandfire; LLibrary is crappy and breaks like hell, so we can't use it in dev
+            + "required-after:conarm;required-after:tinkersaether;required-after:ebwizardry;"
+            + "required-after:iceandfire;required-after:tinkertoolleveling;";
 
     public static Logger logger;
+
+    public static SimpleNetworkWrapper network = NetworkRegistry.INSTANCE.newSimpleChannel(MODID+"network");
 
     // The instance of your mod that Forge uses.  Optional.
     @Mod.Instance(Taint.MODID)
@@ -47,6 +54,7 @@ public class Taint
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
+        network.registerMessage(ReachServerHandler.class, MessageReachAttack.class, 0, Side.SERVER);
         proxy.init();
     }
 

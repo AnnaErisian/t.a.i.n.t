@@ -5,17 +5,17 @@ import slimeknights.tconstruct.library.tools.ToolNBT;
 
 public class WandNBT extends ToolNBT {
 
-    private static final String TAG_FIRE = "fire_potency";
-    private static final String TAG_ICE = "ice_potency";
-    private static final String TAG_LIGHTNING = "lightning_potency";
-    private static final String TAG_EARTH = "earth_potency";
-    private static final String TAG_NECROMANCY = "necro_potency";
-    private static final String TAG_SORCERY = "sorc_potency";
-    private static final String TAG_HEALING = "heal_potency";
-    private static final String TAG_CAST_TIER = "cast_tier";
-    private static final String TAG_POTENCY_TIER = "potency_tier";
-    private static final String TAG_UPGRADE_SLOTS = "mod_slots";
-    private static final String TAG_UPGRADE_LIMIT = "mod_limit";
+    public static final String TAG_FIRE = "fire_potency";
+    public static final String TAG_ICE = "ice_potency";
+    public static final String TAG_LIGHTNING = "lightning_potency";
+    public static final String TAG_EARTH = "earth_potency";
+    public static final String TAG_NECROMANCY = "necro_potency";
+    public static final String TAG_SORCERY = "sorc_potency";
+    public static final String TAG_HEALING = "heal_potency";
+    public static final String TAG_CAST_TIER = "cast_tier";
+    public static final String TAG_POTENCY_TIER = "potency_tier";
+    public static final String TAG_UPGRADE_SLOTS = "mod_slots";
+    public static final String TAG_UPGRADE_LIMIT = "mod_limit";
 
     public float fire = 0;
     public float ice = 0;
@@ -187,6 +187,32 @@ public class WandNBT extends ToolNBT {
         return this;
     }
 
+    public ToolNBT gemLastStaff(WandGemMaterialStats... heads) {
+        for(WandGemMaterialStats head : heads) {
+            if(head != null) {
+                fire *= head.potencyMod;
+                ice *= head.potencyMod;
+                lightning *= head.potencyMod;
+                earth *= head.potencyMod;
+                necro *= head.potencyMod;
+                healing *= head.potencyMod;
+                sorc *= head.potencyMod;
+            }
+        }
+
+        //not gonna let this get too crazy, but it should keep up with modded
+        //Since that is the *whole* point of this integration
+        fire = adjustPotencyStaff(fire);
+        ice = adjustPotencyStaff(ice);
+        lightning = adjustPotencyStaff(lightning);
+        earth = adjustPotencyStaff(earth);
+        necro = adjustPotencyStaff(necro);
+        healing = adjustPotencyStaff(healing);
+        sorc = adjustPotencyStaff(sorc);
+
+        return this;
+    }
+
     /**
      * This gives better than expected values until 118%. after which it falls off a bit
      * @param potency
@@ -194,5 +220,14 @@ public class WandNBT extends ToolNBT {
      */
     private static float adjustPotency(float potency){
         return 1.05f * (float) Math.pow(potency, 9f/16f);
+    }
+
+    /**
+     * This gives better than expected values until 207%. after which it falls off a bit
+     * @param potency
+     * @return
+     */
+    private static float adjustPotencyStaff(float potency){
+        return 1.2f * (float) Math.pow(potency, 0.75f);
     }
 }

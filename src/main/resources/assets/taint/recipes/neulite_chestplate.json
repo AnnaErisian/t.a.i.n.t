@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "taint:neulite_chestplate"
+  },
+  "pattern": [
+    "A A",
+    "AAA",
+    "AAA"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_neulite"
+    }
+  }
+}

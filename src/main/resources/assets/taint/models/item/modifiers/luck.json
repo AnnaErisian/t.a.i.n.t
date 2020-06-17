@@ -8,6 +8,5 @@
 		"buckler": "taint:items/buckler/mod_luck",
 		"magicwand": "taint:items/magicwand/mod_luck",
 		"staff": "taint:items/staff/mod_luck",
-		"warwand": "taint:items/warwand/mod_luck"
 	}
 }

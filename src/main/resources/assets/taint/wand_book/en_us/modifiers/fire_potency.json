@@ -1,0 +1,17 @@
+{
+  "modifier": "taint_potency_fire",
+  "text": [
+    {
+      "text": "Provides extra fire potency to the casting implement.  Each level gives 10% base and some extra based on the existing potency, up to 4 levels can be added."
+    }
+  ],
+  "effects": [
+    "Increased fire potency",
+    "Flat increase",
+    "Multiple levels"
+  ],
+  "demoTool": [
+    "taint:magicwand",
+    "taint:staff"
+  ]
+}

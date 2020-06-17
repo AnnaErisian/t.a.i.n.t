@@ -8,6 +8,5 @@
 		"buckler": "taint:items/buckler/mod_soulbound",
 		"magicwand": "taint:items/magicwand/mod_soulbound",
 		"staff": "taint:items/staff/mod_soulbound",
-		"warwand": "taint:items/warwand/mod_soulbound"
 	}
 }

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:termium_hoe"
+  },
+  "pattern": [
+    "AA",
+    " S",
+    " S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_termium"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

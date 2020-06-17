@@ -17,8 +17,10 @@ public class WandBook extends BookData {
     public static void init() {
 
         BookLoader.registerPageType(WandMaterialContent.ID, WandMaterialContent.class);
+        BookLoader.registerPageType(WandModifierContent.ID, WandModifierContent.class);
         INSTANCE.addRepository(new FileRepository(new ResourceLocation(Taint.MODID, "wand_book").toString()));
         INSTANCE.addTransformer(new WandMaterialSectionTransformer());
+        INSTANCE.addTransformer(new WandModifierSectionTransformer());
         INSTANCE.addTransformer(BookTransformer.IndexTranformer());
     }
 }

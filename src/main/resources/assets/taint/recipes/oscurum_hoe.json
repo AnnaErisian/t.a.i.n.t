@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:oscurum_hoe"
+  },
+  "pattern": [
+    "AA",
+    " S",
+    " S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_oscurum"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

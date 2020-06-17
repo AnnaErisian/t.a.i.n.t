@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:neulite_pickaxe"
+  },
+  "pattern": [
+    "AAA",
+    " S ",
+    " S "
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_neulite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

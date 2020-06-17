@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "taint:oscurum_helmet"
+  },
+  "pattern": [
+    "AAA",
+    "A A"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_oscurum"
+    }
+  }
+}

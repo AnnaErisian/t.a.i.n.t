@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:cibarite_sword"
+  },
+  "pattern": [
+    "A",
+    "A",
+    "S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_cibarite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

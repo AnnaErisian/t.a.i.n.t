@@ -42,7 +42,15 @@ metalNames = [
 "terium",
 "termium",
 "unseelium",
-"urielium"
+"urielium",
+"gelonixite",
+"equistalite",
+"cenetenium",
+"altumaerite",
+"anguigenium",
+"roviqurium",
+"cerecesnium",
+"altisavanium"
 ]
 
 blockstate = "{{\n  \"variants\": {{\n    \"normal\": [\n      {{ \"model\": \"taint:block_{name}\" }}\n    ]\n  }}\n}}"

@@ -13,10 +13,5 @@
     "name": "wands_staff",
     "type": "tool",
     "data": "staff.json"
-  },
-  {
-    "name": "wands_warwand",
-    "type": "tool",
-    "data": "war_wand.json"
   }
 ]

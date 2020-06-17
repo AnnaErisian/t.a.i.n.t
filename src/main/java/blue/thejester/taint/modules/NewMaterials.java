@@ -5,10 +5,15 @@ import blue.thejester.taint.item.MetalMaterial;
 import blue.thejester.taint.traits.*;
 import c4.conarm.common.armor.traits.ArmorTraits;
 import c4.conarm.lib.materials.*;
+import com.github.alexthe666.iceandfire.compat.tinkers.TinkersCompat;
+import com.github.alexthe666.iceandfire.compat.tinkers.TraitFreeze;
 import landmaster.plustic.traits.*;
 import landmaster.plustic.traits.armor.DunansTransport;
+import landmaster.plustic.traits.armor.Invariant;
+import landmaster.plustic.util.ModifierRegisterPromise;
 import nc.integration.tconstruct.conarm.trait.NCArmorTraits;
 import nc.integration.tconstruct.trait.NCTraits;
+import nc.integration.tconstruct.trait.TraitUplifting;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraftforge.fml.common.event.FMLInterModComms;
@@ -23,6 +28,8 @@ import slimeknights.tconstruct.library.traits.ITrait;
 import slimeknights.tconstruct.shared.TinkerCommons;
 import slimeknights.tconstruct.shared.TinkerFluids;
 import slimeknights.tconstruct.tools.TinkerTraits;
+import slimeknights.tconstruct.tools.traits.TraitPetramor;
+import twilightforest.compat.TConstruct;
 
 public class NewMaterials implements IModule {
 
@@ -45,7 +52,268 @@ public class NewMaterials implements IModule {
         createTier6Materials();
         createTier7Materials();
         createTier8Materials();
+        createTier9Materials();
 
+    }
+
+    private void createTier9Materials() {
+        {
+            int color = 0x63efec;
+            String cn = "Gelonixite";
+            MetalMaterial mm = MetalMaterial.gelonixite;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(21.0f, 41.0f),
+                    new PlatesMaterialStats(1.05f, 12f, 5.5f),
+                    new TrimMaterialStats(15f),
+                    new HeadMaterialStats(2000, 11.8f, 12f, 10),
+                    new HandleMaterialStats(1.2f, 200),
+                    new ExtraMaterialStats(450),
+                    new BowMaterialStats(1.2f, 1.30f, 7.2f)
+            );
+            setRenderInfo(mat, color);
+            mat.addTrait(NCTraits.UPLIFTING);
+            mat.addTrait(NaturesWrath.natureswrath);
+            mat.addTrait(NaturesPower.naturespower);
+            ArmorMaterials.addArmorTrait(mat, FlightMastery.flightmastery, ArmorMaterialType.CORE);
+            addToArmorAll(mat, ArmorTraits.tasty);
+            addToArmorAll(mat, ArmorTraits.spiny);
+            addToArmorAll(mat, ArmorTraits.alien);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x5f5f5f;
+            String cn = "Equistalite";
+            MetalMaterial mm = MetalMaterial.equistalite;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(24.6f, 43.4f),
+                    new PlatesMaterialStats(1.3f, 13f, 6.0f),
+                    new TrimMaterialStats(19f),
+                    new HeadMaterialStats(2500, 12.2f, 11.0f, 10),
+                    new HandleMaterialStats(1.15f, 200),
+                    new ExtraMaterialStats(750)
+            );
+            setRenderInfo(mat, color);
+            mat.addTrait(Heavy.heavy);
+            mat.addTrait(TinkerTraits.enderference);
+            mat.addTrait(RampingStatusInflictor.nuclear_winter);
+            ArmorMaterials.addArmorTrait(mat, NickOfTime.nickOfTime, ArmorMaterialType.CORE);
+            addToArmorAll(mat, ArmorTraits.indomitable);
+            addToArmorAll(mat, Invariant.invariant);
+            ArmorMaterials.addArmorTrait(mat, ImmortalCenturion.immortalCenturion1);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x51a557;
+            String cn = "Cenetenium";
+            MetalMaterial mm = MetalMaterial.cenetenium;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(24.0f, 44.5f),
+                    new PlatesMaterialStats(1.2f, 18f, 7.0f),
+                    new TrimMaterialStats(20f),
+                    new HeadMaterialStats(2850, 12.4f, 8f, 10),
+                    new HandleMaterialStats(1.3f, 200),
+                    new ExtraMaterialStats(1000),
+                    new BowMaterialStats(0.4f, 1.40f, 12.2f)
+            );
+            setRenderInfo(mat, color);
+            mat.addTrait(TinkerTraits.writable);
+            mat.addTrait(TinkerTraits.dense);
+            mat.addTrait(TinkerTraits.duritos);
+            addToArmorAll(mat, Midden.midden);
+            addToArmorAll(mat, ArmorTraits.shielding);
+            addToArmorAll(mat, ArmorTraits.indomitable);
+            ArmorMaterials.addArmorTrait(mat, SnakeEater.snakeEater, ArmorMaterialType.CORE);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x001634;
+            String cn = "Altumaerite";
+            MetalMaterial mm = MetalMaterial.altumaerite;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(23.4f, 41.4f),
+                    new PlatesMaterialStats(1.15f, 13f, 6.4f),
+                    new TrimMaterialStats(17f),
+                    new HeadMaterialStats(2400, 12f, 10.8f, 10),
+                    new HandleMaterialStats(1.18f, 200),
+                    new ExtraMaterialStats(580),
+                    new BowMaterialStats(0.95f, 3.40f, 6.0f)
+            );
+            setRenderInfo(mat, color);
+            addToToolAll(mat, TinkerTraits.alien);
+            addToToolAll(mat, TinkerTraits.stonebound);
+            mat.addTrait(TinkerTraits.writable, MaterialTypes.HEAD);
+            addToToolAll(mat, TinkerTraits.aquadynamic);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.alien);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.petravidity);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.magnetic2);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.aquaspeed);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x91b47d;
+            String cn = "Anguigenium";
+            MetalMaterial mm = MetalMaterial.anguigenium;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(23.8f, 43.4f),
+                    new PlatesMaterialStats(1.18f, 10f, 6.6f),
+                    new TrimMaterialStats(16f),
+                    new HeadMaterialStats(2350, 11.2f, 9.2f, 10),
+                    new HandleMaterialStats(1.1f, 200),
+                    new ExtraMaterialStats(500)
+            );
+            setRenderInfo(mat, color);
+            mat.addTrait(TinkersCompat.FREEZE_II, MaterialTypes.HEAD);
+            mat.addTrait(TinkersCompat.BURN_II, MaterialTypes.HEAD);
+            mat.addTrait(TinkersCompat.FREEZE_I, MaterialTypes.HANDLE);
+            mat.addTrait(TinkersCompat.BURN_I, MaterialTypes.EXTRA);
+            addToToolAll(mat, Annihilator.annihilator);
+            addToToolAll(mat, Global.global);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.indomitable);
+            ArmorMaterials.addArmorTrait(mat, MasterOfTheUniverse.master_of_the_universe);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.shielding);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x8b8b8b;
+            String cn = "Roviqurium";
+            MetalMaterial mm = MetalMaterial.roviqurium;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(22.8f, 43.6f),
+                    new PlatesMaterialStats(1.4f, 13f, 6.2f),
+                    new TrimMaterialStats(17f),
+                    new HeadMaterialStats(2700, 11.4f, 9.8f, 10),
+                    new HandleMaterialStats(1.4f, 200),
+                    new ExtraMaterialStats(750)
+            );
+            setRenderInfo(mat, color);
+            mat.addTrait(Tetraboost.tetraboost2, MaterialTypes.HEAD);
+            mat.addTrait(Tetraboost.tetraboost);
+            new ModifierRegisterPromise("glowing").thenAccept(modifier -> mat.addTrait((ITrait)modifier)); // since Glowing is also a Trait
+            addToToolAll(mat, TinkerTraits.petramor);
+            ArmorMaterials.addArmorTrait(mat, Tetraboost.tetraboost2, ArmorMaterialType.CORE);
+            ArmorMaterials.addArmorTrait(mat, Tetraboost.tetraboost, ArmorMaterialType.TRIM);
+            ArmorMaterials.addArmorTrait(mat, Tetraboost.tetraboost, ArmorMaterialType.PLATES);
+            addToArmorAll(mat, ArmorTraits.subterranean);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x1d4964;
+            String cn = "Altisavanium";
+            MetalMaterial mm = MetalMaterial.altisavanium;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(26.8f, 47.0f),
+                    new PlatesMaterialStats(1.3f, 14f, 7.6f),
+                    new TrimMaterialStats(18f),
+                    new HeadMaterialStats(4000, 12.6f, 11.5f, 10),
+                    new HandleMaterialStats(2.0f, 200),
+                    new ExtraMaterialStats(800)
+            );
+            setRenderInfo(mat, color);
+            addToToolAll(mat, TinkerTraits.petramor);
+            addToToolAll(mat, TinkerTraits.dense);
+            addToToolAll(mat, TinkerTraits.stonebound);
+            mat.addTrait(TConstruct.stalwart, MaterialTypes.HEAD);
+            ArmorMaterials.addArmorTrait(mat, MasterOfTheUniverse.master_of_the_universe, ArmorMaterialType.CORE);
+            ArmorMaterials.addArmorTrait(mat, Terrafirma.terrafirma.get(0), ArmorMaterialType.CORE);
+            addToArmorAll(mat, ArmorTraits.indomitable);
+            addToArmorAll(mat, ArmorTraits.invigorating);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.blessed, ArmorMaterialType.PLATES);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.steady, ArmorMaterialType.PLATES);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.blessed, ArmorMaterialType.TRIM);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.steady, ArmorMaterialType.TRIM);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
+
+        {
+            int color = 0x8b8cc6;
+            String cn = "Cerecesnium";
+            MetalMaterial mm = MetalMaterial.cerecesnium;
+            String ln = mm.name();
+            Material mat = new Material(cn, color);
+            TinkerRegistry.addMaterialStats(mat,
+                    new CoreMaterialStats(28.8f, 46.0f),
+                    new PlatesMaterialStats(1.25f, 11f, 6.4f),
+                    new TrimMaterialStats(16f),
+                    new HeadMaterialStats(3250, 12.4f, 11.0f, 10),
+                    new HandleMaterialStats(1.7f, 200),
+                    new ExtraMaterialStats(600),
+                    new BowMaterialStats(2f, 1.60f, 6.0f)
+            );
+            setRenderInfo(mat, color);
+            addToToolAll(mat, Mana.mana);
+            addToToolAll(mat, Elemental.elemental);
+            mat.addTrait(Botanical.botanical.get(1), MaterialTypes.HEAD);
+            addToToolAll(mat, Annihilator.annihilator);
+            ArmorMaterials.addArmorTrait(mat, Gaian.gaian, ArmorMaterialType.CORE);
+            ArmorMaterials.addArmorTrait(mat, Superstar.superstar, ArmorMaterialType.CORE);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.aquaspeed, ArmorMaterialType.PLATES);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.aquaspeed, ArmorMaterialType.TRIM);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.shielding, ArmorMaterialType.PLATES);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.shielding, ArmorMaterialType.TRIM);
+            addToArmorAll(mat, Mana.mana);
+            addToArmorAll(mat, Skyweight.skyweight);
+
+            mm.material = mat;
+            mm.fluid = Create.plain(ln, color);
+            MaterialIntegration integration = new MaterialIntegration(mat, mm.fluid, mm.getOreName());
+            integration.setRepresentativeItem("ingot"+cn);
+            TinkerRegistry.integrate(integration).preInit();
+        }
     }
 
     private void createTier8Materials() {
@@ -104,7 +372,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(22.8f, 20.2f),
+                    new CoreMaterialStats(22.8f, 30.2f),
                     new PlatesMaterialStats(1.02f, 12f, 3.4f),
                     new TrimMaterialStats(17f),
                     new HeadMaterialStats(2250, 9.11f, 10.8f, 10),
@@ -131,7 +399,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(22.8f, 20.2f),
+                    new CoreMaterialStats(22.8f, 24.2f),
                     new PlatesMaterialStats(1.2f, 12f, 3.4f),
                     new TrimMaterialStats(18f)
             );
@@ -153,7 +421,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color+0x201000);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(18.2f, 20.8f),
+                    new CoreMaterialStats(18.2f, 28.8f),
                     new PlatesMaterialStats(1.22f, 15f, 3.2f),
                     new TrimMaterialStats(16f)
             );
@@ -220,7 +488,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(23.8f, 21.4f),
+                    new CoreMaterialStats(23.8f, 33.4f),
                     new PlatesMaterialStats(1.23f, 19f, 5f),
                     new TrimMaterialStats(16f)
             );
@@ -331,7 +599,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(25f, 20.8f),
+                    new CoreMaterialStats(25f, 21.8f),
                     new PlatesMaterialStats(1.4f, 13f, 4f),
                     new TrimMaterialStats(12f),
                     new HeadMaterialStats(1780, 8.6f, 8.4f, 9),
@@ -358,7 +626,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(18f, 21.0f),
+                    new CoreMaterialStats(18f, 22.0f),
                     new PlatesMaterialStats(1.2f, 11f, 4f),
                     new TrimMaterialStats(8f)
             );
@@ -380,7 +648,7 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(16f, 19.6f),
+                    new CoreMaterialStats(16f, 20.6f),
                     new PlatesMaterialStats(1.18f, 15f, 3.5f),
                     new TrimMaterialStats(9f),
                     new HeadMaterialStats(780, 14f, 9.4f, 9),
@@ -436,7 +704,7 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(2100, 8.2f, 11f, 7),
                     new HandleMaterialStats(1.15f, 190),
                     new ExtraMaterialStats(180),
-                    new BowMaterialStats(1.9f, 2.1f, 6f)
+                    new BowMaterialStats(1.9f, 2.1f, 5f)
             );
             setRenderInfo(mat, color);
             mat.addTrait(FaeFlight.faeFlight, MaterialTypes.HEAD);
@@ -485,13 +753,13 @@ public class NewMaterials implements IModule {
             String ln = mm.name();
             Material mat = new Material(cn, color);
             TinkerRegistry.addMaterialStats(mat,
-                    new CoreMaterialStats(17f, 19.8f),
-                    new PlatesMaterialStats(1.45f, 14f, 4f),
-                    new TrimMaterialStats(22f)
+                    new CoreMaterialStats(17f, 12.8f),
+                    new PlatesMaterialStats(1.15f, 4f, 2f),
+                    new TrimMaterialStats(12f)
             );
             setRenderInfo(mat, color);
-            ArmorMaterials.addArmorTrait(mat, Beezerker.beezerker);
-            addToArmorAll(mat, ArmorTraits.lightweight);
+            ArmorMaterials.addArmorTrait(mat, NickOfTime.nickOfTime);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.lightweight);
 
             mm.material = mat;
             mm.fluid = Create.plain(ln, color);
@@ -598,13 +866,14 @@ public class NewMaterials implements IModule {
                     new HeadMaterialStats(1000, 11f, 8.6f, 8),
                     new HandleMaterialStats(1.2f, 190),
                     new ExtraMaterialStats(190),
-                    new BowMaterialStats(2.4f, 2.2f, 6f)
+                    new BowMaterialStats(2.4f, 2.2f, 2f)
             );
             setRenderInfo(mat, color);
             mat.addTrait(Launching.launching, MaterialTypes.HEAD);
             addToToolAll(mat, TinkerTraits.lightweight);
             ArmorMaterials.addArmorTrait(mat, AirMastery.airmastery, ArmorMaterialType.CORE);
-            ArmorMaterials.addArmorTrait(mat, ArmorTraits.featherweight);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.featherweight, ArmorMaterialType.PLATES);
+            ArmorMaterials.addArmorTrait(mat, ArmorTraits.featherweight, ArmorMaterialType.TRIM);
 
             mm.material = mat;
             mm.fluid = Create.plain(ln, color);
@@ -1016,40 +1285,53 @@ public class NewMaterials implements IModule {
         initTier6Alloys();
         initTier7Alloys();
         initTier8Alloys();
+        initTier9Alloys();
 
+    }
+
+    private void initTier9Alloys() {
+
+        sendTiCAlloyInfo("gelonixite", 1, fluid("adamantite", 2), fluid("starsteel", 1), fluid("dragonsteel_ice", 1));
+        sendTiCAlloyInfo("equistalite", 1, fluid("adamantite", 3), fluid("dupondium", 1), fluid("sand", 1));
+        sendTiCAlloyInfo("cenetenium", 1, fluid("adamantite", 3), fluid("urielium", 1), fluid("atercaeum", 1));
+        sendTiCAlloyInfo("altumaerite", 1, fluid("adamantite", 3), fluid("orichalcum", 1));
+        sendTiCAlloyInfo("anguigenium", 1, fluid("adamantite", 2), fluid("solairite", 1), fluid("dragonsteel_fire", 1), fluid("dragonsteel_ice", 1));
+        sendTiCAlloyInfo("roviqurium", 1, fluid("adamantite", 2), fluid("ptemnium", 1), fluid("dragonsteel_fire", 1));
+        sendTiCAlloyInfo("cerecesnium", 1, fluid("anguigenium", 2), fluid("roviqurium", 2), fluid("cenetenium", 2));
+        sendTiCAlloyInfo("altisavanium", 1, fluid("gelonixite", 2), fluid("equistalite", 2), fluid("altumaerite", 2));
     }
 
     private void initTier8Alloys() {
-        sendTiCAlloyInfo("dupondium", 1, fluid("soldrite", 3), fluid("atercaeum", 4), fluid("netherstar", 25));
-        sendTiCAlloyInfo("starsteel", 1, fluid("unseelium", 3), fluid("cibarite", 2));
-        sendTiCAlloyInfo("adamantite", 2, fluid("dupondium", 5), fluid("atercaeum", 7), fluid("starsteel", 5), fluid("ptemnium", 6));
-        sendTiCAlloyInfo("ptemnium", 2, fluid("inurose", 5), fluid("accelerase", 4), fluid("urielium", 3));
+        sendTiCAlloyInfo("dupondium", 2, fluid("soldrite", 3), fluid("atercaeum", 4), fluid("orinase", 2));
+        sendTiCAlloyInfo("starsteel", 1, fluid("dragonsteel_ice", 3), fluid("cibarite", 2));
+        sendTiCAlloyInfo("adamantite", 2, fluid("orichalcum", 5), fluid("atercaeum", 7), fluid("starsteel", 5), fluid("ptemnium", 6));
+        sendTiCAlloyInfo("ptemnium", 3, fluid("inurose", 5), fluid("accelerase", 4), fluid("urielium", 3), fluid("dupondium", 5));
         sendTiCAlloyInfo("orichalcum", 1, fluid("inurose", 5), fluid("cibarite", 5), fluid("oscurum", 5));
-        sendTiCAlloyInfo("solairite", 3, fluid("oscurum", 2), fluid("antenium", 6));
-        sendTiCAlloyInfo("urielium", 2, fluid("solairite", 4), fluid("thermoconducting", 6));
+        sendTiCAlloyInfo("solairite", 5, fluid("oscurum", 4), fluid("antenium", 6), fluid("superlumium", 7));
+        sendTiCAlloyInfo("urielium", 2, fluid("solairite", 4), fluid("thermoconducting", 6), fluid("terium", 6), fluid("dragonsteel_fire", 2));
     }
 
     private void initTier7Alloys() {
-        sendTiCAlloyInfo("soldrite", 18, fluid("lordslime", 18), fluid("valkyrie", 18));
+        sendTiCAlloyInfo("soldrite", 18, fluid("lordslime", 18), fluid("valkyrie", 18), fluid("constantan", 54));
         sendTiCAlloyInfo("superlumium", 18, fluid("gravitite", 36), fluid("lumium", 18), fluid("experience", 125));
         sendTiCAlloyInfo("antenium", 18, fluid("valkyrie", 16), fluid("neulite", 36), fluid("lava", 250));
-        sendTiCAlloyInfo("accelerase", 2, fluid("neulite", 2), fluid("fierkite", 2));
-        sendTiCAlloyInfo("terium", 36, fluid("neulite", 36), fluid("sestertium", 18), fluid("sand", 250));
+        sendTiCAlloyInfo("accelerase", 2, fluid("neulite", 2), fluid("fierkite", 2), fluid("sand", 4));
+        sendTiCAlloyInfo("terium", 36, fluid("neulite", 36), fluid("sestertium", 18), fluid("escalite", 72));
     }
 
     private void initTier6Alloys() {
-        sendTiCAlloyInfo("unseelium", 2, fluid("faerite", 2), fluid("caersin", 2));
+        sendTiCAlloyInfo("unseelium", 3, fluid("faerite", 2), fluid("caersin", 2), fluid("infernium", 2));
         sendTiCAlloyInfo("orinase", 3, fluid("caersin", 3), fluid("octine", 2), fluid("cannium", 1));
-        sendTiCAlloyInfo("rallium", 9, fluid("caersin", 18), fluid("endacid", 125));
+        sendTiCAlloyInfo("rallium", 9, fluid("caersin", 18), fluid("endacid", 125), fluid("aerium", 9));
         sendTiCAlloyInfo("tempestite", 27, fluid("luginite", 18), fluid("endacid", 250), fluid("enderium", 27));
-        sendTiCAlloyInfo("fierkite", 4, fluid("tempestite", 2), fluid("aerium", 4), fluid("unseelium", 3));
+        sendTiCAlloyInfo("fierkite", 4, fluid("tempestite", 2), fluid("rallium", 4), fluid("unseelium", 3));
     }
 
     private void initTier5Alloys() {
         sendTiCAlloyInfo("lunite", 27, fluid("peractium", 18), fluid("tar", 125), fluid("adipatum", 36));
         sendTiCAlloyInfo("betweensteel", 5, fluid("octine", 3), fluid("syrmorite", 4), fluid("lunite", 1));
-        sendTiCAlloyInfo("cannium", 4, fluid("betweensteel", 3), fluid("black_rosite", 4));
-        sendTiCAlloyInfo("ascalite", 2, fluid("adipatum", 2), fluid("enderium", 3));
+        sendTiCAlloyInfo("cannium", 48, fluid("betweensteel", 36), fluid("black_rosite", 72), fluid("netherstar", 25));
+        sendTiCAlloyInfo("ascalite", 2, fluid("adipatum", 2), fluid("enderium", 3), fluid("betweensteel", 3));//TODO
         sendTiCAlloyInfo("aerium", 27, fluid("ascalite", 18), fluid("sestertium", 36), fluid("sponge", 100));
     }
 
@@ -1057,18 +1339,18 @@ public class NewMaterials implements IModule {
         sendTiCAlloyInfo("lordslime", 72, fluid("piridium", 72), fluid("blueslime", 250), fluid("ardorum", 72));
         sendTiCAlloyInfo("littium", 27, fluid("ardorum", 36), fluid("water", 100), fluid("mana", 10));
         sendTiCAlloyInfo("infernium", 3, fluid("obsidian", 4), fluid("manyullyn", 2), fluid("termium", 1));
-        sendTiCAlloyInfo("peractium", 4, fluid("iridium", 2), fluid("termium", 1), fluid("knightmetal", 3));
-        sendTiCAlloyInfo("sestertium", 18, fluid("fierymetal", 12), fluid("lordslime", 24), fluid("cryotheum", 125), fluid("petrotheum", 125));
+        sendTiCAlloyInfo("peractium", 4, fluid("iridium", 2), fluid("termium", 1), fluid("knightmetal", 3), fluid("knightmetal", 3));//TODO
+        sendTiCAlloyInfo("sestertium", 18, fluid("fierymetal", 12), fluid("lordslime", 18), fluid("cryotheum", 125), fluid("slipsteel", 24));//TODO
     }
 
     private void initTier3Alloys() {
-        sendTiCAlloyInfo("piridium", 12, fluid("knightslime", 18), fluid("aerotheum", 100));
+        sendTiCAlloyInfo("piridium", 8, fluid("knightslime", 18), fluid("aerotheum", 100));
         sendTiCAlloyInfo("luginite", 9, fluid("hot_spring_water", 125), fluid("prismarine", 72), fluid("aluminum", 18));
         sendTiCAlloyInfo("black_rosite", 8, fluid("mirion", 18), fluid("poison", 125), fluid("pyrotheum", 100));
     }
 
     private void initTier2Alloys() {
-        sendTiCAlloyInfo("slipsteel", 12, fluid("steel", 18), fluid("refined_fuel", 125));
+        sendTiCAlloyInfo("slipsteel", 24, fluid("steel", 36), fluid("pigiron", 18), fluid("refined_fuel", 250)); //TODO
         sendTiCAlloyInfo("faerite", 96, fluid("manasteel", 108), fluid("prismarine", 36), fluid("redstone", 250));
         sendTiCAlloyInfo("escalite", 2, fluid("gold", 2), fluid("marshmallow", 5), fluid("milk_chocolate", 4));
     }

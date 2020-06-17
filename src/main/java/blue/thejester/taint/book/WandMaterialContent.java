@@ -148,7 +148,7 @@ public class WandMaterialContent extends ContentMaterial {
             displayArmor.add(elementItem);
         }
 
-        ToolCore[] wandTypes = new ToolCore[]{Tools.wand, Tools.staff, Tools.warwand};
+        ToolCore[] wandTypes = new ToolCore[]{Tools.wand, Tools.staff};
 
         for (ToolCore wand : wandTypes) {
             if (wand == null) {

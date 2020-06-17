@@ -39,7 +39,8 @@ public class ToolGlaive extends SwordCore {
 
 
     private static final float DURABILITY_MODIFIER = 1.8f;
-    private static final UUID GLAIVE_REACH_MODIFIER = UUID.fromString("a2dd4317-5694-43fa-8b0b-ae52ab9c8bbc");
+//    private static final UUID GLAIVE_REACH_MODIFIER = UUID.fromString("a2dd4317-5694-43fa-8b0b-ae52ab9c8bbc");
+
 
     public ToolGlaive() {
         super(PartMaterialType.handle(TinkerTools.toolRod),
@@ -156,14 +157,14 @@ public class ToolGlaive extends SwordCore {
         return data;
     }
 
-    @Override
-    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
-        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
-
-        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.glaive) {
-            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(GLAIVE_REACH_MODIFIER, "Tool modifier", 2.0, Constants.AttributeModifierOperation.ADD));
-        }
-
-        return multimap;
-    }
+//    @Override
+//    public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot equipmentSlot, ItemStack stack) {
+//        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot, stack);
+//
+//        if (equipmentSlot == EntityEquipmentSlot.MAINHAND && stack.getItem() == Tools.glaive) {
+//            multimap.put(EntityPlayer.REACH_DISTANCE.getName(), new AttributeModifier(GLAIVE_REACH_MODIFIER, "Tool modifier", 2.0, Constants.AttributeModifierOperation.ADD));
+//        }
+//
+//        return multimap;
+//    }
 }

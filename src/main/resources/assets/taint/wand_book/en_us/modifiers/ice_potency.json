@@ -1,0 +1,17 @@
+{
+  "modifier": "taint_potency_ice",
+  "text": [
+    {
+      "text": "Provides extra ice potency to the casting implement.  Each level gives 10% base and some extra based on the existing potency, up to 4 levels can be added."
+    }
+  ],
+  "effects": [
+    "Increased ice potency",
+    "Flat increase",
+    "Multiple levels"
+  ],
+  "demoTool": [
+    "taint:magicwand",
+    "taint:staff"
+  ]
+}

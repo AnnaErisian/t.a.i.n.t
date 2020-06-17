@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:atercaeum_shovel"
+  },
+  "pattern": [
+    "A",
+    "S",
+    "S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_atercaeum"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

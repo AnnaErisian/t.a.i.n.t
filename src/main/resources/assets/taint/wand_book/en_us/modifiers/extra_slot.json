@@ -1,0 +1,17 @@
+{
+  "modifier": "taint_upgrade_slots",
+  "text": [
+    {
+      "text": "Lets you install an extra Wizardry upgrade.  Up to three rounds can be added, using only one modifier slot."
+    }
+  ],
+  "effects": [
+    "Extra slot for Arcane Workbench upgrades",
+    "Requires 8 Astral Diamonds per upgrade",
+    "Multiple levels"
+  ],
+  "demoTool": [
+    "taint:magicwand",
+    "taint:staff"
+  ]
+}

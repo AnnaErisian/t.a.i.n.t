@@ -1,0 +1,34 @@
+[
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/fire_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/ice_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/lightning_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/earth_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/necromancy_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/sorcery_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/healing_potency.json"
+  },
+  {
+    "type": "wand_modifier",
+    "data": "modifiers/extra_slot.json"
+  }
+]

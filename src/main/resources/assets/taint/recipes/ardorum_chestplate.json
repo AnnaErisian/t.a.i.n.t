@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "taint:ardorum_chestplate"
+  },
+  "pattern": [
+    "A A",
+    "AAA",
+    "AAA"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_ardorum"
+    }
+  }
+}

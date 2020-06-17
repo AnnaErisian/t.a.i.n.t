@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:cibarite_shovel"
+  },
+  "pattern": [
+    "A",
+    "S",
+    "S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_cibarite"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

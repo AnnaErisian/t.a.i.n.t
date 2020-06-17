@@ -8,6 +8,5 @@
 		"buckler": "taint:items/buckler/mod_glowing",
 		"magicwand": "taint:items/magicwand/mod_glowing",
 		"staff": "taint:items/staff/mod_glowing",
-		"warwand": "taint:items/warwand/mod_glowing"
 	}
 }

@@ -1,6 +1,7 @@
 package blue.thejester.taint.tools;
 
 import blue.thejester.taint.modules.Tools;
+import blue.thejester.taint.traits.Arcane;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Sets;
 import electroblob.wizardry.Wizardry;
@@ -32,6 +33,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
@@ -60,6 +62,7 @@ import slimeknights.tconstruct.library.tools.ToolNBT;
 import slimeknights.tconstruct.library.utils.TagUtil;
 import slimeknights.tconstruct.library.utils.TinkerUtil;
 import slimeknights.tconstruct.library.utils.ToolHelper;
+import slimeknights.toolleveling.TinkerToolLeveling;
 
 import javax.annotation.Nonnull;
 import java.util.List;
@@ -76,15 +79,16 @@ import static blue.thejester.taint.tools.WandPartMaterialStats.*;
 public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCastingItem, IManaStoringItem {
 
     public ToolWand() {
-        this("magicwand",   new PartMaterialType(Tools.wandGem, WandGemMaterialStats.TYPE),
+        this("magicwand", Category.NO_MELEE,  new PartMaterialType(Tools.wandGem, WandGemMaterialStats.TYPE),
                 new PartMaterialType(Tools.wandSocket, WandSocketMaterialStats.TYPE),
                 new PartMaterialType(Tools.wandCore, WandCoreMaterialStats.TYPE));
     }
 
-    public ToolWand(String key, PartMaterialType... parts) {
+    public ToolWand(String key, Category cat,  PartMaterialType... parts) {
         super(parts);
 
-        this.addCategory(Category.WEAPON);
+        this.addCategory(cat);
+        this.addCategory(Tools.categoryMagic);
 
         setTranslationKey(key).setRegistryName(key);
 
@@ -173,13 +177,26 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
     private boolean canBeUpgraded(ItemStack stack, Item specialUpgrade) {
         if(WandHelper.getTotalUpgrades(stack) < getUpgradeSlots(stack)) {
             if(specialUpgrade == WizardryItems.attunement_upgrade) {
-                return WandHelper.getUpgradeLevel(stack, specialUpgrade) < Constants.UPGRADE_STACK_LIMIT;
-            } else {
-                return WandHelper.getUpgradeLevel(stack, specialUpgrade) < getUpgradeStackLimit(stack);
+                return TaintWandHelper.getAttunementLevel(stack) < Constants.UPGRADE_STACK_LIMIT;
+            } else if (specialUpgrade == WizardryItems.blast_upgrade){
+                return TaintWandHelper.getBlastLevel(stack, null) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.condenser_upgrade){
+                return TaintWandHelper.getCondenserLevel(stack) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.cooldown_upgrade){
+                return TaintWandHelper.getCooldownLevel(stack, null) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.duration_upgrade){
+                return TaintWandHelper.getDurationLevel(stack, null) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.melee_upgrade){
+                return TaintWandHelper.getMeleeLevel(stack) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.range_upgrade){
+                return TaintWandHelper.getRangeLevel(stack, null) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.siphon_upgrade){
+                return TaintWandHelper.getSiphonLevel(stack) < getUpgradeStackLimit(stack);
+            } else if (specialUpgrade == WizardryItems.storage_upgrade){
+                return TaintWandHelper.getStorageLevel(stack) < getUpgradeStackLimit(stack);
             }
-        } else {
-            return false;
         }
+        return false;
     }
 
     private int getUpgradeStackLimit(ItemStack stack) {
@@ -189,26 +206,20 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
     private float getPotencyIncrease(ItemStack stack, Spell spell) {
         WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
-        return getPotencyIncrease(stack, spell.getElement());
+        return TaintWandHelper.getPotencyIncrease(this, stack, spell);
     }
 
-    private float getPotencyIncrease(ItemStack stack, Element element) {
-        WandNBT nbt = new WandNBT(TagUtil.getToolTag(stack));
-        switch (element) {
-            case FIRE: return nbt.fire;
-            case ICE: return nbt.ice;
-            case LIGHTNING: return nbt.lightning;
-            case NECROMANCY: return nbt.necro;
-            case EARTH: return nbt.earth;
-            case SORCERY: return nbt.sorc;
-            case HEALING: return nbt.healing;
-        }
-        return 0;
-    }
 
     @Override
     public boolean showDurabilityBar(ItemStack stack) {
         return stack.isItemDamaged();
+    }
+
+    @Override
+    public void addMaterialTraits(NBTTagCompound root, List<Material> materials) {
+        super.addMaterialTraits(root, materials);
+
+        Arcane.arcane.apply(root);
     }
 
     /*==================================================================================================================
@@ -312,7 +323,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
     public int getMaxDamage(ItemStack stack){
         // + 0.5f corrects small float errors rounding down
         return (int)(super.getMaxDamage(stack) * (1.0f + Constants.STORAGE_INCREASE_PER_LEVEL
-                * WandHelper.getUpgradeLevel(stack, WizardryItems.storage_upgrade)) + 0.5f);
+                * TaintWandHelper.getStorageLevel(stack)) + 0.5f);
     }
 
     @Override
@@ -329,9 +340,9 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
         WandHelper.decrementCooldowns(stack);
 
         // Decrements wand damage (increases mana) every 1.5 seconds if it has a condenser upgrade
-        if(!world.isRemote && !this.isManaFull(stack) && world.getTotalWorldTime() % Constants.CONDENSER_TICK_INTERVAL == 0){
+        if(!world.isRemote && world.getTotalWorldTime() % Constants.CONDENSER_TICK_INTERVAL == 0){
             // If the upgrade level is 0, this does nothing anyway.
-            this.rechargeMana(stack, WandHelper.getUpgradeLevel(stack, WizardryItems.condenser_upgrade));
+            TaintWandHelper.triggerCondenser(this, stack, world, entity);
         }
     }
 
@@ -341,7 +352,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
         Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(slot, stack);
 
         if(slot == EntityEquipmentSlot.MAINHAND){
-            int level = WandHelper.getUpgradeLevel(stack, WizardryItems.melee_upgrade);
+            int level = TaintWandHelper.getMeleeLevel(stack);
             // This check doesn't affect the damage output, but it does stop a blank line from appearing in the tooltip.
             if(level > 0 && !this.isManaEmpty(stack)){
                 multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
@@ -356,7 +367,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
     @Override
     public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase wielder){
 
-        int level = WandHelper.getUpgradeLevel(stack, WizardryItems.melee_upgrade);
+        int level = TaintWandHelper.getMeleeLevel(stack);
         int mana = this.getMana(stack);
 
         if(level > 0 && mana > 0) this.consumeMana(stack, level * 4, wielder);
@@ -366,7 +377,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
     @Override
     public boolean canDestroyBlockInCreative(World world, BlockPos pos, ItemStack stack, EntityPlayer player){
-        return WandHelper.getUpgradeLevel(stack, WizardryItems.melee_upgrade) == 0;
+        return TaintWandHelper.getMeleeLevel(stack) == 0;
     }
 
     // A proper hook was introduced for this in Forge build 14.23.5.2805 - Hallelujah, finally!
@@ -446,13 +457,13 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
             // +0.5f is necessary due to the error in the way floats are calculated.
             tooltip.add(net.minecraft.client.resources.I18n.format("item.taint.wand.potency",
-                    FIRE_COLOR, (int)(getPotencyIncrease(stack, Element.FIRE) * 100 + 0.5f) + "%",
-                    WandPartMaterialStats.ICE_COLOR, (int)(getPotencyIncrease(stack, Element.ICE) * 100 + 0.5f) + "%",
-                    WandPartMaterialStats.LIGHTNING_COLOR, (int)(getPotencyIncrease(stack, Element.LIGHTNING) * 100 + 0.5f) + "%",
-                    WandPartMaterialStats.EARTH_COLOR, (int)(getPotencyIncrease(stack, Element.EARTH) * 100 + 0.5f) + "%",
-                    WandPartMaterialStats.NECROMANCY_COLOR, (int)(getPotencyIncrease(stack, Element.NECROMANCY) * 100 + 0.5f) + "%",
-                    WandPartMaterialStats.SORCERY_COLOR, (int)(getPotencyIncrease(stack, Element.SORCERY) * 100 + 0.5f) + "%",
-                    WandPartMaterialStats.HEALING_COLOR, (int)(getPotencyIncrease(stack, Element.HEALING) * 100 + 0.5f) + "%"));
+                    FIRE_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.FIRE) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.ICE_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.ICE) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.LIGHTNING_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.LIGHTNING) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.EARTH_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.EARTH) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.NECROMANCY_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.NECROMANCY) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.SORCERY_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.SORCERY) * 100 + 0.5f) + "%",
+                    WandPartMaterialStats.HEALING_COLOR, (int)(TaintWandHelper.getPotencyIncreaseElement(this, stack, Element.HEALING) * 100 + 0.5f) + "%"));
         }
         // detailed data
         else if(Config.extraTooltips && shift) {
@@ -639,6 +650,15 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
                 WandHelper.setCurrentCooldown(stack, (int)(spell.getCooldown() * modifiers.get(WizardryItems.cooldown_upgrade) * cooldownFactor()));
             }
 
+            // Progression
+            if(castingTick % CONTINUOUS_TRACKING_INTERVAL == 0){
+                if(ToolHelper.getTraits(stack).contains(TinkerToolLeveling.modToolLeveling)) {
+                    int progression = (int)(spell.getCost() * modifiers.get(SpellModifiers.PROGRESSION));
+                    progression = Math.max(1, progression/10);
+                    TinkerToolLeveling.modToolLeveling.addXp(stack, progression, caster);
+                }
+            }
+
             return true;
         }
 
@@ -722,21 +742,10 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
         SpellModifiers modifiers = new SpellModifiers();
 
         // Now we only need to add multipliers if they are not 1.
-        int level = WandHelper.getUpgradeLevel(stack, WizardryItems.range_upgrade);
-        if(level > 0)
-            modifiers.set(WizardryItems.range_upgrade, 1.0f + level * Constants.RANGE_INCREASE_PER_LEVEL, true);
-
-        level = WandHelper.getUpgradeLevel(stack, WizardryItems.duration_upgrade);
-        if(level > 0)
-            modifiers.set(WizardryItems.duration_upgrade, 1.0f + level * Constants.DURATION_INCREASE_PER_LEVEL, false);
-
-        level = WandHelper.getUpgradeLevel(stack, WizardryItems.blast_upgrade);
-        if(level > 0)
-            modifiers.set(WizardryItems.blast_upgrade, 1.0f + level * Constants.BLAST_RADIUS_INCREASE_PER_LEVEL, true);
-
-        level = WandHelper.getUpgradeLevel(stack, WizardryItems.cooldown_upgrade);
-        if(level > 0)
-            modifiers.set(WizardryItems.cooldown_upgrade, 1.0f - level * Constants.COOLDOWN_REDUCTION_PER_LEVEL, true);
+            modifiers.set(WizardryItems.range_upgrade, TaintWandHelper.getRangeEffect(stack, player, spell), true);
+            modifiers.set(WizardryItems.duration_upgrade, TaintWandHelper.getDurationEffect(stack, player, spell), false);
+            modifiers.set(WizardryItems.blast_upgrade, TaintWandHelper.getBlastEffect(stack, player, spell), true);
+            modifiers.set(WizardryItems.cooldown_upgrade, TaintWandHelper.getCooldownEffect(stack, player, spell), true);
 
         modifiers.set(SpellModifiers.POTENCY, 1.0f + getPotencyIncrease(stack, spell), true);
 
@@ -773,7 +782,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
     @Override
     public int getSpellSlotCount(ItemStack stack){
-        return BASE_SPELL_SLOTS + WandHelper.getUpgradeLevel(stack, WizardryItems.attunement_upgrade);
+        return BASE_SPELL_SLOTS + TaintWandHelper.getAttunementLevel(stack);
     }
 
     @Override
@@ -802,8 +811,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
 
                 }else if(specialUpgrade == WizardryItems.attunement_upgrade){
 
-                    int newSlotCount = BASE_SPELL_SLOTS + WandHelper.getUpgradeLevel(centre.getStack(),
-                            WizardryItems.attunement_upgrade);
+                    int newSlotCount = BASE_SPELL_SLOTS + TaintWandHelper.getAttunementLevel(centre.getStack());
 
                     Spell[] spells = WandHelper.getSpells(centre.getStack());
                     Spell[] newSpells = new Spell[newSlotCount];
@@ -897,7 +905,7 @@ public class ToolWand extends TinkerToolCore implements IWorkbenchItem, ISpellCa
         if(stack.getItem() instanceof IManaStoringItem){
 
             // Nobody said it had to be a wand, as long as it's got a melee upgrade it counts
-            int level = WandHelper.getUpgradeLevel(stack, WizardryItems.melee_upgrade);
+            int level = TaintWandHelper.getMeleeLevel(stack);
             int mana = ((IManaStoringItem)stack.getItem()).getMana(stack);
 
             if(level > 0 && mana > 0){

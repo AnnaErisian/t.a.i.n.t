@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:caersin_sword"
+  },
+  "pattern": [
+    "A",
+    "A",
+    "S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_caersin"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

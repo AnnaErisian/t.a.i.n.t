@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:inurose_axe"
+  },
+  "pattern": [
+    "AA",
+    "AS",
+    " S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_inurose"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

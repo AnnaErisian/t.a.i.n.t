@@ -128,7 +128,7 @@ public class ToolBuckler extends SwordCore {
         event.setAmount(event.getAmount() * 0.7f);
         if(isInEarlyBlock(event.getEntityLiving())) {
             //the normal blocking halving won't happen, so do it here
-            event.setAmount(event.getAmount() * 0.5f);
+            event.setAmount(event.getAmount() * 0.0f);
         }
 
         // bounce the enemy back, but don't do any real damage

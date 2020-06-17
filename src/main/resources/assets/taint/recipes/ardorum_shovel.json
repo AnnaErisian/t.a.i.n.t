@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "taint:ardorum_shovel"
+  },
+  "pattern": [
+    "A",
+    "S",
+    "S"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_ardorum"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  }
+}

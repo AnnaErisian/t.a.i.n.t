@@ -8,6 +8,5 @@
 		"buckler": "taint:items/buckler/mod_smite",
 		"magicwand": "taint:items/magicwand/mod_smite",
 		"staff": "taint:items/staff/mod_smite",
-		"warwand": "taint:items/warwand/mod_smite"
 	}
 }

@@ -84,6 +84,15 @@ public enum MetalMaterial {
     ptemnium,
     solairite,
 
+    gelonixite,
+    equistalite,
+    cenetenium,
+    altumaerite,
+    anguigenium,
+    roviqurium,
+    cerecesnium,
+    altisavanium,
+
 
     ardorum,
     termium,

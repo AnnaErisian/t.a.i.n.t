@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "taint:neulite_leggings"
+  },
+  "pattern": [
+    "AAA",
+    "A A",
+    "A A"
+  ],
+  "type": "forge:ore_shaped",
+  "key": {
+    "A": {
+      "item": "taint:ingot_neulite"
+    }
+  }
+}

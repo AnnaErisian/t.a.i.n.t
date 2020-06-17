@@ -29,6 +29,5 @@ for modifierSpec in [
 \t\t"buckler": "taint:items/buckler/mod_%(shortName)s",
 \t\t"magicwand": "taint:items/magicwand/mod_%(shortName)s",
 \t\t"staff": "taint:items/staff/mod_%(shortName)s",
-\t\t"warwand": "taint:items/warwand/mod_%(shortName)s"
 \t}
 }''' % { 'shortName': modifierSpec[1] })
