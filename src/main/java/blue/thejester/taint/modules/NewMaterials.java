@@ -197,7 +197,7 @@ public class NewMaterials implements IModule {
             );
             setRenderInfo(mat, color);
             mat.addTrait(TinkersCompat.FREEZE_II, MaterialTypes.HEAD);
-            mat.addTrait(TinkersCompat.BURN_II, MaterialTypes.HEAD);
+            mat.addTrait(TinkerTraits.sharp, MaterialTypes.HEAD);
             mat.addTrait(TinkersCompat.FREEZE_I, MaterialTypes.HANDLE);
             mat.addTrait(TinkersCompat.BURN_I, MaterialTypes.EXTRA);
             addToToolAll(mat, Annihilator.annihilator);
@@ -1331,7 +1331,7 @@ public class NewMaterials implements IModule {
         sendTiCAlloyInfo("lunite", 27, fluid("peractium", 18), fluid("tar", 125), fluid("adipatum", 36));
         sendTiCAlloyInfo("betweensteel", 5, fluid("octine", 3), fluid("syrmorite", 4), fluid("lunite", 1));
         sendTiCAlloyInfo("cannium", 48, fluid("betweensteel", 36), fluid("black_rosite", 72), fluid("netherstar", 25));
-        sendTiCAlloyInfo("ascalite", 2, fluid("adipatum", 2), fluid("enderium", 3), fluid("betweensteel", 3));//TODO
+        sendTiCAlloyInfo("ascalite", 2, fluid("adipatum", 2), fluid("enderium", 3), fluid("betweensteel", 3));
         sendTiCAlloyInfo("aerium", 27, fluid("ascalite", 18), fluid("sestertium", 36), fluid("sponge", 100));
     }
 
@@ -1339,18 +1339,18 @@ public class NewMaterials implements IModule {
         sendTiCAlloyInfo("lordslime", 72, fluid("piridium", 72), fluid("blueslime", 250), fluid("ardorum", 72));
         sendTiCAlloyInfo("littium", 27, fluid("ardorum", 36), fluid("water", 100), fluid("mana", 10));
         sendTiCAlloyInfo("infernium", 3, fluid("obsidian", 4), fluid("manyullyn", 2), fluid("termium", 1));
-        sendTiCAlloyInfo("peractium", 4, fluid("iridium", 2), fluid("termium", 1), fluid("knightmetal", 3), fluid("knightmetal", 3));//TODO
-        sendTiCAlloyInfo("sestertium", 18, fluid("fierymetal", 12), fluid("lordslime", 18), fluid("cryotheum", 125), fluid("slipsteel", 24));//TODO
+        sendTiCAlloyInfo("peractium", 4, fluid("iridium", 2), fluid("termium", 1), fluid("knightmetal", 3), fluid("knightmetal", 3));
+        sendTiCAlloyInfo("sestertium", 18, fluid("fierymetal", 12), fluid("lordslime", 18), fluid("cryotheum", 25), fluid("slipsteel", 24));
     }
 
     private void initTier3Alloys() {
-        sendTiCAlloyInfo("piridium", 8, fluid("knightslime", 18), fluid("aerotheum", 100));
+        sendTiCAlloyInfo("piridium", 8, fluid("knightslime", 18), fluid("aerotheum", 20));
         sendTiCAlloyInfo("luginite", 9, fluid("hot_spring_water", 125), fluid("prismarine", 72), fluid("aluminum", 18));
-        sendTiCAlloyInfo("black_rosite", 8, fluid("mirion", 18), fluid("poison", 125), fluid("pyrotheum", 100));
+        sendTiCAlloyInfo("black_rosite", 8, fluid("mirion", 18), fluid("poison", 125), fluid("pyrotheum", 20));
     }
 
     private void initTier2Alloys() {
-        sendTiCAlloyInfo("slipsteel", 24, fluid("steel", 36), fluid("pigiron", 18), fluid("refined_fuel", 250)); //TODO
+        sendTiCAlloyInfo("slipsteel", 24, fluid("steel", 36), fluid("pigiron", 18), fluid("refined_fuel", 75));
         sendTiCAlloyInfo("faerite", 96, fluid("manasteel", 108), fluid("prismarine", 36), fluid("redstone", 250));
         sendTiCAlloyInfo("escalite", 2, fluid("gold", 2), fluid("marshmallow", 5), fluid("milk_chocolate", 4));
     }
